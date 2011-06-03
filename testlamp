@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from acabsl import set
+from acabsl import send
 import time
 import sys
 t = .3
