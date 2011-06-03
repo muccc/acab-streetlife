@@ -19,10 +19,12 @@ serials = map(createSerial,serials)
 
 def send(x,y,r,g,b,t):
     lamp = lamps[y][x]
+    ms = int(t*1000)
+
     if t == 0:
         sendSetColor(lamp,r,g,b,serials[interfaces[y]])
     else:
-        sendMSFade(lamp,r,g,b,t,serials[interfaces[y]])
+        sendMSFade(lamp,r,g,b,ms,serials[interfaces[y]])
 
 def high(x):
     return (x>>8)&0xff;
