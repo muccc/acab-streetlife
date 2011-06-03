@@ -1,7 +1,9 @@
 import serialinterface
 import time
 
-serials = [ "/dev/acabrow01","/dev/acabrow23","/dev/acabrow45" ]
+serials = [ "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A100473q-if00-port0",
+            "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A100473s-if00-port0",
+            "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A1004b6A-if00-port0" ]
 
 lamps = [[0x27, 0x54, 0x49, 0x04, 0x05, 0x06, 0x07, 0x08],
          [0x1A, 0x28, 0x48, 0x14, 0x15, 0x16, 0x17, 0x18],
@@ -36,7 +38,7 @@ def low(x):
 def sendSetColor(lamp,r,g,b,interface):
     cmd = "%cC%c%c%c"%(chr(lamp),chr(r),chr(g),chr(b))
     cmd = cmd.replace("\\","\\\\")
-    write("\x5c\x30%s\x5c\x31"%cmd,interfacee);
+    write("\x5c\x30%s\x5c\x31"%cmd,interface);
 
 def sendMSFade(lamp,r,g,b,ms,interface):
     cmd = "%cM%c%c%c%c%c"%(chr(lamp),chr(r),chr(g),chr(b),chr(high(ms)),chr(low(ms)))
