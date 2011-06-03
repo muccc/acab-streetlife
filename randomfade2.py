@@ -23,8 +23,12 @@ while "True":
 #  print chosen
 #  print r, b, g, t
   for p in chosen:
-     lib_sl.send( int(p[0]), int(p[1]), r, b, g, t)
+     lib_sl.send( int(p[0]), int(p[1]), r, g, b, t)
      time.sleep(t/10) 
+  time.sleep(t/10)
+  for p in chosen:
+     lib_sl.send( int(p[0]), int(p[1]), 0, 0, 0, t)
+     time.sleep(t/10)
   time.sleep(t/10)
 
 
