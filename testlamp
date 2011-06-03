@@ -1,0 +1,21 @@
+#!/usr/bin/python
+
+from acabsl import set
+import time
+import sys
+t = .3
+x = int(sys.argv[1])
+y = int(sys.argv[2])
+
+
+while 1:
+    send(x,y,255,0,0,500)
+    time.sleep(t)
+    send(x,y,0,255,0,500)
+    time.sleep(t)
+    send(x,y,0,0,255,500)
+    time.sleep(t)
+    send(x,y,0,0,0,500)
+    time.sleep(t)
+
+
