@@ -9,6 +9,11 @@ UDPPORT=5005
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 def send(x,y,r,g,b,t=0):
+  x=int(x)
+  y=int(y)
+  r=int(r)
+  g=int(g)
+  b=int(b)
   try:
     message = "/%s/%s/%i/%i/%i/%i" % (x, y, r, g, b, t*1000)
     urllib2.urlopen("http://%s:%i"% (HOST, PORT)+message)
