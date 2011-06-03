@@ -3,6 +3,7 @@ import socket
 import thread
 import time
 import Queue
+import sys
 
 UDP_IP="0.0.0.0"
 UDP_PORT=5005
@@ -22,9 +23,9 @@ def writer():
             msl = ord(data[6])
             ms = (msh<<8) + msl;
             acabsl.send(x,y,r,g,b,ms/1000.)
-        except:
-            pass
-        time.sleep(.001)
+        except Exception as e:
+            print "Unexpected error:", e
+
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind((UDP_IP,UDP_PORT))
