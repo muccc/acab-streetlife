@@ -4,7 +4,7 @@ HOST="127.1"
 PORT=8080
 
 def send(x,y,r,g,b,t=0):
-  message = "/%s/%s/%i/%i/%i/%i" % (x, y, r, b, g, t*1000)
+  message = "/%s/%s/%i/%i/%i/%i" % (x, y, r, g, b, t*1000)
   urllib2.urlopen("http://%s:%i"% (HOST, PORT)+message)
 
 def matrix(targetsize_x=8,targetsize_y=6):
