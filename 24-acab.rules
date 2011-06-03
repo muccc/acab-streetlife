@@ -1,0 +1,3 @@
+ATTRS{serial}=="A100473q", SYMLINK="acabrow01", GROUP="tty", MODE="0660"
+ATTRS{serial}=="A100473s", SYMLINK="acabrow23", GROUP="tty", MODE="0660"
+ATTRS{serial}=="A1004b6A", SYMLINK="acabrow45", GROUP="tty", MODE="0660"
