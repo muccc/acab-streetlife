@@ -11,15 +11,19 @@ q = Queue.Queue(100)
 def writer():
     while 1:
         data = q.get()
-        x = ord(data[0])
-        y = ord(data[1])
-        r = ord(data[2])
-        g = ord(data[3])
-        b = ord(data[4])
-        msh = ord(data[5])
-        msl = ord(data[6])
-        ms = (msh<<8) + msl;
-        acabsl.send(x,y,r,g,b,ms/1000.)
+        print list(data)
+        try:
+            x = ord(data[0])
+            y = ord(data[1])
+            r = ord(data[2])
+            g = ord(data[3])
+            b = ord(data[4])
+            msh = ord(data[5])
+            msl = ord(data[6])
+            ms = (msh<<8) + msl;
+            acabsl.send(x,y,r,g,b,ms/1000.)
+        except:
+            pass
         time.sleep(.001)
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
