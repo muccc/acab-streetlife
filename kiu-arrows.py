@@ -7,42 +7,44 @@ cs =	[
 	    [000,255,255,255,000,000],
 	    [000,000,000,255,255,255],
 	]
+tfade = 0.3
+tick = 0.1
 
 def drawa(c,r,c1):
 
-    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
+    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
     for x in range(1,c):
-	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
+	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
 
     for y in range(0,r):
-	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
+	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
 
 def drawb(c,r,c1):
 
-    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
+    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
     for x in range(c,7):
-	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
+	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
 
     for y in range(0,r):
-	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
+	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
 
 def drawc(c,r,c1):
 
-    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
+    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
     for x in range(c,7):
-	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
+	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
 
     for y in range(r,6):
-	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
+	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
 
 def drawd(c,r,c1):
 
-    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
+    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
     for x in range(1,c):
-	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
+	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
 
     for y in range(r,6):
-	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
+	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
 
 
 
@@ -65,7 +67,7 @@ while 1:
     lastc = c
 
     if mode != lastm:
-	time.sleep(0.3)
+	time.sleep(tick * 6)
 	lastm = mode
     
     if mode == 0:    
@@ -108,5 +110,5 @@ while 1:
 	    y = 0
 	    mode = 0
 	
-    time.sleep(0.05)
+    time.sleep(tick)
 

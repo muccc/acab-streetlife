@@ -10,7 +10,7 @@ fgb = 0
 bgr = 0
 bgg = 0
 bgb = 0
-tick = 0.05
+tick = 0.25
 
 font = 	{
 	    "a" :	[
@@ -491,10 +491,10 @@ while 1:
 	    col = content[y][cx]
 	    
 	    if (col == 0):
-		lib_sl.send(x,y,bgr,bgg,bgb)
+		lib_sl.send(x,y,bgr,bgg,bgb,tick/1.5)
 
 	    if (col == 1):
-		lib_sl.send(x,y,fgr,fgg,fgb)
+		lib_sl.send(x,y,fgr,fgg,fgb,tick/1.5)
     
     time.sleep(tick)
     

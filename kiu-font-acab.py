@@ -9,7 +9,7 @@ cs =    [
         ]
 
 text = "AllColoursAreBeautiful - CCC - Street Life - AllColoursAreBeautiful - MUCCC - Corso Leopold - "
-tick = 0.05
+tick = 0.2
 
 font = 	{
 	    "a" :	[
@@ -505,10 +505,10 @@ while 1:
 	    col = content[y][cx]
 	    
 	    if (col == 0):
-		lib_sl.send(x,y,cs[0][col1],cs[1][col1],cs[2][col1])
+		lib_sl.send(x,y,cs[0][col1],cs[1][col1],cs[2][col1],tick/1.5)
 
 	    if (col == 1):
-		lib_sl.send(x,y,cs[0][col2],cs[1][col2],cs[2][col2])
+		lib_sl.send(x,y,cs[0][col2],cs[1][col2],cs[2][col2],tick/1.5)
     
     time.sleep(tick)
     

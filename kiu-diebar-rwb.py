@@ -12,6 +12,7 @@ c =	[ [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
 
 idx = 0
 cx = 0
+tick = 0.25
 while 1:
 
     for x in range(0,8):
@@ -23,15 +24,15 @@ while 1:
 	    col = c[y][cx]
 	    
 	    if (col == 0):
-		lib_sl.send(x,y,255,0,0)
+		lib_sl.send(x,y,255,0,0,tick/1.5)
 
 	    if (col == 1):
-		lib_sl.send(x,y,255,255,255)
+		lib_sl.send(x,y,255,255,255,tick/1.5)
 
 	    if (col == 2):
-		lib_sl.send(x,y,0,0,0)
+		lib_sl.send(x,y,0,0,0,tick/1.5)
     
-    time.sleep(0.05)
+    time.sleep(tick)
     
     idx = idx + 1
     if (idx > 23):
