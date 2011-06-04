@@ -28,6 +28,7 @@ playlist = [
             [40, ["kiu-infinity.py"]],
             [60, ["kiu-random_pixels.py"]],
             [15, ["kiu-soft-scroll.py"]],
+            [30, ["s-color2.py"]] ,
             [15, ["kiu-diebar-rw.py"]],
             [30, ["kiu-wabern.py"]],
             [10, [ddc_chooser()]],
