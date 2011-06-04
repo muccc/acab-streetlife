@@ -3,6 +3,7 @@ import playlist
 import time
 import os
 import signal
+import random
 
 pidfile='/tmp/animation_pids'
 
@@ -16,7 +17,7 @@ signal.signal(signal.SIGINT, abort)
 signal.pause
 
 while 1:
- for i in pl:
+  i =  random.choice(pl)
   t = i[0]
   processlist=[]
   pids=open(pidfile,"w")
@@ -32,4 +33,4 @@ while 1:
   for process in processlist:
     process.kill()
   print "next entry"
- reload(playlist)
+  reload(playlist)
