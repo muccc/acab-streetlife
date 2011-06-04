@@ -18,6 +18,7 @@ playlist = [
             [10, ["lines.py", "lines.py"]],
             [15, ["kiu-diebar-rwb.py"]],
 	    [15, [ddc_chooser()]],
+	    [30, ["die_bar_thema.py"]] 
 	    [15, ["dots.py"]],
 	    [30, ["mc3_pixelpushers.py"]],
             [30, ["s-color.py"]] ,
@@ -31,6 +32,6 @@ playlist = [
             [15, ["kiu-diebar-rw.py"]],
             [30, ["kiu-wabern.py"]],
             [10, [ddc_chooser()]],
-
+	    [30, ["die_bar_thema.py"]]
             #[time_in_seconds, [simultaniois_animation1, simultanious_animation2, ....]]
 ]
