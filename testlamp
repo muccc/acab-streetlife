@@ -9,13 +9,13 @@ y = int(sys.argv[2])
 
 
 while 1:
-    send(x,y,255,0,0,500)
+    send(x,y,255,0,0,.1)
     time.sleep(t)
-    send(x,y,0,255,0,500)
+    send(x,y,0,255,0,.1)
     time.sleep(t)
-    send(x,y,0,0,255,500)
+    send(x,y,0,0,255,.1)
     time.sleep(t)
-    send(x,y,0,0,0,500)
+    send(x,y,0,0,0,.1)
     time.sleep(t)
 
 
