@@ -6,7 +6,7 @@ import time
 tick = 0.1
 
 def setcol(col, r, g, b, time):
-    for i in range(0,7):
+    for i in range(0,6):
     	send(col,i,r,g,b,time);
 
 h = 0
