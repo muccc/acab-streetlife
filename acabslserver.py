@@ -16,13 +16,18 @@ def writer():
         try:
             x = ord(data[0])
             y = ord(data[1])
-            r = ord(data[2])
-            g = ord(data[3])
-            b = ord(data[4])
-            msh = ord(data[5])
-            msl = ord(data[6])
+            cmd = data[2]
+            r = ord(data[3])
+            g = ord(data[4])
+            b = ord(data[5])
+            msh = ord(data[6])
+            msl = ord(data[7])
             ms = (msh<<8) + msl;
-            acabsl.send(x,y,r,g,b,ms/1000.)
+            if cmd == C:
+                acabsl.send(x,y,r,g,b,ms/1000.)
+            elif cmd == 'F':
+                acabsl.sendSpeedFade(x,y,r,g,b,ms/1000.)
+
         except Exception as e:
             print "Unexpected error:", e
 

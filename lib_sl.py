@@ -21,8 +21,24 @@ def send(x,y,r,g,b,t=0):
     pass
 
   ms = int(t * 1000)
-  msg = "%c%c%c%c%c%c%c"%(x,y,r,g,b,ms>>8,ms&0xFF)
+  msg = "%c%c%Cc%c%c%c%c"%(x,y,r,g,b,ms>>8,ms&0xFF)
   sock.sendto(msg, (UDPHOST, UDPPORT))
+
+def speedfade(x,y,r,g,b,speed)
+  x=int(x)
+  y=int(y)
+  r=int(r)
+  g=int(g)
+  b=int(b)
+  try:
+    message = "/%s/%s/%i/%i/%i/%i" % (x, y, r, g, b, t*1000)
+    urllib2.urlopen("http://%s:%i"% (HOST, PORT)+message)
+  except:
+    pass
+
+  msg = "%c%c%Fc%c%c%c%c"%(x,y,r,g,b,speed>>8,speed&0xFF)
+  sock.sendto(msg, (UDPHOST, UDPPORT))
+
 
 def matrix(targetsize_x=8,targetsize_y=6):
   x=0

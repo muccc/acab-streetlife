@@ -45,6 +45,14 @@ def sendMSFade(lamp,r,g,b,ms,interface):
     cmd = cmd.replace("\\","\\\\")
     write("\x5c\x30%s\x5c\x31"%cmd,interface);
 
+def sendSpeedFade(x,y,r,g,b,speed,interface):
+    lamp = lamps[y][x]
+ 
+    cmd = "%cF%c%c%c%c%c"%(chr(lamp),chr(r),chr(g),chr(b),chr(high(speed)),chr(low(speed)))
+    cmd = cmd.replace("\\","\\\\")
+    write("\x5c\x30%s\x5c\x31"%cmd,interfaces[y]);
+
+
 def write(msg, interface):
     timeout = interface_timeouts[interface]
     t = time.time()
