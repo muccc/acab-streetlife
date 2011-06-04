@@ -12,13 +12,14 @@ def ddc_chooser():
 
 playlist = [
 	    [20, ["rainbowwall.py", "randomfade.py"]],
+            [30, ["s-color4.py"]] ,
             [30, ["s-rainbowscroll.py"]] ,
             [10, ["crazy.py"]] ,
             [10, ["kiu-arrows.py"]],
             [10, ["lines.py", "lines.py"]],
             [15, ["kiu-diebar-rwb.py"]],
 	    [15, [ddc_chooser()]],
-	    [30, ["die_bar_thema.py"]] 
+	    [30, ["die_bar_thema.py"]], 
 	    [15, ["dots.py"]],
 	    [30, ["mc3_pixelpushers.py"]],
             [30, ["s-color.py"]] ,
