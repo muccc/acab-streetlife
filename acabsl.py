@@ -21,8 +21,25 @@ def createSerial(dev):
 serials = map(createSerial,serials)
 
 def send(x,y,r,g,b,t):
-    lamp = lamps[y][x]
     ms = int(t*1000)
+    if x == 100 and y == 100:
+      if ms == 0:
+	sendSetColor(0,r,g,b,0)
+	sendSetColor(0,r,g,b,1)
+	sendSetColor(0,r,g,b,2)
+      else:
+        sendMSFade(0,r,g,b,ms,0)
+        sendMSFade(0,r,g,b,ms,1)
+        sendMSFade(0,r,g,b,ms,2)
+      return
+    if x == 100:
+      if ms == 0:
+	sendSetColor(0,r,g,b,y)
+      else:
+        sendMSFade(0,r,g,b,ms,y)
+      return
+             
+    lamp = lamps[y][x]
 
     if ms == 0:
         sendSetColor(lamp,r,g,b,interfaces[y])
