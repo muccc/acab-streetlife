@@ -29,13 +29,20 @@ inp.setformat(alsaaudio.PCM_FORMAT_S16_LE)
 # mode.
 inp.setperiodsize(160)
 t=0.001
+vmin=0
+vmax=0
+vavg=0
 while True:
     # Read data from device
     l,data = inp.read()
     if l:
     	# Return the maximum of the absolute value of all samples in a fragment.
-    	vavg= audioop.avg(data, 2)
-    	vmin,vmax= audioop.minmax(data, 2)
+        try:
+    	    vavg= audioop.avg(data, 2)
+    	    vmin,vmax= audioop.minmax(data, 2)
+        except:
+            pass
+
         val=min(80,vmax/40)
         lib_sl.send(100,2,val,0,0,t)
         lib_sl.send(100,0,0,val,0,t)
