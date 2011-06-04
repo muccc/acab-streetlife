@@ -23,7 +23,8 @@ def writer():
             msh = ord(data[6])
             msl = ord(data[7])
             ms = (msh<<8) + msl;
-            if cmd == C:
+            if cmd == 'C':
+                print 'set color'
                 acabsl.send(x,y,r,g,b,ms/1000.)
             elif cmd == 'F':
                 acabsl.sendSpeedFade(x,y,r,g,b,ms/1000.)
