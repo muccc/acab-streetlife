@@ -10,45 +10,45 @@ cs =	[
 
 def drawa(c,r,c1):
 
-    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],100)
+    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
     for x in range(1,c):
-	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],100)
+	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
 
     for y in range(0,r):
-	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],100)
+	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
 
 def drawb(c,r,c1):
 
-    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],100)
+    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
     for x in range(c,7):
-	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],100)
+	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
 
     for y in range(0,r):
-	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],100)
+	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
 
 def drawc(c,r,c1):
 
-    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],100)
+    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
     for x in range(c,7):
-	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],100)
+	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
 
     for y in range(r,6):
-	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],100)
+	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
 
 def drawd(c,r,c1):
 
-    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],100)
+    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
     for x in range(1,c):
-	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],100)
+	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
 
     for y in range(r,6):
-	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],100)
+	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],0.1)
 
 
 
 for c in range(0,8):
     for r in range(0,6):
-        lib_sl.send(c,r,0,0,0, 500)
+        lib_sl.send(c,r,0,0,0, 0.5)
 time.sleep(0.5)
 
 x = 1

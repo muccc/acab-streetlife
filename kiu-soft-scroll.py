@@ -14,9 +14,9 @@ def draw(x,y,r,g,b,t):
 	lib_sl.send(x,y,r,g,b,t)
 
 def pix(x,y,c):
-	draw(x-1,y,0,0,0,600)
-	draw(x+1,y,0,0,0,600)
-	draw(x,y,cs[0][c],cs[1][c],cs[2][c],300)
+	draw(x-1,y,0,0,0,0.6)
+	draw(x+1,y,0,0,0,0.6)
+	draw(x,y,cs[0][c],cs[1][c],cs[2][c],0.3)
 
 def col(c):
     if c > 5:
