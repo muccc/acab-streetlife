@@ -31,13 +31,22 @@ inp.setperiodsize(160)
 t=0.001
 count=0
 dia=1
+vavg = 0
+vmin = 0
+vmax = 0
+
 while True:
     for i in range(0,8):
         l,data = inp.read()
         if l:
         	# Return the maximum of the absolute value of all samples in a fragment.
-        	vavg= audioop.avg(data, 2)
-        	vmin,vmax= audioop.minmax(data, 2)
+        	
+		try:
+			vavg= audioop.avg(data, 2)
+        		vmin,vmax= audioop.minmax(data, 2)
+		catch:
+			pass
+
                 val=min(200,vmax/40)
                 val2=min(200,-1*(vmin/40))
                 lib_sl.send(dia*(i+1)%8,5,val,i*20,0,t)
