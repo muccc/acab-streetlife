@@ -4,7 +4,8 @@ import socket
 HOST="127.1"
 PORT=8080
 
-UDPHOST="83.133.179.27"
+#UDPHOST="83.133.179.27"
+UDPHOST="10.0.0.1"
 UDPPORT=5005
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
@@ -21,7 +22,7 @@ def send(x,y,r,g,b,t=0):
     pass
 
   ms = int(t * 1000)
-  msg = "%c%c%cc%c%c%c%c"%(x,y,r,g,b,ms>>8,ms&0xFF)
+  msg = "%c%cC%c%c%c%c%c"%(x,y,r,g,b,ms>>8,ms&0xFF)
   sock.sendto(msg, (UDPHOST, UDPPORT))
 
 def speedfade(x,y,r,g,b,speed):
