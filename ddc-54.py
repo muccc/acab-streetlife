@@ -61,4 +61,4 @@ while 1:
     lib_sl.send(7,3,255,0,0)
     lib_sl.send(7,4,255,0,0)
     lib_sl.send(7,5,255,0,0)
-    time.sleep(60.0)
+    time.sleep(6.0)

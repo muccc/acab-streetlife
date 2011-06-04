@@ -66,7 +66,7 @@ while 1:
     lib_sl.send(0,4,0,0,255)
     lib_sl.send(0,5,0,0,255)
     lib_sl.send(1,5,0,0,255)
-    time.sleep(0.2)
+    time.sleep(0.02)
 
 //NOW THE FADE
 
@@ -123,7 +123,7 @@ while 1:
     lib_sl.speedfade(0,4,255,0,0,50)
     lib_sl.speedfade(0,5,255,0,0,50)
     lib_sl.speedfade(1,5,255,0,0,50)
-    time.sleep(27.0)
+    time.sleep(2.7)
 
 //AND ANOTHER FADE
 //TOPROW
@@ -179,7 +179,7 @@ while 1:
     lib_sl.speedfade(0,4,0,255,0,50)
     lib_sl.speedfade(0,5,0,255,0,50)
     lib_sl.speedfade(1,5,0,255,0,50)
-    time.sleep(27.0)
+    time.sleep(2.7)
 
 //AND FADE BACK TO THE FIRST COLORS
 //TOPROW
@@ -235,7 +235,7 @@ while 1:
     lib_sl.speedfade(0,4,0,0,255,50)
     lib_sl.speedfade(0,5,0,0,255,50)
     lib_sl.speedfade(1,5,0,0,255,50)
-    time.sleep(27.0)
+    time.sleep(2.7)
 
 //START THE RED STRIPE
     lib_sl.send(5,0,255,0,0)
@@ -290,7 +290,7 @@ while 1:
     lib_sl.send(0,4,0,0,255)
     lib_sl.send(0,5,0,0,255)
     lib_sl.send(1,5,0,0,255)
-    time.sleep(0.2)
+    time.sleep(0.02)
 
 //NOW THE FADE
 
@@ -347,7 +347,7 @@ while 1:
     lib_sl.speedfade(0,4,255,0,0,50)
     lib_sl.speedfade(0,5,255,0,0,50)
     lib_sl.speedfade(1,5,255,0,0,50)
-    time.sleep(27.0)
+    time.sleep(2.7)
 
 //AND ANOTHER FADE
 //TOPROW
@@ -403,7 +403,7 @@ while 1:
     lib_sl.speedfade(0,4,0,255,0,50)
     lib_sl.speedfade(0,5,0,255,0,50)
     lib_sl.speedfade(1,5,0,255,0,50)
-    time.sleep(27.0)
+    time.sleep(2.7)
 
 //AND FADE BACK TO THE FIRST COLORS
 //TOPROW
@@ -459,7 +459,7 @@ while 1:
     lib_sl.speedfade(0,4,0,0,255,50)
     lib_sl.speedfade(0,5,0,0,255,50)
     lib_sl.speedfade(1,5,0,0,255,50)
-    time.sleep(27.0)
+    time.sleep(2.7)
 
 //START THE RED STRIPE
     lib_sl.send(5,0,255,0,0)
@@ -514,7 +514,7 @@ while 1:
     lib_sl.send(0,4,0,0,255)
     lib_sl.send(0,5,0,0,255)
     lib_sl.send(1,5,0,0,255)
-    time.sleep(0.2)
+    time.sleep(0.02)
 
 //NOW THE FADE
 
@@ -571,7 +571,7 @@ while 1:
     lib_sl.speedfade(0,4,255,0,0,50)
     lib_sl.speedfade(0,5,255,0,0,50)
     lib_sl.speedfade(1,5,255,0,0,50)
-    time.sleep(27.0)
+    time.sleep(2.7)
 
 //AND ANOTHER FADE
 //TOPROW
@@ -627,7 +627,7 @@ while 1:
     lib_sl.speedfade(0,4,0,255,0,50)
     lib_sl.speedfade(0,5,0,255,0,50)
     lib_sl.speedfade(1,5,0,255,0,50)
-    time.sleep(27.0)
+    time.sleep(2.7)
 
 //AND FADE BACK TO THE FIRST COLORS
 //TOPROW
@@ -683,7 +683,7 @@ while 1:
     lib_sl.speedfade(0,4,0,0,255,50)
     lib_sl.speedfade(0,5,0,0,255,50)
     lib_sl.speedfade(1,5,0,0,255,50)
-    time.sleep(27.0)
+    time.sleep(2.7)
 
 //START THE RED STRIPE
     lib_sl.send(5,0,255,0,0)
@@ -738,7 +738,7 @@ while 1:
     lib_sl.send(0,4,0,0,255)
     lib_sl.send(0,5,0,0,255)
     lib_sl.send(1,5,0,0,255)
-    time.sleep(0.2)
+    time.sleep(0.02)
 
 //NOW THE FADE
 
@@ -795,7 +795,7 @@ while 1:
     lib_sl.speedfade(0,4,255,0,0,50)
     lib_sl.speedfade(0,5,255,0,0,50)
     lib_sl.speedfade(1,5,255,0,0,50)
-    time.sleep(27.0)
+    time.sleep(2.7)
 
 //AND ANOTHER FADE
 //TOPROW
@@ -851,7 +851,7 @@ while 1:
     lib_sl.speedfade(0,4,0,255,0,50)
     lib_sl.speedfade(0,5,0,255,0,50)
     lib_sl.speedfade(1,5,0,255,0,50)
-    time.sleep(27.0)
+    time.sleep(2.7)
 
 //AND FADE BACK TO THE FIRST COLORS
 //TOPROW
@@ -907,4 +907,4 @@ while 1:
     lib_sl.speedfade(0,4,0,0,255,50)
     lib_sl.speedfade(0,5,0,0,255,50)
     lib_sl.speedfade(1,5,0,0,255,50)
-    time.sleep(27.0)
+    time.sleep(2.7)

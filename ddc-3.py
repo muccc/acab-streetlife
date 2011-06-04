@@ -64,7 +64,7 @@ while 1:
     lib_sl.speedfade(6,5,0,0,255,1000)
     lib_sl.speedfade(7,5,0,0,255,1000)
 
-    time.sleep(50.0)
+    time.sleep(5.0)
 
     lib_sl.speedfade(0,0,0,255,0,1000)
     lib_sl.speedfade(0,1,0,255,0,1000)
@@ -117,7 +117,7 @@ while 1:
     lib_sl.speedfade(6,5,255,0,0,1000)
     lib_sl.speedfade(7,5,255,0,0,1000)
 
-    time.sleep(50.0)
+    time.sleep(5.0)
 
     lib_sl.speedfade(0,0,0,0,255,1000)
     lib_sl.speedfade(0,1,0,0,255,1000)
@@ -170,7 +170,7 @@ while 1:
     lib_sl.speedfade(6,5,0,255,0,1000)
     lib_sl.speedfade(7,5,0,255,0,1000)
 
-    time.sleep(50.0)
+    time.sleep(5.0)
 
 
     lib_sl.speedfade(0,0,255,0,0,1000)
@@ -224,7 +224,7 @@ while 1:
     lib_sl.speedfade(6,5,0,0,255,1000)
     lib_sl.speedfade(7,5,0,0,255,1000)
 
-    time.sleep(50.0)
+    time.sleep(5.0)
 
     lib_sl.speedfade(0,0,0,255,0,1000)
     lib_sl.speedfade(0,1,0,255,0,1000)
@@ -277,7 +277,7 @@ while 1:
     lib_sl.speedfade(6,5,255,0,0,1000)
     lib_sl.speedfade(7,5,255,0,0,1000)
 
-    time.sleep(50.0)
+    time.sleep(5.0)
 
     lib_sl.speedfade(0,0,0,0,255,1000)
     lib_sl.speedfade(0,1,0,0,255,1000)
@@ -330,7 +330,7 @@ while 1:
     lib_sl.speedfade(6,5,0,255,0,1000)
     lib_sl.speedfade(7,5,0,255,0,1000)
 
-    time.sleep(50.0)
+    time.sleep(5.0)
 
 
     lib_sl.speedfade(0,0,255,0,0,1000)
@@ -384,7 +384,7 @@ while 1:
     lib_sl.speedfade(6,5,0,0,255,1000)
     lib_sl.speedfade(7,5,0,0,255,1000)
 
-    time.sleep(50.0)
+    time.sleep(5.0)
 
     lib_sl.speedfade(0,0,0,255,0,1000)
     lib_sl.speedfade(0,1,0,255,0,1000)
@@ -437,7 +437,7 @@ while 1:
     lib_sl.speedfade(6,5,255,0,0,1000)
     lib_sl.speedfade(7,5,255,0,0,1000)
 
-    time.sleep(50.0)
+    time.sleep(5.0)
 
     lib_sl.speedfade(0,0,0,0,255,1000)
     lib_sl.speedfade(0,1,0,0,255,1000)
@@ -490,7 +490,7 @@ while 1:
     lib_sl.speedfade(6,5,0,255,0,1000)
     lib_sl.speedfade(7,5,0,255,0,1000)
 
-    time.sleep(50.0)
+    time.sleep(5.0)
 
 
     lib_sl.speedfade(0,0,255,0,0,1000)
@@ -544,7 +544,7 @@ while 1:
     lib_sl.speedfade(6,5,0,0,255,1000)
     lib_sl.speedfade(7,5,0,0,255,1000)
 
-    time.sleep(50.0)
+    time.sleep(5.0)
 
     lib_sl.speedfade(0,0,0,255,0,1000)
     lib_sl.speedfade(0,1,0,255,0,1000)
@@ -597,7 +597,7 @@ while 1:
     lib_sl.speedfade(6,5,255,0,0,1000)
     lib_sl.speedfade(7,5,255,0,0,1000)
 
-    time.sleep(50.0)
+    time.sleep(5.0)
 
     lib_sl.speedfade(0,0,0,0,255,1000)
     lib_sl.speedfade(0,1,0,0,255,1000)
@@ -650,4 +650,4 @@ while 1:
     lib_sl.speedfade(6,5,0,255,0,1000)
     lib_sl.speedfade(7,5,0,255,0,1000)
 
-    time.sleep(50.0)
+    time.sleep(5.0)

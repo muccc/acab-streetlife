@@ -93,7 +93,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(30.0)
+    time.sleep(3.0)
 
 #### BEGINN OF THE MESSAGE = "KA" (&#8722; · &#8722; · &#8722;), IN RED
 ## BEGIN "K" (-·-)
@@ -146,7 +146,7 @@ while 1:
     lib_sl.send(7,3,255,0,0)
     lib_sl.send(7,4,255,0,0)
     lib_sl.send(7,5,255,0,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -197,7 +197,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,255,0,0)
@@ -248,7 +248,7 @@ while 1:
     lib_sl.send(7,3,255,0,0)
     lib_sl.send(7,4,255,0,0)
     lib_sl.send(7,5,255,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -299,7 +299,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DAH
     lib_sl.send(0,0,255,0,0)
@@ -350,7 +350,7 @@ while 1:
     lib_sl.send(7,3,255,0,0)
     lib_sl.send(7,4,255,0,0)
     lib_sl.send(7,5,255,0,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 ## END "K"
 
 # A PAUSE BETWEEN TWO SYMBOLS
@@ -402,7 +402,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 ## BEGIN "A" (·-)
 # A DIT
@@ -454,7 +454,7 @@ while 1:
     lib_sl.send(7,3,255,0,0)
     lib_sl.send(7,4,255,0,0)
     lib_sl.send(7,5,255,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -505,7 +505,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DAH
     lib_sl.send(0,0,255,0,0)
@@ -556,7 +556,7 @@ while 1:
     lib_sl.send(7,3,255,0,0)
     lib_sl.send(7,4,255,0,0)
     lib_sl.send(7,5,255,0,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 ## A PAUSE BETWEEN TWO WORDS
     lib_sl.send(0,0,0,0,0)
@@ -607,7 +607,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(8.4)
+    time.sleep(0.84)
 
 ### BEGIN OF THE WORD "WELCOME" (·-- · ·-·· -·-· --- -- ·)
 ## BEGIN "W" (·--)
@@ -660,7 +660,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -711,7 +711,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DAH
     lib_sl.send(0,0,0,255,0)
@@ -762,7 +762,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -813,7 +813,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DAH
     lib_sl.send(0,0,0,255,0)
@@ -864,7 +864,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 ## END "W"
 
 ## A PAUSE BETWEEN TWO CHARACTERS
@@ -916,7 +916,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 ## BEGIN "E" (·)
 # A DIT
@@ -968,7 +968,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 ## END "E"
 
 ## A PAUSE BETWEEN TWO CHARACTERS
@@ -1020,7 +1020,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 ## BEGIN "L" (·-··)
 # A DIT
@@ -1072,7 +1072,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -1123,7 +1123,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DAH
     lib_sl.send(0,0,0,255,0)
@@ -1174,7 +1174,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -1225,7 +1225,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,0,255,0)
@@ -1276,7 +1276,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -1327,7 +1327,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,0,255,0)
@@ -1378,7 +1378,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 ## END "L"
 
 ## A PAUSE BETWEEN TWO CHARACTERS
@@ -1430,7 +1430,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 ## BEGIN "C" (-·-·)
 # A DAH
@@ -1482,7 +1482,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -1533,7 +1533,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,0,255,0)
@@ -1584,7 +1584,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -1635,7 +1635,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DAH
     lib_sl.send(0,0,0,255,0)
@@ -1686,7 +1686,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -1737,7 +1737,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,0,255,0)
@@ -1788,7 +1788,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 ## END "C"
 
 ## A PAUSE BETWEEN TWO CHARACTERS
@@ -1840,7 +1840,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 ## BEGIN "O" (---)
 # A DAH
@@ -1892,7 +1892,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -1943,7 +1943,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DAH
     lib_sl.send(0,0,0,255,0)
@@ -1994,7 +1994,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -2045,7 +2045,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DAH
     lib_sl.send(0,0,0,255,0)
@@ -2096,7 +2096,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 ## END "O"
 
 ## A PAUSE BETWEEN TWO CHARACTERS
@@ -2148,7 +2148,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 ## BEGIN "M" (--)
 # A DAH
@@ -2200,7 +2200,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -2251,7 +2251,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DAH
     lib_sl.send(0,0,0,255,0)
@@ -2302,7 +2302,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 ## END "M"
 
 ## A PAUSE BETWEEN TWO CHARACTERS
@@ -2354,7 +2354,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 ## BEGIN "E" (·)
 # A DIT
@@ -2406,7 +2406,7 @@ while 1:
     lib_sl.send(7,3,0,255,0)
     lib_sl.send(7,4,0,255,0)
     lib_sl.send(7,5,0,255,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 ## END "E"
 ### END OF THE WORD "WELCOME"
 
@@ -2459,7 +2459,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(8.4)
+    time.sleep(0.84)
 
 ### BEGIN OF THE WORD "HACKERS" (···· ·- -·-· -·- · ·-· ···)
 ## BEGIN "H" (····)
@@ -2512,7 +2512,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -2563,7 +2563,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,0,0,255)
@@ -2614,7 +2614,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -2665,7 +2665,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,0,0,255)
@@ -2716,7 +2716,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -2767,7 +2767,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,0,0,255)
@@ -2818,7 +2818,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 ## END "H"
 
 ## A PAUSE BETWEEN TWO CHARACTERS
@@ -2870,7 +2870,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 ## BEGIN "A" (·-)
 # A DIT
@@ -2922,7 +2922,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -2973,7 +2973,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DAH
     lib_sl.send(0,0,0,0,255)
@@ -3024,7 +3024,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(3.6)
+    time.sleep(0.36)
 ## END "A"
 
 ## A PAUSE BETWEEN TWO CHARACTERS
@@ -3076,7 +3076,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 ## BEGIN "C" (-·-·)
 # A DAH
@@ -3128,7 +3128,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -3179,7 +3179,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,0,0,255)
@@ -3230,7 +3230,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -3281,7 +3281,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DAH
     lib_sl.send(0,0,0,0,255)
@@ -3332,7 +3332,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -3383,7 +3383,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,0,0,255)
@@ -3434,7 +3434,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 ## END "C"
 
 ## A PAUSE BETWEEN TWO CHARACTERS
@@ -3486,7 +3486,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 ## BEGIN "K" (-·-)
 # A DAH
@@ -3538,7 +3538,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -3589,7 +3589,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,0,0,255)
@@ -3640,7 +3640,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -3691,7 +3691,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DAH
     lib_sl.send(0,0,0,0,255)
@@ -3742,7 +3742,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(3.6)
+    time.sleep(0.36)
 ## END "K"
 
 ## A PAUSE BETWEEN TWO CHARACTERS
@@ -3794,7 +3794,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 ## BEGIN "E" (·)
 # A DIT
@@ -3846,7 +3846,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 ## END "E"
 
 ## A PAUSE BETWEEN TWO CHARACTERS
@@ -3898,7 +3898,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 ## BEGIN "R" (·-·)
 # A DIT
@@ -3950,7 +3950,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -4001,7 +4001,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DAH
     lib_sl.send(0,0,0,0,255)
@@ -4052,7 +4052,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -4103,7 +4103,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,0,0,255)
@@ -4154,7 +4154,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 ## END "R"
 
 ## A PAUSE BETWEEN TWO CHARACTERS
@@ -4206,7 +4206,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 ## BEGIN "S" (···)
 # A DIT
@@ -4258,7 +4258,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -4309,7 +4309,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,0,0,255)
@@ -4360,7 +4360,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -4411,7 +4411,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,0,0,255)
@@ -4462,7 +4462,7 @@ while 1:
     lib_sl.send(7,3,0,0,255)
     lib_sl.send(7,4,0,0,255)
     lib_sl.send(7,5,0,0,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 ## END "S"
 ### END OF THE WORD "HACKERS"
 
@@ -4517,7 +4517,7 @@ while 1:
     lib_sl.send(7,3,255,0,0)
     lib_sl.send(7,4,255,0,0)
     lib_sl.send(7,5,255,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -4568,7 +4568,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DAH
     lib_sl.send(0,0,255,0,0)
@@ -4619,7 +4619,7 @@ while 1:
     lib_sl.send(7,3,255,0,0)
     lib_sl.send(7,4,255,0,0)
     lib_sl.send(7,5,255,0,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 ## END "A"
 
 # A PAUSE BETWEEN TWO SYMBOLS
@@ -4671,7 +4671,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 ## BEGIN "R" (·-·)
 # A DIT
@@ -4723,7 +4723,7 @@ while 1:
     lib_sl.send(7,3,255,0,0)
     lib_sl.send(7,4,255,0,0)
     lib_sl.send(7,5,255,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -4774,7 +4774,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DAH
     lib_sl.send(0,0,255,0,0)
@@ -4825,7 +4825,7 @@ while 1:
     lib_sl.send(7,3,255,0,0)
     lib_sl.send(7,4,255,0,0)
     lib_sl.send(7,5,255,0,0)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -4876,7 +4876,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,255,0,0)
@@ -4927,7 +4927,7 @@ while 1:
     lib_sl.send(7,3,255,0,0)
     lib_sl.send(7,4,255,0,0)
     lib_sl.send(7,5,255,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 ## END "R"
 
 ## A PAUSE BETWEEN TWO WORDS
@@ -4979,7 +4979,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(8.4)
+    time.sleep(0.84)
 
 #### END OF CONNECTION = "SK" (···-·-), IN WHITE
 ## BEGIN "S" (···)
@@ -5032,7 +5032,7 @@ while 1:
     lib_sl.send(7,3,255,255,255)
     lib_sl.send(7,4,255,255,255)
     lib_sl.send(7,5,255,255,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -5083,7 +5083,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,255,255,255)
@@ -5134,7 +5134,7 @@ while 1:
     lib_sl.send(7,3,255,255,255)
     lib_sl.send(7,4,255,255,255)
     lib_sl.send(7,5,255,255,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -5185,7 +5185,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,255,255,255)
@@ -5236,7 +5236,7 @@ while 1:
     lib_sl.send(7,3,255,255,255)
     lib_sl.send(7,4,255,255,255)
     lib_sl.send(7,5,255,255,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 ## END "S"
 
 # A PAUSE BETWEEN TWO SYMBOLS
@@ -5288,7 +5288,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 ## BEGIN "K" (-·-)
 # A DAH
@@ -5340,7 +5340,7 @@ while 1:
     lib_sl.send(7,3,255,255,255)
     lib_sl.send(7,4,255,255,255)
     lib_sl.send(7,5,255,255,255)
-    time.sleep(3.6)
+    time.sleep(0.36)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -5391,7 +5391,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DIT
     lib_sl.send(0,0,255,255,255)
@@ -5442,7 +5442,7 @@ while 1:
     lib_sl.send(7,3,255,255,255)
     lib_sl.send(7,4,255,255,255)
     lib_sl.send(7,5,255,255,255)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A PAUSE BETWEEN TWO SYMBOLS
     lib_sl.send(0,0,0,0,0)
@@ -5493,7 +5493,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(1.2)
+    time.sleep(0.12)
 
 # A DAH
     lib_sl.send(0,0,255,255,255)
@@ -5544,7 +5544,7 @@ while 1:
     lib_sl.send(7,3,255,255,255)
     lib_sl.send(7,4,255,255,255)
     lib_sl.send(7,5,255,255,255)
-    time.sleep(3.6)
+    time.sleep(0.36)
 ## END "K"
 #### END OF THE CONNECTION
 
@@ -5598,6 +5598,6 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(30.0)
+    time.sleep(3.0)
 
 # END

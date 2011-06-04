@@ -61,7 +61,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(10.0)
+    time.sleep(1.0)
 
     lib_sl.speedfade(5,0,186,247,107,368)
     lib_sl.speedfade(5,1,186,247,107,368)
@@ -118,7 +118,7 @@ while 1:
     lib_sl.speedfade(0,5,239,28,6,147)
     lib_sl.speedfade(1,5,239,28,6,147)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
     lib_sl.send(0,0,0,0,0)
     lib_sl.send(0,1,0,0,0)
     lib_sl.send(0,2,0,0,0)
@@ -167,7 +167,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.send(5,0,98,162,16)
     lib_sl.send(5,1,98,162,16)
@@ -186,7 +186,7 @@ while 1:
     lib_sl.send(0,1,98,162,16)
     lib_sl.send(1,0,98,162,16)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.send(5,2,231,162,14)
     lib_sl.send(5,3,231,162,14)
@@ -205,7 +205,7 @@ while 1:
     lib_sl.send(0,3,231,162,14)
     lib_sl.send(1,2,231,162,14)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.send(5,4,196,27,10)
     lib_sl.send(5,5,196,27,10)
@@ -224,7 +224,7 @@ while 1:
     lib_sl.send(0,5,196,27,10)
     lib_sl.send(1,5,196,27,10)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
 
 
@@ -276,7 +276,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(10.0)
+    time.sleep(1.0)
 
     lib_sl.speedfade(5,0,186,247,107,368)
     lib_sl.speedfade(5,1,186,247,107,368)
@@ -333,7 +333,7 @@ while 1:
     lib_sl.speedfade(0,5,239,28,6,147)
     lib_sl.speedfade(1,5,239,28,6,147)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
     lib_sl.send(0,0,0,0,0)
     lib_sl.send(0,1,0,0,0)
     lib_sl.send(0,2,0,0,0)
@@ -382,7 +382,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.send(5,0,98,162,16)
     lib_sl.send(5,1,98,162,16)
@@ -401,7 +401,7 @@ while 1:
     lib_sl.send(0,1,98,162,16)
     lib_sl.send(1,0,98,162,16)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.send(5,2,231,162,14)
     lib_sl.send(5,3,231,162,14)
@@ -420,7 +420,7 @@ while 1:
     lib_sl.send(0,3,231,162,14)
     lib_sl.send(1,2,231,162,14)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.send(5,4,196,27,10)
     lib_sl.send(5,5,196,27,10)
@@ -439,7 +439,7 @@ while 1:
     lib_sl.send(0,5,196,27,10)
     lib_sl.send(1,5,196,27,10)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
 
 
@@ -491,7 +491,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(10.0)
+    time.sleep(1.0)
 
     lib_sl.speedfade(5,0,186,247,107,368)
     lib_sl.speedfade(5,1,186,247,107,368)
@@ -548,7 +548,7 @@ while 1:
     lib_sl.speedfade(0,5,239,28,6,147)
     lib_sl.speedfade(1,5,239,28,6,147)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
     lib_sl.send(0,0,0,0,0)
     lib_sl.send(0,1,0,0,0)
     lib_sl.send(0,2,0,0,0)
@@ -597,7 +597,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.send(5,0,98,162,16)
     lib_sl.send(5,1,98,162,16)
@@ -616,7 +616,7 @@ while 1:
     lib_sl.send(0,1,98,162,16)
     lib_sl.send(1,0,98,162,16)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.send(5,2,231,162,14)
     lib_sl.send(5,3,231,162,14)
@@ -635,7 +635,7 @@ while 1:
     lib_sl.send(0,3,231,162,14)
     lib_sl.send(1,2,231,162,14)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.send(5,4,196,27,10)
     lib_sl.send(5,5,196,27,10)
@@ -654,5 +654,5 @@ while 1:
     lib_sl.send(0,5,196,27,10)
     lib_sl.send(1,5,196,27,10)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 

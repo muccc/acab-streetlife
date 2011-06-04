@@ -62,7 +62,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //SET THE FIRST COL
     lib_sl.send(5,0,255,0,0)
@@ -76,7 +76,7 @@ while 1:
     lib_sl.send(2,0,255,0,0)
     lib_sl.send(2,1,255,0,0)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //CLEAR THE OLD ROW
     lib_sl.send(5,0,0,0,0)
@@ -98,7 +98,7 @@ while 1:
     lib_sl.send(0,1,255,0,0)
     lib_sl.send(1,0,255,0,0)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //CLEAR
     lib_sl.send(6,0,0,0,0)
@@ -120,7 +120,7 @@ while 1:
     lib_sl.send(2,2,255,0,0)
     lib_sl.send(2,3,255,0,0)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //CLEAR
     lib_sl.send(5,2,0,0,0)
@@ -142,7 +142,7 @@ while 1:
     lib_sl.send(0,3,255,0,0)
     lib_sl.send(1,2,255,0,0)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //CLEAR
     lib_sl.send(6,2,0,0,0)
@@ -164,7 +164,7 @@ while 1:
     lib_sl.send(2,4,255,0,0)
     lib_sl.send(2,5,255,0,0)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //CLEAR
     lib_sl.send(5,4,0,0,0)
@@ -186,7 +186,7 @@ while 1:
     lib_sl.send(0,5,255,0,0)
     lib_sl.send(1,5,255,0,0)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //CLEAR THE STATE
     lib_sl.send(0,0,0,0,0)
@@ -237,7 +237,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //SET THE FIRST COL
     lib_sl.send(5,0,0,255,0)
@@ -251,7 +251,7 @@ while 1:
     lib_sl.send(2,0,0,255,0)
     lib_sl.send(2,1,0,255,0)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //CLEAR THE OLD ROW
     lib_sl.send(5,0,0,0,0)
@@ -273,7 +273,7 @@ while 1:
     lib_sl.send(0,1,0,255,0)
     lib_sl.send(1,0,0,255,0)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //CLEAR
     lib_sl.send(6,0,0,0,0)
@@ -295,7 +295,7 @@ while 1:
     lib_sl.send(2,2,0,255,0)
     lib_sl.send(2,3,0,255,0)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //CLEAR
     lib_sl.send(5,2,0,0,0)
@@ -317,7 +317,7 @@ while 1:
     lib_sl.send(0,3,0,255,0)
     lib_sl.send(1,2,0,255,0)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //CLEAR
     lib_sl.send(6,2,0,0,0)
@@ -339,7 +339,7 @@ while 1:
     lib_sl.send(2,4,0,255,0)
     lib_sl.send(2,5,0,255,0)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //CLEAR
     lib_sl.send(5,4,0,0,0)
@@ -361,7 +361,7 @@ while 1:
     lib_sl.send(0,5,0,255,0)
     lib_sl.send(1,5,0,255,0)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //CLEAR THE STATE
     lib_sl.send(0,0,0,0,0)
@@ -412,7 +412,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //SET THE FIRST COL
     lib_sl.send(5,0,0,0,255)
@@ -426,7 +426,7 @@ while 1:
     lib_sl.send(2,0,0,0,255)
     lib_sl.send(2,1,0,0,255)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //CLEAR THE OLD ROW
     lib_sl.send(5,0,0,0,0)
@@ -448,7 +448,7 @@ while 1:
     lib_sl.send(0,1,0,0,255)
     lib_sl.send(1,0,0,0,255)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //CLEAR
     lib_sl.send(6,0,0,0,0)
@@ -470,7 +470,7 @@ while 1:
     lib_sl.send(2,2,0,0,255)
     lib_sl.send(2,3,0,0,255)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //CLEAR
     lib_sl.send(5,2,0,0,0)
@@ -492,7 +492,7 @@ while 1:
     lib_sl.send(0,3,0,0,255)
     lib_sl.send(1,2,0,0,255)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //CLEAR
     lib_sl.send(6,2,0,0,0)
@@ -514,7 +514,7 @@ while 1:
     lib_sl.send(2,4,0,0,255)
     lib_sl.send(2,5,0,0,255)
 
-    time.sleep(10.0)
+    time.sleep(1.0)
 
 //CLEAR
     lib_sl.send(5,4,0,0,0)
@@ -536,4 +536,4 @@ while 1:
     lib_sl.send(0,5,0,0,255)
     lib_sl.send(1,5,0,0,255)
 
-    time.sleep(10.0)
+    time.sleep(1.0)

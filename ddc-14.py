@@ -61,7 +61,7 @@ while 1:
     lib_sl.speedfade(7,3,255,0,0,453)
     lib_sl.speedfade(7,4,255,0,0,453)
     lib_sl.speedfade(7,5,255,0,0,453)
-    time.sleep(10.0)
+    time.sleep(1.0)
 
     lib_sl.speedfade(5,0,255,255,0,453)
     lib_sl.speedfade(5,1,255,255,0,453)
@@ -74,7 +74,7 @@ while 1:
     lib_sl.speedfade(2,0,255,255,0,453)
     lib_sl.speedfade(2,1,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,0,255,255,0,453)
     lib_sl.speedfade(7,0,255,255,0,453)
@@ -83,7 +83,7 @@ while 1:
     lib_sl.speedfade(0,1,255,255,0,453)
     lib_sl.speedfade(1,0,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,255,255,0,453)
     lib_sl.speedfade(5,3,255,255,0,453)
@@ -96,7 +96,7 @@ while 1:
     lib_sl.speedfade(2,2,255,255,0,453)
     lib_sl.speedfade(2,3,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,255,255,0,453)
     lib_sl.speedfade(7,2,255,255,0,453)
@@ -105,7 +105,7 @@ while 1:
     lib_sl.speedfade(0,3,255,255,0,453)
     lib_sl.speedfade(1,2,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,255,255,0,453)
     lib_sl.speedfade(5,5,255,255,0,453)
@@ -128,7 +128,7 @@ while 1:
     lib_sl.speedfade(2,0,0,255,0,453)
     lib_sl.speedfade(2,1,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,255,255,0,453)
     lib_sl.speedfade(6,5,255,255,0,453)
@@ -143,7 +143,7 @@ while 1:
     lib_sl.speedfade(0,1,0,255,0,453)
     lib_sl.speedfade(1,0,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,0,255,0,453)
     lib_sl.speedfade(5,3,0,255,0,453)
@@ -156,7 +156,7 @@ while 1:
     lib_sl.speedfade(2,2,0,255,0,453)
     lib_sl.speedfade(2,3,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,0,255,0,453)
     lib_sl.speedfade(7,2,0,255,0,453)
@@ -165,7 +165,7 @@ while 1:
     lib_sl.speedfade(0,3,0,255,0,453)
     lib_sl.speedfade(1,2,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,0,255,0,453)
     lib_sl.speedfade(5,5,0,255,0,453)
@@ -188,7 +188,7 @@ while 1:
     lib_sl.speedfade(2,0,0,255,255,453)
     lib_sl.speedfade(2,1,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,0,255,0,453)
     lib_sl.speedfade(6,5,0,255,0,453)
@@ -203,7 +203,7 @@ while 1:
     lib_sl.speedfade(0,1,0,255,255,453)
     lib_sl.speedfade(1,0,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,0,255,255,453)
     lib_sl.speedfade(5,3,0,255,255,453)
@@ -216,7 +216,7 @@ while 1:
     lib_sl.speedfade(2,2,0,255,255,453)
     lib_sl.speedfade(2,3,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,0,255,255,453)
     lib_sl.speedfade(7,2,0,255,255,453)
@@ -225,7 +225,7 @@ while 1:
     lib_sl.speedfade(0,3,0,255,255,453)
     lib_sl.speedfade(1,2,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,0,255,255,453)
     lib_sl.speedfade(5,5,0,255,255,453)
@@ -248,7 +248,7 @@ while 1:
     lib_sl.speedfade(2,0,0,0,255,453)
     lib_sl.speedfade(2,1,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,0,255,255,453)
     lib_sl.speedfade(6,5,0,255,255,453)
@@ -263,7 +263,7 @@ while 1:
     lib_sl.speedfade(0,1,0,0,255,453)
     lib_sl.speedfade(1,0,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,0,0,255,453)
     lib_sl.speedfade(5,3,0,0,255,453)
@@ -276,7 +276,7 @@ while 1:
     lib_sl.speedfade(2,2,0,0,255,453)
     lib_sl.speedfade(2,3,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,0,0,255,453)
     lib_sl.speedfade(7,2,0,0,255,453)
@@ -285,7 +285,7 @@ while 1:
     lib_sl.speedfade(0,3,0,0,255,453)
     lib_sl.speedfade(1,2,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,0,0,255,453)
     lib_sl.speedfade(5,5,0,0,255,453)
@@ -308,7 +308,7 @@ while 1:
     lib_sl.speedfade(2,0,255,0,255,453)
     lib_sl.speedfade(2,1,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,0,0,255,453)
     lib_sl.speedfade(6,5,0,0,255,453)
@@ -323,7 +323,7 @@ while 1:
     lib_sl.speedfade(0,1,255,0,255,453)
     lib_sl.speedfade(1,0,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,255,0,255,453)
     lib_sl.speedfade(5,3,255,0,255,453)
@@ -336,7 +336,7 @@ while 1:
     lib_sl.speedfade(2,2,255,0,255,453)
     lib_sl.speedfade(2,3,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,255,0,255,453)
     lib_sl.speedfade(7,2,255,0,255,453)
@@ -345,7 +345,7 @@ while 1:
     lib_sl.speedfade(0,3,255,0,255,453)
     lib_sl.speedfade(1,2,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,255,0,255,453)
     lib_sl.speedfade(5,5,255,0,255,453)
@@ -368,7 +368,7 @@ while 1:
     lib_sl.speedfade(2,0,255,0,0,453)
     lib_sl.speedfade(2,1,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,255,0,255,453)
     lib_sl.speedfade(6,5,255,0,255,453)
@@ -383,7 +383,7 @@ while 1:
     lib_sl.speedfade(0,1,255,0,0,453)
     lib_sl.speedfade(1,0,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,255,0,0,453)
     lib_sl.speedfade(5,3,255,0,0,453)
@@ -396,7 +396,7 @@ while 1:
     lib_sl.speedfade(2,2,255,0,0,453)
     lib_sl.speedfade(2,3,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,255,0,0,453)
     lib_sl.speedfade(7,2,255,0,0,453)
@@ -405,7 +405,7 @@ while 1:
     lib_sl.speedfade(0,3,255,0,0,453)
     lib_sl.speedfade(1,2,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,255,0,0,453)
     lib_sl.speedfade(5,5,255,0,0,453)
@@ -428,7 +428,7 @@ while 1:
     lib_sl.speedfade(2,0,255,255,0,453)
     lib_sl.speedfade(2,1,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,255,0,0,453)
     lib_sl.speedfade(6,5,255,0,0,453)
@@ -443,7 +443,7 @@ while 1:
     lib_sl.speedfade(0,1,255,255,0,453)
     lib_sl.speedfade(1,0,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,255,255,0,453)
     lib_sl.speedfade(5,3,255,255,0,453)
@@ -456,7 +456,7 @@ while 1:
     lib_sl.speedfade(2,2,255,255,0,453)
     lib_sl.speedfade(2,3,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,255,255,0,453)
     lib_sl.speedfade(7,2,255,255,0,453)
@@ -465,7 +465,7 @@ while 1:
     lib_sl.speedfade(0,3,255,255,0,453)
     lib_sl.speedfade(1,2,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,255,255,0,453)
     lib_sl.speedfade(5,5,255,255,0,453)
@@ -488,7 +488,7 @@ while 1:
     lib_sl.speedfade(2,0,0,255,0,453)
     lib_sl.speedfade(2,1,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,255,255,0,453)
     lib_sl.speedfade(6,5,255,255,0,453)
@@ -503,7 +503,7 @@ while 1:
     lib_sl.speedfade(0,1,0,255,0,453)
     lib_sl.speedfade(1,0,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,0,255,0,453)
     lib_sl.speedfade(5,3,0,255,0,453)
@@ -516,7 +516,7 @@ while 1:
     lib_sl.speedfade(2,2,0,255,0,453)
     lib_sl.speedfade(2,3,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,0,255,0,453)
     lib_sl.speedfade(7,2,0,255,0,453)
@@ -525,7 +525,7 @@ while 1:
     lib_sl.speedfade(0,3,0,255,0,453)
     lib_sl.speedfade(1,2,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,0,255,0,453)
     lib_sl.speedfade(5,5,0,255,0,453)
@@ -548,7 +548,7 @@ while 1:
     lib_sl.speedfade(2,0,0,255,255,453)
     lib_sl.speedfade(2,1,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,0,255,0,453)
     lib_sl.speedfade(6,5,0,255,0,453)
@@ -563,7 +563,7 @@ while 1:
     lib_sl.speedfade(0,1,0,255,255,453)
     lib_sl.speedfade(1,0,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,0,255,255,453)
     lib_sl.speedfade(5,3,0,255,255,453)
@@ -576,7 +576,7 @@ while 1:
     lib_sl.speedfade(2,2,0,255,255,453)
     lib_sl.speedfade(2,3,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,0,255,255,453)
     lib_sl.speedfade(7,2,0,255,255,453)
@@ -585,7 +585,7 @@ while 1:
     lib_sl.speedfade(0,3,0,255,255,453)
     lib_sl.speedfade(1,2,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,0,255,255,453)
     lib_sl.speedfade(5,5,0,255,255,453)
@@ -608,7 +608,7 @@ while 1:
     lib_sl.speedfade(2,0,0,0,255,453)
     lib_sl.speedfade(2,1,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,0,255,255,453)
     lib_sl.speedfade(6,5,0,255,255,453)
@@ -623,7 +623,7 @@ while 1:
     lib_sl.speedfade(0,1,0,0,255,453)
     lib_sl.speedfade(1,0,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,0,0,255,453)
     lib_sl.speedfade(5,3,0,0,255,453)
@@ -636,7 +636,7 @@ while 1:
     lib_sl.speedfade(2,2,0,0,255,453)
     lib_sl.speedfade(2,3,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,0,0,255,453)
     lib_sl.speedfade(7,2,0,0,255,453)
@@ -645,7 +645,7 @@ while 1:
     lib_sl.speedfade(0,3,0,0,255,453)
     lib_sl.speedfade(1,2,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,0,0,255,453)
     lib_sl.speedfade(5,5,0,0,255,453)
@@ -668,7 +668,7 @@ while 1:
     lib_sl.speedfade(2,0,255,0,255,453)
     lib_sl.speedfade(2,1,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,0,0,255,453)
     lib_sl.speedfade(6,5,0,0,255,453)
@@ -683,7 +683,7 @@ while 1:
     lib_sl.speedfade(0,1,255,0,255,453)
     lib_sl.speedfade(1,0,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,255,0,255,453)
     lib_sl.speedfade(5,3,255,0,255,453)
@@ -696,7 +696,7 @@ while 1:
     lib_sl.speedfade(2,2,255,0,255,453)
     lib_sl.speedfade(2,3,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,255,0,255,453)
     lib_sl.speedfade(7,2,255,0,255,453)
@@ -705,7 +705,7 @@ while 1:
     lib_sl.speedfade(0,3,255,0,255,453)
     lib_sl.speedfade(1,2,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,255,0,255,453)
     lib_sl.speedfade(5,5,255,0,255,453)
@@ -728,7 +728,7 @@ while 1:
     lib_sl.speedfade(2,0,255,0,0,453)
     lib_sl.speedfade(2,1,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,255,0,255,453)
     lib_sl.speedfade(6,5,255,0,255,453)
@@ -743,7 +743,7 @@ while 1:
     lib_sl.speedfade(0,1,255,0,0,453)
     lib_sl.speedfade(1,0,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,255,0,0,453)
     lib_sl.speedfade(5,3,255,0,0,453)
@@ -756,7 +756,7 @@ while 1:
     lib_sl.speedfade(2,2,255,0,0,453)
     lib_sl.speedfade(2,3,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,255,0,0,453)
     lib_sl.speedfade(7,2,255,0,0,453)
@@ -765,7 +765,7 @@ while 1:
     lib_sl.speedfade(0,3,255,0,0,453)
     lib_sl.speedfade(1,2,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,255,0,0,453)
     lib_sl.speedfade(5,5,255,0,0,453)
@@ -788,7 +788,7 @@ while 1:
     lib_sl.speedfade(2,0,255,255,0,453)
     lib_sl.speedfade(2,1,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,255,0,0,453)
     lib_sl.speedfade(6,5,255,0,0,453)
@@ -803,7 +803,7 @@ while 1:
     lib_sl.speedfade(0,1,255,255,0,453)
     lib_sl.speedfade(1,0,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,255,255,0,453)
     lib_sl.speedfade(5,3,255,255,0,453)
@@ -816,7 +816,7 @@ while 1:
     lib_sl.speedfade(2,2,255,255,0,453)
     lib_sl.speedfade(2,3,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,255,255,0,453)
     lib_sl.speedfade(7,2,255,255,0,453)
@@ -825,7 +825,7 @@ while 1:
     lib_sl.speedfade(0,3,255,255,0,453)
     lib_sl.speedfade(1,2,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,255,255,0,453)
     lib_sl.speedfade(5,5,255,255,0,453)
@@ -848,7 +848,7 @@ while 1:
     lib_sl.speedfade(2,0,0,255,0,453)
     lib_sl.speedfade(2,1,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,255,255,0,453)
     lib_sl.speedfade(6,5,255,255,0,453)
@@ -863,7 +863,7 @@ while 1:
     lib_sl.speedfade(0,1,0,255,0,453)
     lib_sl.speedfade(1,0,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,0,255,0,453)
     lib_sl.speedfade(5,3,0,255,0,453)
@@ -876,7 +876,7 @@ while 1:
     lib_sl.speedfade(2,2,0,255,0,453)
     lib_sl.speedfade(2,3,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,0,255,0,453)
     lib_sl.speedfade(7,2,0,255,0,453)
@@ -885,7 +885,7 @@ while 1:
     lib_sl.speedfade(0,3,0,255,0,453)
     lib_sl.speedfade(1,2,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,0,255,0,453)
     lib_sl.speedfade(5,5,0,255,0,453)
@@ -908,7 +908,7 @@ while 1:
     lib_sl.speedfade(2,0,0,255,255,453)
     lib_sl.speedfade(2,1,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,0,255,0,453)
     lib_sl.speedfade(6,5,0,255,0,453)
@@ -923,7 +923,7 @@ while 1:
     lib_sl.speedfade(0,1,0,255,255,453)
     lib_sl.speedfade(1,0,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,0,255,255,453)
     lib_sl.speedfade(5,3,0,255,255,453)
@@ -936,7 +936,7 @@ while 1:
     lib_sl.speedfade(2,2,0,255,255,453)
     lib_sl.speedfade(2,3,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,0,255,255,453)
     lib_sl.speedfade(7,2,0,255,255,453)
@@ -945,7 +945,7 @@ while 1:
     lib_sl.speedfade(0,3,0,255,255,453)
     lib_sl.speedfade(1,2,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,0,255,255,453)
     lib_sl.speedfade(5,5,0,255,255,453)
@@ -968,7 +968,7 @@ while 1:
     lib_sl.speedfade(2,0,0,0,255,453)
     lib_sl.speedfade(2,1,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,0,255,255,453)
     lib_sl.speedfade(6,5,0,255,255,453)
@@ -983,7 +983,7 @@ while 1:
     lib_sl.speedfade(0,1,0,0,255,453)
     lib_sl.speedfade(1,0,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,0,0,255,453)
     lib_sl.speedfade(5,3,0,0,255,453)
@@ -996,7 +996,7 @@ while 1:
     lib_sl.speedfade(2,2,0,0,255,453)
     lib_sl.speedfade(2,3,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,0,0,255,453)
     lib_sl.speedfade(7,2,0,0,255,453)
@@ -1005,7 +1005,7 @@ while 1:
     lib_sl.speedfade(0,3,0,0,255,453)
     lib_sl.speedfade(1,2,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,0,0,255,453)
     lib_sl.speedfade(5,5,0,0,255,453)
@@ -1028,7 +1028,7 @@ while 1:
     lib_sl.speedfade(2,0,255,0,255,453)
     lib_sl.speedfade(2,1,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,0,0,255,453)
     lib_sl.speedfade(6,5,0,0,255,453)
@@ -1043,7 +1043,7 @@ while 1:
     lib_sl.speedfade(0,1,255,0,255,453)
     lib_sl.speedfade(1,0,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,255,0,255,453)
     lib_sl.speedfade(5,3,255,0,255,453)
@@ -1056,7 +1056,7 @@ while 1:
     lib_sl.speedfade(2,2,255,0,255,453)
     lib_sl.speedfade(2,3,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,255,0,255,453)
     lib_sl.speedfade(7,2,255,0,255,453)
@@ -1065,7 +1065,7 @@ while 1:
     lib_sl.speedfade(0,3,255,0,255,453)
     lib_sl.speedfade(1,2,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,255,0,255,453)
     lib_sl.speedfade(5,5,255,0,255,453)
@@ -1088,7 +1088,7 @@ while 1:
     lib_sl.speedfade(2,0,255,0,0,453)
     lib_sl.speedfade(2,1,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,255,0,255,453)
     lib_sl.speedfade(6,5,255,0,255,453)
@@ -1103,7 +1103,7 @@ while 1:
     lib_sl.speedfade(0,1,255,0,0,453)
     lib_sl.speedfade(1,0,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,255,0,0,453)
     lib_sl.speedfade(5,3,255,0,0,453)
@@ -1116,7 +1116,7 @@ while 1:
     lib_sl.speedfade(2,2,255,0,0,453)
     lib_sl.speedfade(2,3,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,255,0,0,453)
     lib_sl.speedfade(7,2,255,0,0,453)
@@ -1125,7 +1125,7 @@ while 1:
     lib_sl.speedfade(0,3,255,0,0,453)
     lib_sl.speedfade(1,2,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,255,0,0,453)
     lib_sl.speedfade(5,5,255,0,0,453)
@@ -1148,7 +1148,7 @@ while 1:
     lib_sl.speedfade(2,0,255,255,0,453)
     lib_sl.speedfade(2,1,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,255,0,0,453)
     lib_sl.speedfade(6,5,255,0,0,453)
@@ -1163,7 +1163,7 @@ while 1:
     lib_sl.speedfade(0,1,255,255,0,453)
     lib_sl.speedfade(1,0,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,255,255,0,453)
     lib_sl.speedfade(5,3,255,255,0,453)
@@ -1176,7 +1176,7 @@ while 1:
     lib_sl.speedfade(2,2,255,255,0,453)
     lib_sl.speedfade(2,3,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,255,255,0,453)
     lib_sl.speedfade(7,2,255,255,0,453)
@@ -1185,7 +1185,7 @@ while 1:
     lib_sl.speedfade(0,3,255,255,0,453)
     lib_sl.speedfade(1,2,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,255,255,0,453)
     lib_sl.speedfade(5,5,255,255,0,453)
@@ -1208,7 +1208,7 @@ while 1:
     lib_sl.speedfade(2,0,0,255,0,453)
     lib_sl.speedfade(2,1,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,255,255,0,453)
     lib_sl.speedfade(6,5,255,255,0,453)
@@ -1223,7 +1223,7 @@ while 1:
     lib_sl.speedfade(0,1,0,255,0,453)
     lib_sl.speedfade(1,0,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,0,255,0,453)
     lib_sl.speedfade(5,3,0,255,0,453)
@@ -1236,7 +1236,7 @@ while 1:
     lib_sl.speedfade(2,2,0,255,0,453)
     lib_sl.speedfade(2,3,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,0,255,0,453)
     lib_sl.speedfade(7,2,0,255,0,453)
@@ -1245,7 +1245,7 @@ while 1:
     lib_sl.speedfade(0,3,0,255,0,453)
     lib_sl.speedfade(1,2,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,0,255,0,453)
     lib_sl.speedfade(5,5,0,255,0,453)
@@ -1268,7 +1268,7 @@ while 1:
     lib_sl.speedfade(2,0,0,255,255,453)
     lib_sl.speedfade(2,1,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,0,255,0,453)
     lib_sl.speedfade(6,5,0,255,0,453)
@@ -1283,7 +1283,7 @@ while 1:
     lib_sl.speedfade(0,1,0,255,255,453)
     lib_sl.speedfade(1,0,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,0,255,255,453)
     lib_sl.speedfade(5,3,0,255,255,453)
@@ -1296,7 +1296,7 @@ while 1:
     lib_sl.speedfade(2,2,0,255,255,453)
     lib_sl.speedfade(2,3,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,0,255,255,453)
     lib_sl.speedfade(7,2,0,255,255,453)
@@ -1305,7 +1305,7 @@ while 1:
     lib_sl.speedfade(0,3,0,255,255,453)
     lib_sl.speedfade(1,2,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,0,255,255,453)
     lib_sl.speedfade(5,5,0,255,255,453)
@@ -1328,7 +1328,7 @@ while 1:
     lib_sl.speedfade(2,0,0,0,255,453)
     lib_sl.speedfade(2,1,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,0,255,255,453)
     lib_sl.speedfade(6,5,0,255,255,453)
@@ -1343,7 +1343,7 @@ while 1:
     lib_sl.speedfade(0,1,0,0,255,453)
     lib_sl.speedfade(1,0,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,0,0,255,453)
     lib_sl.speedfade(5,3,0,0,255,453)
@@ -1356,7 +1356,7 @@ while 1:
     lib_sl.speedfade(2,2,0,0,255,453)
     lib_sl.speedfade(2,3,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,0,0,255,453)
     lib_sl.speedfade(7,2,0,0,255,453)
@@ -1365,7 +1365,7 @@ while 1:
     lib_sl.speedfade(0,3,0,0,255,453)
     lib_sl.speedfade(1,2,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,0,0,255,453)
     lib_sl.speedfade(5,5,0,0,255,453)
@@ -1388,7 +1388,7 @@ while 1:
     lib_sl.speedfade(2,0,255,0,255,453)
     lib_sl.speedfade(2,1,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,0,0,255,453)
     lib_sl.speedfade(6,5,0,0,255,453)
@@ -1403,7 +1403,7 @@ while 1:
     lib_sl.speedfade(0,1,255,0,255,453)
     lib_sl.speedfade(1,0,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,255,0,255,453)
     lib_sl.speedfade(5,3,255,0,255,453)
@@ -1416,7 +1416,7 @@ while 1:
     lib_sl.speedfade(2,2,255,0,255,453)
     lib_sl.speedfade(2,3,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,255,0,255,453)
     lib_sl.speedfade(7,2,255,0,255,453)
@@ -1425,7 +1425,7 @@ while 1:
     lib_sl.speedfade(0,3,255,0,255,453)
     lib_sl.speedfade(1,2,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,255,0,255,453)
     lib_sl.speedfade(5,5,255,0,255,453)
@@ -1448,7 +1448,7 @@ while 1:
     lib_sl.speedfade(2,0,255,0,0,453)
     lib_sl.speedfade(2,1,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,255,0,255,453)
     lib_sl.speedfade(6,5,255,0,255,453)
@@ -1463,7 +1463,7 @@ while 1:
     lib_sl.speedfade(0,1,255,0,0,453)
     lib_sl.speedfade(1,0,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,255,0,0,453)
     lib_sl.speedfade(5,3,255,0,0,453)
@@ -1476,7 +1476,7 @@ while 1:
     lib_sl.speedfade(2,2,255,0,0,453)
     lib_sl.speedfade(2,3,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,255,0,0,453)
     lib_sl.speedfade(7,2,255,0,0,453)
@@ -1485,7 +1485,7 @@ while 1:
     lib_sl.speedfade(0,3,255,0,0,453)
     lib_sl.speedfade(1,2,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,255,0,0,453)
     lib_sl.speedfade(5,5,255,0,0,453)
@@ -1508,7 +1508,7 @@ while 1:
     lib_sl.speedfade(2,0,255,255,0,453)
     lib_sl.speedfade(2,1,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,255,0,0,453)
     lib_sl.speedfade(6,5,255,0,0,453)
@@ -1523,7 +1523,7 @@ while 1:
     lib_sl.speedfade(0,1,255,255,0,453)
     lib_sl.speedfade(1,0,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,255,255,0,453)
     lib_sl.speedfade(5,3,255,255,0,453)
@@ -1536,7 +1536,7 @@ while 1:
     lib_sl.speedfade(2,2,255,255,0,453)
     lib_sl.speedfade(2,3,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,255,255,0,453)
     lib_sl.speedfade(7,2,255,255,0,453)
@@ -1545,7 +1545,7 @@ while 1:
     lib_sl.speedfade(0,3,255,255,0,453)
     lib_sl.speedfade(1,2,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,255,255,0,453)
     lib_sl.speedfade(5,5,255,255,0,453)
@@ -1568,7 +1568,7 @@ while 1:
     lib_sl.speedfade(2,0,0,255,0,453)
     lib_sl.speedfade(2,1,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,255,255,0,453)
     lib_sl.speedfade(6,5,255,255,0,453)
@@ -1583,7 +1583,7 @@ while 1:
     lib_sl.speedfade(0,1,0,255,0,453)
     lib_sl.speedfade(1,0,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,0,255,0,453)
     lib_sl.speedfade(5,3,0,255,0,453)
@@ -1596,7 +1596,7 @@ while 1:
     lib_sl.speedfade(2,2,0,255,0,453)
     lib_sl.speedfade(2,3,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,0,255,0,453)
     lib_sl.speedfade(7,2,0,255,0,453)
@@ -1605,7 +1605,7 @@ while 1:
     lib_sl.speedfade(0,3,0,255,0,453)
     lib_sl.speedfade(1,2,0,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,0,255,0,453)
     lib_sl.speedfade(5,5,0,255,0,453)
@@ -1628,7 +1628,7 @@ while 1:
     lib_sl.speedfade(2,0,0,255,255,453)
     lib_sl.speedfade(2,1,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,0,255,0,453)
     lib_sl.speedfade(6,5,0,255,0,453)
@@ -1643,7 +1643,7 @@ while 1:
     lib_sl.speedfade(0,1,0,255,255,453)
     lib_sl.speedfade(1,0,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,0,255,255,453)
     lib_sl.speedfade(5,3,0,255,255,453)
@@ -1656,7 +1656,7 @@ while 1:
     lib_sl.speedfade(2,2,0,255,255,453)
     lib_sl.speedfade(2,3,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,0,255,255,453)
     lib_sl.speedfade(7,2,0,255,255,453)
@@ -1665,7 +1665,7 @@ while 1:
     lib_sl.speedfade(0,3,0,255,255,453)
     lib_sl.speedfade(1,2,0,255,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,0,255,255,453)
     lib_sl.speedfade(5,5,0,255,255,453)
@@ -1688,7 +1688,7 @@ while 1:
     lib_sl.speedfade(2,0,0,0,255,453)
     lib_sl.speedfade(2,1,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,0,255,255,453)
     lib_sl.speedfade(6,5,0,255,255,453)
@@ -1703,7 +1703,7 @@ while 1:
     lib_sl.speedfade(0,1,0,0,255,453)
     lib_sl.speedfade(1,0,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,0,0,255,453)
     lib_sl.speedfade(5,3,0,0,255,453)
@@ -1716,7 +1716,7 @@ while 1:
     lib_sl.speedfade(2,2,0,0,255,453)
     lib_sl.speedfade(2,3,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,0,0,255,453)
     lib_sl.speedfade(7,2,0,0,255,453)
@@ -1725,7 +1725,7 @@ while 1:
     lib_sl.speedfade(0,3,0,0,255,453)
     lib_sl.speedfade(1,2,0,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,0,0,255,453)
     lib_sl.speedfade(5,5,0,0,255,453)
@@ -1748,7 +1748,7 @@ while 1:
     lib_sl.speedfade(2,0,255,0,255,453)
     lib_sl.speedfade(2,1,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,0,0,255,453)
     lib_sl.speedfade(6,5,0,0,255,453)
@@ -1763,7 +1763,7 @@ while 1:
     lib_sl.speedfade(0,1,255,0,255,453)
     lib_sl.speedfade(1,0,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,255,0,255,453)
     lib_sl.speedfade(5,3,255,0,255,453)
@@ -1776,7 +1776,7 @@ while 1:
     lib_sl.speedfade(2,2,255,0,255,453)
     lib_sl.speedfade(2,3,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,255,0,255,453)
     lib_sl.speedfade(7,2,255,0,255,453)
@@ -1785,7 +1785,7 @@ while 1:
     lib_sl.speedfade(0,3,255,0,255,453)
     lib_sl.speedfade(1,2,255,0,255,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,255,0,255,453)
     lib_sl.speedfade(5,5,255,0,255,453)
@@ -1808,7 +1808,7 @@ while 1:
     lib_sl.speedfade(2,0,255,0,0,453)
     lib_sl.speedfade(2,1,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,255,0,255,453)
     lib_sl.speedfade(6,5,255,0,255,453)
@@ -1823,7 +1823,7 @@ while 1:
     lib_sl.speedfade(0,1,255,0,0,453)
     lib_sl.speedfade(1,0,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,255,0,0,453)
     lib_sl.speedfade(5,3,255,0,0,453)
@@ -1836,7 +1836,7 @@ while 1:
     lib_sl.speedfade(2,2,255,0,0,453)
     lib_sl.speedfade(2,3,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,255,0,0,453)
     lib_sl.speedfade(7,2,255,0,0,453)
@@ -1845,7 +1845,7 @@ while 1:
     lib_sl.speedfade(0,3,255,0,0,453)
     lib_sl.speedfade(1,2,255,0,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,4,255,0,0,453)
     lib_sl.speedfade(5,5,255,0,0,453)
@@ -1868,7 +1868,7 @@ while 1:
     lib_sl.speedfade(2,0,255,255,0,453)
     lib_sl.speedfade(2,1,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(7,4,255,0,0,453)
     lib_sl.speedfade(6,5,255,0,0,453)
@@ -1883,7 +1883,7 @@ while 1:
     lib_sl.speedfade(0,1,255,255,0,453)
     lib_sl.speedfade(1,0,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(5,2,255,255,0,453)
     lib_sl.speedfade(5,3,255,255,0,453)
@@ -1896,7 +1896,7 @@ while 1:
     lib_sl.speedfade(2,2,255,255,0,453)
     lib_sl.speedfade(2,3,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.speedfade(6,2,255,255,0,453)
     lib_sl.speedfade(7,2,255,255,0,453)
@@ -1905,5 +1905,5 @@ while 1:
     lib_sl.speedfade(0,3,255,255,0,453)
     lib_sl.speedfade(1,2,255,255,0,453)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 

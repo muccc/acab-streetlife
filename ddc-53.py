@@ -62,7 +62,7 @@ while 1:
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.send(7,4,255,255,0)
     lib_sl.send(6,5,255,255,0)
@@ -73,7 +73,7 @@ while 1:
     lib_sl.send(6,0,255,255,0)
     lib_sl.send(7,0,255,255,0)
     lib_sl.send(7,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(6,5,0,0,0)
@@ -93,7 +93,7 @@ while 1:
     lib_sl.send(5,0,255,255,0)
     lib_sl.send(5,1,255,255,0)
     lib_sl.send(6,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(5,4,0,0,0)
     lib_sl.send(5,5,0,0,0)
@@ -116,7 +116,7 @@ while 1:
     lib_sl.send(3,1,255,255,0)
     lib_sl.send(4,0,255,255,0)
     lib_sl.send(4,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(3,4,0,0,0)
     lib_sl.send(3,5,0,0,0)
@@ -139,7 +139,7 @@ while 1:
     lib_sl.send(1,1,255,255,0)
     lib_sl.send(2,0,255,255,0)
     lib_sl.send(2,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(1,4,0,0,0)
     lib_sl.send(2,4,0,0,0)
@@ -159,7 +159,7 @@ while 1:
     lib_sl.send(0,0,255,255,0)
     lib_sl.send(0,1,255,255,0)
     lib_sl.send(1,0,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(0,0,0,0,0)
     lib_sl.send(0,1,0,0,0)
@@ -210,7 +210,7 @@ while 1:
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.send(7,4,255,255,0)
     lib_sl.send(6,5,255,255,0)
@@ -221,7 +221,7 @@ while 1:
     lib_sl.send(6,0,255,255,0)
     lib_sl.send(7,0,255,255,0)
     lib_sl.send(7,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(6,5,0,0,0)
@@ -241,7 +241,7 @@ while 1:
     lib_sl.send(5,0,255,255,0)
     lib_sl.send(5,1,255,255,0)
     lib_sl.send(6,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(5,4,0,0,0)
     lib_sl.send(5,5,0,0,0)
@@ -264,7 +264,7 @@ while 1:
     lib_sl.send(3,1,255,255,0)
     lib_sl.send(4,0,255,255,0)
     lib_sl.send(4,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(3,4,0,0,0)
     lib_sl.send(3,5,0,0,0)
@@ -287,7 +287,7 @@ while 1:
     lib_sl.send(1,1,255,255,0)
     lib_sl.send(2,0,255,255,0)
     lib_sl.send(2,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(1,4,0,0,0)
     lib_sl.send(2,4,0,0,0)
@@ -307,7 +307,7 @@ while 1:
     lib_sl.send(0,0,255,255,0)
     lib_sl.send(0,1,255,255,0)
     lib_sl.send(1,0,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(0,0,0,0,0)
     lib_sl.send(0,1,0,0,0)
@@ -358,7 +358,7 @@ while 1:
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.send(7,4,255,255,0)
     lib_sl.send(6,5,255,255,0)
@@ -369,7 +369,7 @@ while 1:
     lib_sl.send(6,0,255,255,0)
     lib_sl.send(7,0,255,255,0)
     lib_sl.send(7,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(6,5,0,0,0)
@@ -389,7 +389,7 @@ while 1:
     lib_sl.send(5,0,255,255,0)
     lib_sl.send(5,1,255,255,0)
     lib_sl.send(6,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(5,4,0,0,0)
     lib_sl.send(5,5,0,0,0)
@@ -412,7 +412,7 @@ while 1:
     lib_sl.send(3,1,255,255,0)
     lib_sl.send(4,0,255,255,0)
     lib_sl.send(4,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(3,4,0,0,0)
     lib_sl.send(3,5,0,0,0)
@@ -435,7 +435,7 @@ while 1:
     lib_sl.send(1,1,255,255,0)
     lib_sl.send(2,0,255,255,0)
     lib_sl.send(2,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(1,4,0,0,0)
     lib_sl.send(2,4,0,0,0)
@@ -455,7 +455,7 @@ while 1:
     lib_sl.send(0,0,255,255,0)
     lib_sl.send(0,1,255,255,0)
     lib_sl.send(1,0,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(0,0,0,0,0)
     lib_sl.send(0,1,0,0,0)
@@ -506,7 +506,7 @@ while 1:
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.send(7,4,255,255,0)
     lib_sl.send(6,5,255,255,0)
@@ -517,7 +517,7 @@ while 1:
     lib_sl.send(6,0,255,255,0)
     lib_sl.send(7,0,255,255,0)
     lib_sl.send(7,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(6,5,0,0,0)
@@ -537,7 +537,7 @@ while 1:
     lib_sl.send(5,0,255,255,0)
     lib_sl.send(5,1,255,255,0)
     lib_sl.send(6,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(5,4,0,0,0)
     lib_sl.send(5,5,0,0,0)
@@ -560,7 +560,7 @@ while 1:
     lib_sl.send(3,1,255,255,0)
     lib_sl.send(4,0,255,255,0)
     lib_sl.send(4,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(3,4,0,0,0)
     lib_sl.send(3,5,0,0,0)
@@ -583,7 +583,7 @@ while 1:
     lib_sl.send(1,1,255,255,0)
     lib_sl.send(2,0,255,255,0)
     lib_sl.send(2,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(1,4,0,0,0)
     lib_sl.send(2,4,0,0,0)
@@ -603,7 +603,7 @@ while 1:
     lib_sl.send(0,0,255,255,0)
     lib_sl.send(0,1,255,255,0)
     lib_sl.send(1,0,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(0,0,0,0,0)
     lib_sl.send(0,1,0,0,0)
@@ -654,7 +654,7 @@ while 1:
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
 
-    time.sleep(5.0)
+    time.sleep(0.5)
 
     lib_sl.send(7,4,255,255,0)
     lib_sl.send(6,5,255,255,0)
@@ -665,7 +665,7 @@ while 1:
     lib_sl.send(6,0,255,255,0)
     lib_sl.send(7,0,255,255,0)
     lib_sl.send(7,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(6,5,0,0,0)
@@ -685,7 +685,7 @@ while 1:
     lib_sl.send(5,0,255,255,0)
     lib_sl.send(5,1,255,255,0)
     lib_sl.send(6,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(5,4,0,0,0)
     lib_sl.send(5,5,0,0,0)
@@ -708,7 +708,7 @@ while 1:
     lib_sl.send(3,1,255,255,0)
     lib_sl.send(4,0,255,255,0)
     lib_sl.send(4,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(3,4,0,0,0)
     lib_sl.send(3,5,0,0,0)
@@ -731,7 +731,7 @@ while 1:
     lib_sl.send(1,1,255,255,0)
     lib_sl.send(2,0,255,255,0)
     lib_sl.send(2,1,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)
 
     lib_sl.send(1,4,0,0,0)
     lib_sl.send(2,4,0,0,0)
@@ -751,4 +751,4 @@ while 1:
     lib_sl.send(0,0,255,255,0)
     lib_sl.send(0,1,255,255,0)
     lib_sl.send(1,0,255,255,0)
-    time.sleep(6.0)
+    time.sleep(0.6)

@@ -61,7 +61,7 @@ while 1:
     lib_sl.send(7,3,0,0,0)
     lib_sl.send(7,4,0,0,0)
     lib_sl.send(7,5,0,0,0)
-    time.sleep(10.0)
+    time.sleep(1.0)
     lib_sl.speedfade(0,0,255,0,0,255)
     lib_sl.speedfade(0,1,255,0,0,255)
     lib_sl.speedfade(1,0,255,0,0,255)

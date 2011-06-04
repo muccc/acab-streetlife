@@ -13,4 +13,4 @@ def rid():
 
 
 while 1:
-    time.sleep(100.01)
+    time.sleep(10.001)
