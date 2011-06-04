@@ -20,6 +20,7 @@ playlist = [
 	    [15, [ddc_chooser()]],
 	    [15, ["dots.py"]],
 	    [30, ["mc3_pixelpushers.py"]],
+            [30, ["s-color.py"]] ,
 #	    [120, ["randomfade2.py"]],
 	    [30, ["rainbowwall2.py"]],
             [40, ["kiu-font-acab.py"]],
