@@ -44,7 +44,7 @@ while True:
 		try:
 			vavg= audioop.avg(data, 2)
         		vmin,vmax= audioop.minmax(data, 2)
-		catch:
+		except:
 			pass
 
                 val=min(200,vmax/40)
