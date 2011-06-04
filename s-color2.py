@@ -35,7 +35,7 @@ while 1:
       dc = col - midcol
       dr = row - midrow
       dist = math.sqrt(dc**2+dr**2)/maxdist
-      h = (math.atan2(dc, dr) + math.pi/2)/math.pi/2
+      h = (math.atan2(dc, dr) + math.pi/2)/math.pi
       h = (h+hoffset) % 1.
       r,g,b = colorsys.hsv_to_rgb(h, dist, 1.)
       send(col, row, r*255, g*255, b*255, tick)

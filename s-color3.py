@@ -38,7 +38,7 @@ while 1:
       h = (math.atan2(dc, dr) + math.pi/2)/math.pi/2
       h = (h+hoffset) % 1.
       r,g,b = colorsys.hsv_to_rgb(h, dist, 1.)
-      send(col, row, r*255, g*255, b*255, tick)
+      send(col, row, r*255, g*255, b*255, tick*2)
   time.sleep(tick)
     
 

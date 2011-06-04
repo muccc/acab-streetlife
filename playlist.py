@@ -29,8 +29,10 @@ playlist = [
             [40, ["kiu-infinity.py"]],
             [60, ["kiu-random_pixels.py"]],
             [15, ["kiu-soft-scroll.py"]],
+            [30, ["s-color2.py"]] ,
             [15, ["kiu-diebar-rw.py"]],
             [30, ["kiu-wabern.py"]],
+            [30, ["s-color3.py"]] ,
             [10, [ddc_chooser()]],
 	    [30, ["die_bar_thema.py"]]
             #[time_in_seconds, [simultaniois_animation1, simultanious_animation2, ....]]
