@@ -17,7 +17,7 @@ def dimcolor(color):
  return nucolor
 
 
-t=3.0
+t=2.0
 
 while 1:
  start=random.choice(lib_sl.matrix())
