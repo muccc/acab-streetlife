@@ -8,7 +8,7 @@ cs =    [
             [000,000,000,000,255,255,255],
         ]
 
-text = "AllColoursAreBeautiful - CCC - AllColoursAreBeautiful - StreetLife - AllColoursAreBeautiful - MUCCC - AllColoursAreBeautiful - Corso Leopold - AllColoursAreBeautiful - diebar - "
+text = "AllColoursAreBeautiful - CCC - Street Life - AllColoursAreBeautiful - MUCCC - Corso Leopold - "
 tick = 0.05
 
 font = 	{
