@@ -4,7 +4,7 @@ import socket
 HOST="127.1"
 PORT=8080
 
-UDPHOST="83.133.179.35"
+UDPHOST="83.133.179.27"
 UDPPORT=5005
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
