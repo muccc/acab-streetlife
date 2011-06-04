@@ -2,8 +2,8 @@ import serialinterface
 import time
 
 serials = [ "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A100473q-if00-port0",
-            "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A100473s-if00-port0",
-            "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A1004b6A-if00-port0" ]
+            "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A1004b6A-if00-port0",
+            "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A100473s-if00-port0"]
 
 lamps = [[0x48, 0x2F, 0x49, 0x2E, 0x2D, 0x43, 0x54, 0x4d],
          [0x22, 0x44, 0x38, 0x27, 0x1A, 0x51, 0x34, 0x21],
