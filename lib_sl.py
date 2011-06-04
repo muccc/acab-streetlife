@@ -21,10 +21,10 @@ def send(x,y,r,g,b,t=0):
     pass
 
   ms = int(t * 1000)
-  msg = "%c%c%Cc%c%c%c%c"%(x,y,r,g,b,ms>>8,ms&0xFF)
+  msg = "%c%c%cc%c%c%c%c"%(x,y,r,g,b,ms>>8,ms&0xFF)
   sock.sendto(msg, (UDPHOST, UDPPORT))
 
-def speedfade(x,y,r,g,b,speed)
+def speedfade(x,y,r,g,b,speed):
   x=int(x)
   y=int(y)
   r=int(r)
