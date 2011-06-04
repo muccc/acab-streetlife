@@ -2,7 +2,6 @@ import serial
 import string
 import sys
 import time
-import crcmod
 
 class SerialInterface:
     def  __init__ ( self, path2device, baudrate, timeout=0):
@@ -12,15 +11,6 @@ class SerialInterface:
         if timeout:
             self.ser.setTimeout(timeout)
 
-    def writeMessage(self,message):
-
-        c = crcmod.Crc(0x11021)
-        c.update(message);
-        message += c.digest()
-        message = message.replace('\\','\\\\')
-        enc = "\\5" + message + "\\2"
-        #print "writing",list(enc)
-        self.ser.write(enc)
     def write(self, data):
         print "writing", list(data)
         self.ser.write(data)
