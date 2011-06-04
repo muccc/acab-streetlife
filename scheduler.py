@@ -32,3 +32,4 @@ while 1:
   for process in processlist:
     process.kill()
   print "next entry"
+ reload(playlist)
