@@ -12,7 +12,7 @@ s = 0.1
 
 for c in range(0,8):
     for r in range(0,6):
-	lib_sl.send(c,r,0,0,255, 500)
+	lib_sl.send(c,r,0,0,255, 0.5)
 
 time.sleep(0.5)
 
@@ -20,14 +20,14 @@ i = 0
 
 
 while 1:
-    lib_sl.send(seq[0][i],seq[1][i],255,255,255, 500)
+    lib_sl.send(seq[0][i],seq[1][i],255,255,255, 0.5)
 
     if i - l < 0:
 	r = 16 + i - l
     else :
 	r = i - l
 
-    lib_sl.send(seq[0][r],seq[1][r],0,0,255, 500)
+    lib_sl.send(seq[0][r],seq[1][r],0,0,255, 0.5)
 
     i = i + 1
     if i > 15:

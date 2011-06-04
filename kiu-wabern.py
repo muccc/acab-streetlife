@@ -33,15 +33,15 @@ def draws(x,y,c,t,f):
 def draw(x,y,c):
 
 #    draws(x-1,y-1,c,300,200)
-    draws(x-1,y,c,300,100)
+    draws(x-1,y,c,0.3,100)
 #    draws(x-1,y+1,c,300,200)
 
-    draws(x,y-1,c,300,100)
-    draws(x,y,c,500,0)
-    draws(x,y+1,c,300,100)
+    draws(x,y-1,c,0.3,100)
+    draws(x,y,c,1,0)
+    draws(x,y+1,c,0.3,100)
 
 #   draws(x+1,y-1,c,300,200)
-    draws(x+1,y,c,300,100)
+    draws(x+1,y,c,0.3,100)
 #    draws(x+1,y+1,c,300,200)
 
 while 1:
@@ -58,5 +58,5 @@ while 1:
     draw(x1,y1,col1) 
     draw(x2,y2,col2) 
 
-    time.sleep(0.2)
+    time.sleep(0.1)
 

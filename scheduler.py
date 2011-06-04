@@ -24,7 +24,7 @@ while 1:
   for animation in i[1]:
     p=subprocess.Popen(["python", animation])
     processlist.append(p)
-    print p.pid
+    print "[" + str(p.pid) + "] " + animation
     pids= open(pidfile,'a')
     pids.write(str(p.pid)+"\n")
     pids.close()
@@ -32,3 +32,4 @@ while 1:
   for process in processlist:
     process.kill()
   print "next entry"
+ reload(playlist)
