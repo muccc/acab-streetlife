@@ -4,7 +4,7 @@ import random
 import time
 import math
 
-tick = 0.05
+tick = 0.5
 
 def setcol(col, r, g, b, time):
     for i in range(0,6):
@@ -13,11 +13,11 @@ def setcol(col, r, g, b, time):
 h = 0
 col = 0
 
-midcol = 3
+midcol = 7
 midrow = 2
 maxdist = 0
 for row in range(0,6):
-  for col in range(0,8):
+  for col in range(0,15):
     dc = col - midcol
     dr = row - midrow
     dist = math.sqrt(dc**2+dr**2)
@@ -31,7 +31,7 @@ while 1:
   hoffset = hoffset % 1.
 
   for row in range(0,6):
-    for col in range(0,8):
+    for col in range(0,18):
       dc = col - midcol
       dr = row - midrow
       dist = math.sqrt(dc**2+dr**2)/maxdist

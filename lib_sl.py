@@ -5,7 +5,8 @@ HOST="127.1"
 PORT=8080
 
 #UDPHOST="83.133.179.27"
-UDPHOST="10.0.0.1"
+#UDPHOST="10.0.0.1"
+UDPHOST="127.0.0.1"
 UDPPORT=5005
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 

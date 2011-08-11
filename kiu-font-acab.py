@@ -496,7 +496,7 @@ pickcolor()
     
 while 1:
 
-    for x in range(0,8):
+    for x in range(0,15):
 	cx = x + idx;
 	if (cx > l - 1):
 	    cx = cx - l
