@@ -5,6 +5,10 @@ import time
 
 class SerialInterface:
     def  __init__ ( self, path2device, baudrate, timeout=0):
+        if path2device == '/dev/null':
+            self.dummy = True
+            return
+        self.dummy = False
         self.ser = serial.Serial(path2device, baudrate)
         self.ser.flushInput()
         self.ser.flushOutput()
@@ -12,7 +16,9 @@ class SerialInterface:
             self.ser.setTimeout(timeout)
 
     def write(self, data):
-        print "writing", list(data)
+        if self.dummy:
+            return
+        #print self, "writing", list(data)
         self.ser.write(data)
 
     def readMessage(self):
