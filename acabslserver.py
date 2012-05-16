@@ -12,7 +12,7 @@ q = Queue.Queue(100)
 def writer():
     while 1:
         data = q.get()
-        print list(data)
+        #print list(data)
         try:
             x = ord(data[0])
             y = ord(data[1])
@@ -24,11 +24,12 @@ def writer():
             msl = ord(data[7])
             ms = (msh<<8) + msl;
             if cmd == 'C':
-                print 'set color'
+                #print 'set color' 
                 acabsl.send(x,y,r,g,b,ms/1000.)
             elif cmd == 'F':
                 acabsl.sendSpeedFade(x,y,r,g,b,ms/1000.)
-
+            elif cmd == 'U':
+                acabsl.sendUpdate()
         except Exception as e:
             print "Unexpected error:", e
 
