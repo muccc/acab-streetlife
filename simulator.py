@@ -2,11 +2,16 @@ import pygame
 from pygame.locals import *
 import sys
 import threading
+import socket
+import thread
+import time
+import Queue
+import sys
 
-import bottle
-from bottle import route, run, request
+UDP_IP="127.0.0.1"
+UDP_PORT=5005
+q = Queue.Queue(100)
 
-#bottle.debug(True)
 
 xsize = 60
 ysize = 40
@@ -14,7 +19,7 @@ ysize = 40
 xpixels = 16
 ypixels = 6
 
-acab = [[[0,0,0,0,0,0,0] for col in range(ypixels)] for row in range(xpixels)]
+acab = [[[0,0,0,0,0,0,0,0,0] for col in range(ypixels)] for row in range(xpixels)]
 
 def handle_events():
     surf = pygame.Surface((xsize,ysize))
@@ -27,19 +32,21 @@ def handle_events():
             for x in range (0,xpixels):
                 current = acab[x][y][0:3]
                 diff    = acab[x][y][3:6]
-                count   = acab[x][y][6]
-
-                new = [max((0,min((current[i] + diff[i],255)))) for i in range(3)]
-                count -= 1
-                if count == 0:
-                    diff = [0,0,0]
+                counts   = acab[x][y][6:9]
+                
+                new = [0, 0, 0]
+                for i in range(3):
+                    new[i] = max((0,min((current[i] + diff[i],255))))
+                    counts[i] = counts[i] - 1
+                    if counts[i] == 0:
+                        diff[i] = 0
                 
                 surf.fill(tuple(map(int, new)))
                 screen.blit(surf, (x*xsize, y*ysize))
                 
                 acab[x][y][0:3] = new
                 acab[x][y][3:6] = diff
-                acab[x][y][6]   = count
+                acab[x][y][6:9] = counts
         pygame.display.update()
         pygame.time.delay(33)
 
@@ -51,32 +58,69 @@ screen.fill((255, 255, 255))
 updatethread = threading.Thread(target=handle_events)
 updatethread.start()
 
-@route('/:x/:y/:r/:g/:b/:t')
-def fade(**kwargs):
-    args = dict(map(lambda tp: (tp[0], int(tp[1])),
-        kwargs.iteritems()))
-    x = args['x']
-    y = args['y']
-    r = args['r']
-    g = args['g']
-    b = args['b']
-    time = args['t']
-    
-    data = acab[x][y]
-    current = data[0:3]
-    target = [r,g,b]
-    diff = [target[i] - current[i] for i in range(3)]
-    steps = time/33
-    if steps == 0:
-        data[0:3] = target
-        data[3:6] = [0,0,0]
+
+def writer():
+    while 1:
+        data = q.get()
+        try:
+            x = ord(data[0])
+            y = ord(data[1])
+            cmd = data[2]
+            r = ord(data[3])
+            g = ord(data[4])
+            b = ord(data[5])
+            msh = ord(data[6])
+            msl = ord(data[7])
+            ms = (msh<<8) + msl;
+            if cmd == 'C':
+                time = ms
+                data = acab[x][y]
+                current = data[0:3]
+                target = [r,g,b]
+                diff = [target[i] - current[i] for i in range(3)]
+                
+                steps = time/33
+                if steps == 0:
+                    data[0:3] = target
+                    data[3:6] = [0,0,0]
+                else:
+                    data[3:6] = [ d/float(steps) for d in diff]
+
+                data[6:9] = [steps, steps, steps]
+                acab[x][y] = data
+
+            elif cmd == 'F':
+                speed = ms / 58.7
+                data = acab[x][y]
+                current = data[0:3]
+                target = [r,g,b]
+                diff = [target[i] - current[i] for i in range(3)]
+                
+                data[3:6] = [speed, speed, speed]
+                data[6:9] = [d/speed for d in diff]
+
+                for i in range(3):
+                    if diff[i] < 0:
+                        data[3+i] = -data[3+i]
+                        data[6+i] = -data[6+i]
+                print data
+                acab[x][y] = data
+
+            elif cmd == 'U':
+                pass
+        except Exception as e:
+            print "Unexpected error:", e
+
+
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+sock.bind((UDP_IP,UDP_PORT))
+thread.start_new_thread(writer,())
+
+while True:
+    data = sock.recv(1024)
+    if not q.full():
+        q.put(data)
     else:
-        data[3:6] = [ d/float(steps) for d in diff]
-
-    data[6] = steps
-    acab[x][y] = data
-    return '(%s/%s) @ (%s, %s, %s) -> %s' % (x, y, r, g, b, 0)
-
-run(host='localhost', port=8080)
+        print 'ignoring data'
 
 
