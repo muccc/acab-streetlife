@@ -6,6 +6,7 @@ PORT=8080
 
 UDPHOST="127.0.0.1"
 UDPPORT=5005
+SIMULATORPORT=5006
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 def send(x,y,r,g,b,t=0):
@@ -14,24 +15,15 @@ def send(x,y,r,g,b,t=0):
   r=int(r)
   g=int(g)
   b=int(b)
-  try:
-    message = "/%s/%s/%i/%i/%i/%i" % (x, y, r, g, b, t*1000)
-    #urllib2.urlopen("http://%s:%i"% (HOST, PORT)+message)
-  except:
-    pass
-
   ms = int(t * 1000)
   msg = "%c%cC%c%c%c%c%c"%(x,y,r,g,b,ms>>8,ms&0xFF)
   sock.sendto(msg, (UDPHOST, UDPPORT))
+  sock.sendto(msg, (UDPHOST, SIMULATORPORT))
 
 def update():
-  try:
-    message = "/%s/%s/%i/%i/%i/%i" % (x, y, r, g, b, t*1000)
-    #urllib2.urlopen("http://%s:%i"% (HOST, PORT)+message)
-  except:
-    pass
   msg = "%c%cU%c%c%c%c%c"%(0,0,0,0,0,0,0)
   sock.sendto(msg, (UDPHOST, UDPPORT))
+  sock.sendto(msg, (UDPHOST, SIMULATORPORT))
     
 def speedfade(x,y,r,g,b,speed):
   x=int(x)
@@ -39,15 +31,9 @@ def speedfade(x,y,r,g,b,speed):
   r=int(r)
   g=int(g)
   b=int(b)
-  try:
-    message = "/%s/%s/%i/%i/%i/%i" % (x, y, r, g, b, t*1000)
-    #urllib2.urlopen("http://%s:%i"% (HOST, PORT)+message)
-  except:
-    pass
-
   msg = "%c%cF%c%c%c%c%c"%(x,y,r,g,b,speed>>8,speed&0xFF)
   sock.sendto(msg, (UDPHOST, UDPPORT))
-
+  sock.sendto(msg, (UDPHOST, SIMULATORPORT))
 
 def matrix(targetsize_x=8,targetsize_y=6):
   x=0
