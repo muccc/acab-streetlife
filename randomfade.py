@@ -5,7 +5,7 @@ import time
 import random
 import lib_sl
 
-matrix = lib_sl.matrix(8,6)
+matrix = lib_sl.matrix()
 
 def rcolor():
   return int(random.random()*255)

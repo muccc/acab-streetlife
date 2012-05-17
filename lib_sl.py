@@ -39,13 +39,13 @@ def speedfade(x,y,r,g,b,speed):
   sock.sendto(msg, (UDPHOST, UDPPORT))
   sock.sendto(msg, (UDPHOST, SIMULATORPORT))
 
-def matrix(targetsize_x=8,targetsize_y=6):
+def matrix(targetsize_x=16,targetsize_y=6):
   x=0
   y=0
   matrix = []
   while ( y < targetsize_y):
     while ( x < targetsize_x):
-      p =  str(x) + str(y)
+      p =  (x,y)
       matrix.append(p)
       x = x + 1
 
