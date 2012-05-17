@@ -20,8 +20,12 @@ def send(x,y,r,g,b,t=0):
   sock.sendto(msg, (UDPHOST, UDPPORT))
   sock.sendto(msg, (UDPHOST, SIMULATORPORT))
 
-def update():
-  msg = "%c%cU%c%c%c%c%c"%(0,0,0,0,0,0,0)
+def update(buffered = True):
+  if buffered:
+    msg = "%c%cU%c%c%c%c%c"%(1,0,0,0,0,0,0)
+  else:
+    msg = "%c%cU%c%c%c%c%c"%(0,0,0,0,0,0,0) 
+
   sock.sendto(msg, (UDPHOST, UDPPORT))
   sock.sendto(msg, (UDPHOST, SIMULATORPORT))
     
@@ -48,3 +52,6 @@ def matrix(targetsize_x=8,targetsize_y=6):
     y = y + 1
     x = 0
   return matrix
+
+update(False)
+update(False)
