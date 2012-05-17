@@ -7,11 +7,21 @@ import thread
 serials = [ 
     "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A400fvDr-if00-port0",
     "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A400fvDu-if00-port0",
-    "/dev/null",
-    "/dev/null",
-    "/dev/null",
+    "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A400fvDs-if00-port0",
+    "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A10044Xp-if00-port0",
+    "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A400fvDq-if00-port0",
     "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A400fvDt-if00-port0",
     ]
+
+#serials = [ 
+#    "/dev/null",
+#    "/dev/null",
+#    "/dev/null",
+#    "/dev/null",
+#    "/dev/null",
+#    "/dev/null",
+#    ]
+
 #            0   1     2     3     4     5     6     7     8     9     10    11    12    13    14    15
 lamps = [[0x74, 0x74, 0x47, 0x68, 0x6c, 0x12, 0x13, 0x14, 0x1b, 0x1a, 0x18, 0x11, 0x10, 0x19, 0x15, 0xFF ],
          [0x2b, 0x29, 0x1e, 0x2a, 0x16, 0x1f, 0x17, 0x1c, 0x20, 0x23, 0x21, 0x22, 0x2c, 0x24, 0x2e, 0xFF ],
@@ -51,7 +61,7 @@ bridges = map(createBridge,serials)
 for bridge in bridges:
     thread.start_new_thread(interfaceHandler,bridge)
 
-buffered = True
+buffered = False
 
 def send(x,y,r,g,b,t):
     ms = int(t*1000)
@@ -84,13 +94,15 @@ def low(x):
     return x&0xff;
 
 def sendSetColor(lamp,r,g,b,interface):
+    global buffered
     if buffered:
-        cmd = "%ca%c%c%c"%(chr(lamp),chr(r),chr(g),chr(b))
+        cmd = "%cP%c%c%c"%(chr(lamp),chr(r),chr(g),chr(b))
     else:
         cmd = "%cC%c%c%c"%(chr(lamp),chr(r),chr(g),chr(b))
     write(cmd,interface);
 
 def sendMSFade(lamp,r,g,b,ms,interface):
+    global buffered
     if buffered:
         cmd = "%cc%c%c%c%c%c"%(chr(lamp),chr(r),chr(g),chr(b),chr(high(ms)),chr(low(ms)))
     else:
@@ -98,21 +110,36 @@ def sendMSFade(lamp,r,g,b,ms,interface):
     write(cmd,interface);
 
 def sendSpeedFade(x,y,r,g,b,speed,interface):
+    global buffered
     lamp = lamps[y][x]
-    cmd = "%cF%c%c%c%c%c"%(chr(lamp),chr(r),chr(g),chr(b),chr(high(speed)),chr(low(speed)))
+    if buffered:
+        cmd = "%ca%c%c%c%c%c"%(chr(lamp),chr(r),chr(g),chr(b),chr(high(speed)),chr(low(speed)))
+    else:
+        cmd = "%cF%c%c%c%c%c"%(chr(lamp),chr(r),chr(g),chr(b),chr(high(speed)),chr(low(speed)))
+
     write(cmd,interfaces[y]);
 
-def sendUpdate():
-    cmd = "%cU"%chr(0)
-    for i in interfaces:
-        write(cmd, interfaces[i])
- 
+def sendUpdate(mode):
+    global buffered
+    buffered = mode
+    if buffered:
+        cmd = "%cU"%chr(0)
+        for i in interfaces:
+            write(cmd, interfaces[i])
+
+fullmessage = [False for i in interfaces]
+
 def write(msg, interface):
     msg = "\x5c\x30%s\x5c\x31"%msg
     msg = msg.replace("\\","\\\\")
 
     if not bridges[interface][0].full():
+        if fullmessage[interface]:
+            print 'reactivating bridge'
+            fullmessage[interface] = False
         bridges[interface][0].put(msg)
     else:
-        print 'ignoring', msg, 'queue for bridge is full'
+        if fullmessage[interface] == False:
+            print 'ignoring', msg, 'queue for bridge is full'
+            fullmessage[interface] = True
 
