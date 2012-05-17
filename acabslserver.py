@@ -29,7 +29,10 @@ def writer():
             elif cmd == 'F':
                 acabsl.sendSpeedFade(x,y,r,g,b,ms/1000.)
             elif cmd == 'U':
-                acabsl.sendUpdate()
+                buffered = False
+                if ord(data[0]): buffered = True
+                acabsl.sendUpdate(buffered)
+
         except Exception as e:
             print "Unexpected error:", e
 
