@@ -15,11 +15,11 @@ dir =	[
 x1=2
 y1=3
 
-x2=6
+x2=14
 y2=3
 
 def draws(x,y,c,t,f):
-    if (x < 0 or x > 7):
+    if (x < 0 or x > 15):
 	return
     if (y < 0 or y > 5):
 	return
@@ -29,7 +29,7 @@ def draws(x,y,c,t,f):
     
     lib_sl.send(x,y,c1,c2,c3,t)
     
-
+lib_sl.update()
 def draw(x,y,c):
 
 #    draws(x-1,y-1,c,300,200)
@@ -46,10 +46,10 @@ def draw(x,y,c):
 
 while 1:
 
-    x1 = max(1,min(6,x1 + dir[0][random.randint(0,3)]))
+    x1 = max(1,min(14,x1 + dir[0][random.randint(0,3)]))
     y1 = max(1,min(4,y1 + dir[1][random.randint(0,3)]))
 
-    x2 = max(1,min(6,x2 + dir[0][random.randint(0,3)]))
+    x2 = max(1,min(14,x2 + dir[0][random.randint(0,3)]))
     y2 = max(1,min(4,y2 + dir[1][random.randint(0,3)]))
     
     col1 = random.randint(0,5)
@@ -58,5 +58,6 @@ while 1:
     draw(x1,y1,col1) 
     draw(x2,y2,col2) 
 
+    lib_sl.update()
     time.sleep(0.1)
 

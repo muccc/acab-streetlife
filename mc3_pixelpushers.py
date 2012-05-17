@@ -480,9 +480,10 @@ l = len(content[0])
 idx = 0
 cx = 0
 
+lib_sl.update()
 while 1:
 
-    for x in range(0,8):
+    for x in range(0,16):
 	cx = x + idx;
 	if (cx > l - 1):
 	    cx = cx - l
@@ -496,6 +497,7 @@ while 1:
 	    if (col == 1):
 		lib_sl.send(x,y,fgr,fgg,fgb,tick/1.5)
     
+    lib_sl.update()
     time.sleep(tick)
     
     idx = idx + 1

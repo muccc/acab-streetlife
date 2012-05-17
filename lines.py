@@ -15,7 +15,7 @@ while 1:
  r=rcolor()
  g=rcolor()
  b=rcolor() 
- x=int(random.random()*8)
+ x=int(random.random()*16)
  while (j < 6):
     y=j
     lib_sl.send(x,y,r,g,b,t)

@@ -493,10 +493,11 @@ def pickcolor():
 	    break
 
 pickcolor()    
-    
+lib_sl.update()
+
 while 1:
 
-    for x in range(0,15):
+    for x in range(0,16):
 	cx = x + idx;
 	if (cx > l - 1):
 	    cx = cx - l
@@ -509,7 +510,7 @@ while 1:
 
 	    if (col == 1):
 		lib_sl.send(x,y,cs[0][col2],cs[1][col2],cs[2][col2],tick/1.5)
-    
+    lib_sl.update()    
     time.sleep(tick)
     
     idx = idx + 1

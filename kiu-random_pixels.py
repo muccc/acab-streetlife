@@ -17,7 +17,7 @@ s = 0.1
 while 1:
 
     r = random.randint(0,5)
-    c = random.randint(0,7)
+    c = random.randint(0,15)
 
     col = random.randint(0,5)
     lib_sl.send(c,r,cs[0][col],cs[1][col],cs[2][col],0.5)

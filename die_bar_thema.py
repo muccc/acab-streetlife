@@ -51,7 +51,7 @@ while 1:
   j=j+1
 # time.sleep(t) 
  i=i+1
- if i >7 :
+ if i >16 :
   i=0
  print tc
  print target

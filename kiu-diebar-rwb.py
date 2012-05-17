@@ -13,9 +13,10 @@ c =	[ [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
 idx = 0
 cx = 0
 tick = 0.25
+lib_sl.update()
 while 1:
 
-    for x in range(0,8):
+    for x in range(0,16):
 	cx = x + idx;
 	if (cx > 23):
 	    cx = cx - 24
@@ -32,6 +33,7 @@ while 1:
 	    if (col == 2):
 		lib_sl.send(x,y,0,0,0,tick/1.5)
     
+    lib_sl.update()
     time.sleep(tick)
     
     idx = idx + 1

@@ -18,6 +18,7 @@ def drawa(c,r,c1):
 
     for y in range(0,r):
 	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+    lib_sl.update()
 
 def drawb(c,r,c1):
 
@@ -27,6 +28,7 @@ def drawb(c,r,c1):
 
     for y in range(0,r):
 	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+    lib_sl.update()
 
 def drawc(c,r,c1):
 
@@ -36,6 +38,7 @@ def drawc(c,r,c1):
 
     for y in range(r,6):
 	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+    lib_sl.update()
 
 def drawd(c,r,c1):
 
@@ -45,12 +48,15 @@ def drawd(c,r,c1):
 
     for y in range(r,6):
 	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+    lib_sl.update()
 
 
 
-for c in range(0,8):
+lib_sl.update()
+for c in range(0,16):
     for r in range(0,6):
         lib_sl.send(c,r,0,0,0, 0.5)
+lib_sl.update()
 time.sleep(0.5)
 
 x = 1
@@ -59,7 +65,7 @@ lastc = 0
 c = 0
 mode = 0
 lastm = 0
-        
+
 while 1:
 
     while c == lastc:

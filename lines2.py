@@ -16,7 +16,7 @@ i=j=0
 
 while 1:
  i=j=0
- x=int(random.random()*8)
+ x=int(random.random()*16)
  while (j < 6):
     c=rcolor()
     y=j
@@ -25,7 +25,7 @@ while 1:
     time.sleep(t/(4*t))
  j=0
  y=int(random.random()*6)
- while (i < 8):
+ while (i < 16):
     c=rcolor()
     x=i
     lib_sl.send(x,y,c[0],c[1],c[2],t)

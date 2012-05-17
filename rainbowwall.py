@@ -31,6 +31,6 @@ while 1:
   time.sleep(t)
   j=j+1
  i=i+1
- if i >7 :
+ if i >15 :
   i=0
  
