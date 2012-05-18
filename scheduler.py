@@ -16,7 +16,7 @@ signal.signal(signal.SIGINT, abort)
 signal.pause
 
 while 1:
-  pl=playlist.playlist
+  pl=playlist.getPlaylist()
   i =  random.choice(pl)
   t = i[0]
   processlist=[]
