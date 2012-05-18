@@ -25,13 +25,13 @@ def writer():
             ms = (msh<<8) + msl;
             if cmd == 'C':
                 #print 'set color' 
-                acabsl-interface.send(x,y,r,g,b,ms/1000.)
+                acabsl_interface.send(x,y,r,g,b,ms/1000.)
             elif cmd == 'F':
-                acabsl-interface.sendSpeedFade(x,y,r,g,b,ms/1000.)
+                acabsl_interface.sendSpeedFade(x,y,r,g,b,ms/1000.)
             elif cmd == 'U':
                 buffered = False
                 if ord(data[0]): buffered = True
-                acabsl-interface.sendUpdate(buffered)
+                acabsl_interface.sendUpdate(buffered)
 
         except Exception as e:
             print "Unexpected error:", e
