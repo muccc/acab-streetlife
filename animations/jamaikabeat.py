@@ -8,7 +8,7 @@
 ## To test it out, run it and shout at your microphone:
 
 import alsaaudio, time, audioop
-import random,time,lib_sl
+import random,time,acabsl
 
 # Open the device in nonblocking capture mode. The last argument could
 # just as well have been zero for blocking mode. Then we could have
@@ -44,9 +44,9 @@ while True:
             pass
 
         val=min(80,vmax/40)
-        lib_sl.send(100,2,val,0,0,t)
-        lib_sl.send(100,0,0,val,0,t)
-        lib_sl.send(100,1,val,val,0,t)
+        acabsl.send(100,2,val,0,0,t)
+        acabsl.send(100,0,0,val,0,t)
+        acabsl.send(100,1,val,val,0,t)
         
-        #lib_sl.send(7,5,min(255,vmax/30),max(255,(-1*vmin)/30),0,t)
+        #acabsl.send(7,5,min(255,vmax/30),max(255,(-1*vmin)/30),0,t)
     time.sleep(t)

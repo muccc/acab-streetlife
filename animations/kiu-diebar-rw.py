@@ -1,4 +1,4 @@
-import lib_sl
+import acabsl
 import random
 import time
 
@@ -13,7 +13,7 @@ c =	[ [0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1],
 idx = 0
 cx = 0
 tick = 0.25
-lib_sl.update()
+acabsl.update()
 while 1:
 
     for x in range(0,16):
@@ -23,11 +23,11 @@ while 1:
 	    
 	for y in range(0,6):	    
 	    if (c[y][cx] == 0):
-		lib_sl.send(x,y,255,0,0,tick/1.5)
+		acabsl.send(x,y,255,0,0,tick/1.5)
 	    else:
-		lib_sl.send(x,y,255,255,255,tick/1.5)
+		acabsl.send(x,y,255,255,255,tick/1.5)
     
-    lib_sl.update()
+    acabsl.update()
     time.sleep(tick)
     
     idx = idx + 1

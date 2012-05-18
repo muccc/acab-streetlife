@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import alsaaudio, time, audioop
-import random,time,lib_sl
+import random,time,acabsl
 
 inp = alsaaudio.PCM(alsaaudio.PCM_CAPTURE,alsaaudio.PCM_NORMAL)
 
@@ -28,9 +28,9 @@ while True:
                 vavg*=-1
                 vmin*=-1
                 print vmin, vavg, vmax, count
-                lib_sl.send(i%8,0+(0 if i>7 else 3),colors[0]*vmax,colors[1]*vmax,colors[2]*vmax,t)
-                lib_sl.send(i%8,1+(0 if i>7 else 3),colors[0]*vavg,colors[1]*vavg,colors[2]*vavg,t)
-                lib_sl.send(i%8,2+(0 if i>7 else 3),colors[0]*vmin,colors[1]*vmin,colors[2]*vmin,t)
+                acabsl.send(i%8,0+(0 if i>7 else 3),colors[0]*vmax,colors[1]*vmax,colors[2]*vmax,t)
+                acabsl.send(i%8,1+(0 if i>7 else 3),colors[0]*vavg,colors[1]*vavg,colors[2]*vavg,t)
+                acabsl.send(i%8,2+(0 if i>7 else 3),colors[0]*vmin,colors[1]*vmin,colors[2]*vmin,t)
                 if count < 50000:
                     count+=vmax
                 else:

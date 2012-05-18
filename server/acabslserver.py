@@ -1,4 +1,4 @@
-import acabsl
+import acabsl-interface
 import socket
 import thread
 import time
@@ -25,13 +25,13 @@ def writer():
             ms = (msh<<8) + msl;
             if cmd == 'C':
                 #print 'set color' 
-                acabsl.send(x,y,r,g,b,ms/1000.)
+                acabsl-interface.send(x,y,r,g,b,ms/1000.)
             elif cmd == 'F':
-                acabsl.sendSpeedFade(x,y,r,g,b,ms/1000.)
+                acabsl-interface.sendSpeedFade(x,y,r,g,b,ms/1000.)
             elif cmd == 'U':
                 buffered = False
                 if ord(data[0]): buffered = True
-                acabsl.sendUpdate(buffered)
+                acabsl-interface.sendUpdate(buffered)
 
         except Exception as e:
             print "Unexpected error:", e

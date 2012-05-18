@@ -1,4 +1,4 @@
-import lib_sl
+import acabsl
 import random
 import time
 
@@ -479,7 +479,7 @@ l = len(content[0])
 
 idx = 0
 cx = 0
-lib_sl.update()
+acabsl.update()
 
 while 1:
 
@@ -492,11 +492,11 @@ while 1:
 	    col = content[y][cx]
 	    
 	    if (col == 0):
-		lib_sl.send(x,y,bgr,bgg,bgb)
+		acabsl.send(x,y,bgr,bgg,bgb)
 
 	    if (col == 1):
-		lib_sl.send(x,y,fgr,fgg,fgb)
-    lib_sl.update()
+		acabsl.send(x,y,fgr,fgg,fgb)
+    acabsl.update()
     time.sleep(tick)
     
     idx = idx + 1

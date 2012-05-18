@@ -1,4 +1,4 @@
-import lib_sl
+import acabsl
 import random
 import time
 
@@ -12,51 +12,51 @@ tick = 0.1
 
 def drawa(c,r,c1):
 
-    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+    acabsl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
     for x in range(1,c):
-	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+	acabsl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
 
     for y in range(0,r):
-	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
-    lib_sl.update()
+	acabsl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+    acabsl.update()
 
 def drawb(c,r,c1):
 
-    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+    acabsl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
     for x in range(c,7):
-	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+	acabsl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
 
     for y in range(0,r):
-	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
-    lib_sl.update()
+	acabsl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+    acabsl.update()
 
 def drawc(c,r,c1):
 
-    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+    acabsl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
     for x in range(c,7):
-	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+	acabsl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
 
     for y in range(r,6):
-	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
-    lib_sl.update()
+	acabsl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+    acabsl.update()
 
 def drawd(c,r,c1):
 
-    lib_sl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+    acabsl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
     for x in range(1,c):
-	lib_sl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+	acabsl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
 
     for y in range(r,6):
-	lib_sl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
-    lib_sl.update()
+	acabsl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+    acabsl.update()
 
 
 
-lib_sl.update()
+acabsl.update()
 for c in range(0,16):
     for r in range(0,6):
-        lib_sl.send(c,r,0,0,0, 0.5)
-lib_sl.update()
+        acabsl.send(c,r,0,0,0, 0.5)
+acabsl.update()
 time.sleep(0.5)
 
 x = 1

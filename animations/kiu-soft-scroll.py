@@ -1,4 +1,4 @@
-import lib_sl
+import acabsl
 import random
 import time
 
@@ -11,7 +11,7 @@ cs =	[
 def draw(x,y,r,g,b,t):
 	if (x < 0 or x > 15):
 	    return
-	lib_sl.send(x,y,r,g,b,t)
+	acabsl.send(x,y,r,g,b,t)
 
 def pix(x,y,c):
 	draw(x-1,y,0,0,0,0.6)
@@ -25,7 +25,7 @@ def col(c):
     
 c = 0
 
-lib_sl.update()
+acabsl.update()
 while 1:
     
     for x in range(0,15):
@@ -35,7 +35,7 @@ while 1:
 	pix(15-x,3,col(c+3))
 	pix(x,4,col(c+4))
 	pix(15-x,5,col(c+5))
-	lib_sl.update()
+	acabsl.update()
 
 	time.sleep(0.3)
 
@@ -50,7 +50,7 @@ while 1:
 	pix(x,3,col(c+3))
 	pix(15-x,4,col(c+4))
 	pix(x,5,col(c+5))
-	lib_sl.update()
+	acabsl.update()
 
 	time.sleep(0.3)
 

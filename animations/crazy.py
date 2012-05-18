@@ -1,4 +1,4 @@
-import random,time,lib_sl
+import random,time,acabsl
 
 def rcolor():
   color=[]
@@ -10,7 +10,7 @@ def rcolor():
 t=0.2
 
 while 1:
- start=random.choice(lib_sl.matrix())
+ start=random.choice(acabsl.matrix())
  c=rcolor()
- lib_sl.send(start[0],start[1],c[0],c[1],c[2],t)
+ acabsl.send(start[0],start[1],c[0],c[1],c[2],t)
  time.sleep(t)

@@ -1,5 +1,5 @@
-from lib_sl import send
-from lib_sl import update
+from acabsl import send
+from acabsl import update
 import colorsys
 import random
 import time

@@ -3,9 +3,9 @@
 
 import time
 import random
-import lib_sl
+import acabsl
 
-matrix = lib_sl.matrix()
+matrix = acabsl.matrix()
 
 def rcolor():
   return int(random.random()*255)
@@ -23,7 +23,7 @@ while "True":
 #  print chosen
 #  print r, b, g, t
   for p in chosen:
-     lib_sl.send( int(p[0]), int(p[1]), r, b, g, t)
+     acabsl.send( int(p[0]), int(p[1]), r, b, g, t)
      time.sleep(t/10) 
   time.sleep(t/10)
 

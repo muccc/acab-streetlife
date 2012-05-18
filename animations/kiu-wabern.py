@@ -1,4 +1,4 @@
-import lib_sl
+import acabsl
 import random
 import time
 
@@ -27,9 +27,9 @@ def draws(x,y,c,t,f):
     c2 = max(0,cs[1][c] - f)
     c3 = max(0,cs[2][c] - f)
     
-    lib_sl.send(x,y,c1,c2,c3,t)
+    acabsl.send(x,y,c1,c2,c3,t)
     
-lib_sl.update()
+acabsl.update()
 def draw(x,y,c):
 
 #    draws(x-1,y-1,c,300,200)
@@ -58,6 +58,6 @@ while 1:
     draw(x1,y1,col1) 
     draw(x2,y2,col2) 
 
-    lib_sl.update()
+    acabsl.update()
     time.sleep(0.1)
 

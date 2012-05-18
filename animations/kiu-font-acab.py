@@ -1,4 +1,4 @@
-import lib_sl
+import acabsl
 import random
 import time
 
@@ -493,7 +493,7 @@ def pickcolor():
 	    break
 
 pickcolor()    
-lib_sl.update()
+acabsl.update()
 
 while 1:
 
@@ -506,11 +506,11 @@ while 1:
 	    col = content[y][cx]
 	    
 	    if (col == 0):
-		lib_sl.send(x,y,cs[0][col1],cs[1][col1],cs[2][col1],tick/1.5)
+		acabsl.send(x,y,cs[0][col1],cs[1][col1],cs[2][col1],tick/1.5)
 
 	    if (col == 1):
-		lib_sl.send(x,y,cs[0][col2],cs[1][col2],cs[2][col2],tick/1.5)
-    lib_sl.update()    
+		acabsl.send(x,y,cs[0][col2],cs[1][col2],cs[2][col2],tick/1.5)
+    acabsl.update()    
     time.sleep(tick)
     
     idx = idx + 1

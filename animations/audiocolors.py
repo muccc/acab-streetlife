@@ -8,7 +8,7 @@
 ## To test it out, run it and shout at your microphone:
 
 import alsaaudio, time, audioop
-import random,time,lib_sl
+import random,time,acabsl
 
 # Open the device in nonblocking capture mode. The last argument could
 # just as well have been zero for blocking mode. Then we could have
@@ -49,12 +49,12 @@ while True:
 
                 val=min(200,vmax/40)
                 val2=min(200,-1*(vmin/40))
-                lib_sl.send(dia*(i+1)%8,5,val,i*20,0,t)
-                lib_sl.send(dia*(i+2)%8,4,val,val,i*20,t)
-                lib_sl.send(dia*(i+3)%8,3,val,val,val,t)
-                lib_sl.send(dia*(i+4)%8,2,val2,0,i*20,t)
-                lib_sl.send(dia*(i+5)%8,1,val2,val2,i*20,t)
-                lib_sl.send(dia*(i+6)%8,0,val2,val2,val2,t)
+                acabsl.send(dia*(i+1)%8,5,val,i*20,0,t)
+                acabsl.send(dia*(i+2)%8,4,val,val,i*20,t)
+                acabsl.send(dia*(i+3)%8,3,val,val,val,t)
+                acabsl.send(dia*(i+4)%8,2,val2,0,i*20,t)
+                acabsl.send(dia*(i+5)%8,1,val2,val2,i*20,t)
+                acabsl.send(dia*(i+6)%8,0,val2,val2,val2,t)
                 if count < 400:
                     count=count+1
                 else:

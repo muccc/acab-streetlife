@@ -1,4 +1,4 @@
-import lib_sl
+import acabsl
 import random
 import time
 
@@ -20,7 +20,7 @@ while 1:
     c = random.randint(0,15)
 
     col = random.randint(0,5)
-    lib_sl.send(c,r,cs[0][col],cs[1][col],cs[2][col],0.5)
+    acabsl.send(c,r,cs[0][col],cs[1][col],cs[2][col],0.5)
 
     time.sleep(0.1)
 

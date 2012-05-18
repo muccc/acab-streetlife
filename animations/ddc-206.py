@@ -1,5 +1,5 @@
 # 206
-import lib_sl
+import acabsl
 import random
 import time
 

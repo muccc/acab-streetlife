@@ -1,4 +1,4 @@
-import lib_sl
+import acabsl
 import random
 import time
 
@@ -26,7 +26,7 @@ color_n=scolor
 while 1:
  j=0
  while j < 6:
-  lib_sl.send(i,j,color_n[0],color_n[1],color_n[2],ft)
+  acabsl.send(i,j,color_n[0],color_n[1],color_n[2],ft)
   color_n=colord(color_n)
   time.sleep(t)
   j=j+1

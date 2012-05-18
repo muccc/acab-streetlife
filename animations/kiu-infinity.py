@@ -1,4 +1,4 @@
-import lib_sl
+import acabsl
 import random
 import time
 
@@ -12,22 +12,22 @@ s = 0.1
 
 for c in range(0,16):
     for r in range(0,6):
-	lib_sl.send(c,r,0,0,255, 0.5)
+	acabsl.send(c,r,0,0,255, 0.5)
 
 time.sleep(0.5)
 
 i = 0
 
-lib_sl.update()
+acabsl.update()
 while 1:
-    lib_sl.send(4+seq[0][i],seq[1][i],255,255,255, 0.5)
+    acabsl.send(4+seq[0][i],seq[1][i],255,255,255, 0.5)
 
     if i - l < 0:
 	r = 16 + i - l
     else :
 	r = i - l
 
-    lib_sl.send(4+seq[0][r],seq[1][r],0,0,255, 0.5)
+    acabsl.send(4+seq[0][r],seq[1][r],0,0,255, 0.5)
 
     i = i + 1
     if i > 15:
@@ -36,6 +36,6 @@ while 1:
 
 	if l > 15:
 	    l = 1
-    lib_sl.update()
+    acabsl.update()
     time.sleep(s)
 
