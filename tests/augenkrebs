@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
-#from acabsl import send
-from lib_sl import send
+from acabsl import send
 import time
 import sys
 t = 0
