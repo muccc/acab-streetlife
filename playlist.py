@@ -3,7 +3,7 @@ import random
 
 
 def ddc_chooser():
- alle = dircache.listdir('.')
+ alle = dircache.listdir('animations')
  ddc_list = []
  for i in alle:
   if i[0:3] == 'ddc':
@@ -43,3 +43,5 @@ playlist = [
 	    [5, ["jamaikabeat.py"]],
             #[time_in_seconds, [simultaniois_animation1, simultanious_animation2, ....]]
 ]
+for entry in playlist:
+    entry[1] = [ 'animations/'+path for path in entry[1]]
