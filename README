@@ -1,61 +1,61 @@
 This is the software behind the ACAB wall.
-You can get our software on gihtub: https://github.com/muccc/acab-streetlife
+You can get our software on github: https://github.com/muccc/acab-streetlife
 
-Animations are created a python scripts which run on the
-computer controling the installation.
+Animations are created as python scripts which run on the
+computer controlling the installation.
 
-The ACAB wall has 16x6 pixels. They are referred using their x and y coordinates.
+The ACAB wall has 16x6 pixels. They are addressed using their x and y coordinates.
 The setup looks like this: (x,y)
 
-(0,0), (1,0) ... (14,0), (15,0)
-(0,1), (1,1) ... (14,1), (15,1)
-  .      .          .       .
-  .      .          .       .
-  .      .          .       .
-(0,4), (1,4) ... (14,4), (15,4)
-(0,5), (1,5) ... (14,5), (15,5)
+  (0,0), (1,0) ... (14,0), (15,0)
+  (0,1), (1,1) ... (14,1), (15,1)
+    .      .          .       .
+    .      .          .       .
+    .      .          .       .
+  (0,4), (1,4) ... (14,4), (15,4)
+  (0,5), (1,5) ... (14,5), (15,5)
 
 
-Use the acabsl library in this directory to create your won script.
+Use the acabsl library for our git repository to create your own scripts.
 
 It provides two methods:
 
-acabsl.send(x,y,r,g,b,time):
-    Send a new color to pixel (x,y).
-    r,g,b are 0-255
-    time is in milliseconds:
-        time=0  => Instant update
-        time>0  => Fade to the new color in time millisceonds
+  acabsl.send(x,y,r,g,b,time):
+      Send a new color to pixel (x,y).
+      r,g,b are 0-255
+      time is in milliseconds:
+          time=0  => Instant update
+          time>0  => Fade to the new color in time millisceonds
 
-acabsl.update():
-    Use this command if you want to use double buffering.
-    Use it once before you do your first acabsl.send() call.
-    The use it everytime you want new commands to be executed.
+  acabsl.update():
+      Use this command if you want to use double buffering.
+      Use it once before you do your first acabsl.send() call.
+      The use it everytime you want new commands to be executed.
 
 
 Example:
 
-import acabsl
+  import acabsl
+  
+  #enable double buffering
+  acabsl.update()
+  
+  #let every pixel fade to red
+  for x in range(16):
+      for y in range(6):
+          acabsl.send(x,y,255,0,0,500)
+  
+  #execute all fades at once
+  acabsl.update()
 
-#enable double buffering
-acabsl.update()
 
-#let every pixel fade to red
-for x in range(16):
-    for y in range(6):
-        acabsl.send(x,y,255,0,0,500)
-
-#execute all fades at once
-acabsl.update()
-
-
-Have a look at scripts in the animations directory for examples. We also have audio examples ;)
+Have a look at the scripts in the animations directory for examples. We also have audio examples ;)
 
 
 Execute the simulator.py file to run a simulation of the wall on your computer:
-python simulator.py
+  python simulator.py
 
-The execute the script you wrote to display it on the simulator.
+Then execute the script you wrote to display it on the simulator.
 
 Send new scripts via a pull request to our github account: https://github.com/muccc/acab-streetlife
 
