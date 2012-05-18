@@ -7,7 +7,6 @@ import random
 
 pidfile='/tmp/animation_pids'
 
-pl=playlist.playlist
 
 def abort(signal,frame,pids):
   for pid in pids:
@@ -17,6 +16,7 @@ signal.signal(signal.SIGINT, abort)
 signal.pause
 
 while 1:
+  pl=playlist.playlist
   i =  random.choice(pl)
   t = i[0]
   processlist=[]
