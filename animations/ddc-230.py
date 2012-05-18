@@ -116,7 +116,6 @@ while 1:
     time.sleep(2.0)
 
 
-// MIDDLE
     acabsl.speedfade(5,2,255,168,0,103)
     acabsl.speedfade(5,3,255,168,0,103)
     acabsl.speedfade(6,3,255,168,0,103)
@@ -135,7 +134,7 @@ while 1:
     acabsl.speedfade(1,2,110,26,195,103)
     time.sleep(2.0)
 
-// SWITCH SIDE
+# SWITCH SIDE
     acabsl.speedfade(6,0,255,168,0,103)
     acabsl.speedfade(7,0,255,168,0,103)
     acabsl.speedfade(7,1,255,168,0,103)
@@ -170,8 +169,8 @@ while 1:
     acabsl.speedfade(0,5,110,26,195,103)
     acabsl.speedfade(1,5,110,26,195,103)
 
-// BLINKEN
-// SET TO RED
+# BLINKEN
+# SET TO RED
     acabsl.speedfade(5,0,255,0,0,89)
     acabsl.speedfade(5,1,255,0,0,89)
     acabsl.speedfade(6,1,255,0,0,89)

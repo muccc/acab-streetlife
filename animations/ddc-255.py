@@ -164,9 +164,7 @@ while 1:
     acabsl.send(2,4,0,0,0)
     acabsl.send(2,5,0,0,0)
     time.sleep(1.0)
-// END OF FIRST PART
 
-// BEGINNING OF SECOND
     acabsl.send(5,4,255,0,0)
     acabsl.send(5,5,255,0,0)
     acabsl.send(6,4,255,0,0)
@@ -256,10 +254,7 @@ while 1:
     acabsl.send(0,1,0,0,0)
     acabsl.send(1,0,0,0,0)
     time.sleep(1.0)
-// END OF PART 2
 
-// BEGIN PART 1 (VERTICAL)
-//BLANK MAN
     acabsl.send(5,0,0,0,0)
     acabsl.send(5,1,0,0,0)
     acabsl.send(6,1,0,0,0)

@@ -813,7 +813,6 @@ while 1:
     acabsl.send(1,0,156,238,80)
     time.sleep(0.3)
 
-//NOW FADE INTO IT!
 
     acabsl.send(0,0,0,0,0)
     acabsl.send(0,1,0,0,0)

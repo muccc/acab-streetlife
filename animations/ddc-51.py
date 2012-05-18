@@ -13,7 +13,6 @@ def rid():
 
 
 while 1:
-//START THE RED STRIPE
     acabsl.send(5,0,255,0,0)
     acabsl.send(5,1,255,0,0)
     acabsl.send(6,1,255,0,0)
@@ -33,7 +32,6 @@ while 1:
     acabsl.send(6,5,255,0,0)
     acabsl.send(7,5,255,0,0)
 
-//AND THE GREEN ONE
     acabsl.send(3,0,0,255,0)
     acabsl.send(3,1,0,255,0)
     acabsl.send(4,0,0,255,0)
@@ -47,7 +45,6 @@ while 1:
     acabsl.send(4,4,0,255,0)
     acabsl.send(4,5,0,255,0)
 
-//AND THE BLUE ONE
     acabsl.send(1,1,0,0,255)
     acabsl.send(2,0,0,0,255)
     acabsl.send(2,1,0,0,255)
@@ -68,9 +65,7 @@ while 1:
     acabsl.send(1,5,0,0,255)
     time.sleep(0.02)
 
-//NOW THE FADE
 
-//TOP ROW
     acabsl.speedfade(5,0,0,255,0,50)
     acabsl.speedfade(5,1,0,255,0,50)
     acabsl.speedfade(6,1,0,255,0,50)
@@ -90,7 +85,6 @@ while 1:
     acabsl.speedfade(6,5,0,255,0,50)
     acabsl.speedfade(7,5,0,255,0,50)
 
-//MIDDLE ROW
     acabsl.speedfade(3,0,0,0,255,50)
     acabsl.speedfade(3,1,0,0,255,50)
     acabsl.speedfade(4,0,0,0,255,50)
@@ -104,7 +98,6 @@ while 1:
     acabsl.speedfade(4,4,0,0,255,50)
     acabsl.speedfade(4,5,0,0,255,50)
 
-//BOTTOM ROW
     acabsl.speedfade(1,1,255,0,0,50)
     acabsl.speedfade(2,0,255,0,0,50)
     acabsl.speedfade(2,1,255,0,0,50)
@@ -125,8 +118,6 @@ while 1:
     acabsl.speedfade(1,5,255,0,0,50)
     time.sleep(2.7)
 
-//AND ANOTHER FADE
-//TOPROW
     acabsl.speedfade(5,0,0,0,255,50)
     acabsl.speedfade(5,1,0,0,255,50)
     acabsl.speedfade(6,1,0,0,255,50)
@@ -146,7 +137,6 @@ while 1:
     acabsl.speedfade(6,5,0,0,255,50)
     acabsl.speedfade(7,5,0,0,255,50)
 
-//MIDDLE
     acabsl.speedfade(3,0,255,0,0,50)
     acabsl.speedfade(3,1,255,0,0,50)
     acabsl.speedfade(4,0,255,0,0,50)
@@ -160,7 +150,6 @@ while 1:
     acabsl.speedfade(4,4,255,0,0,50)
     acabsl.speedfade(4,5,255,0,0,50)
 
-//BOTTOM
     acabsl.speedfade(1,1,0,255,0,50)
     acabsl.speedfade(2,0,0,255,0,50)
     acabsl.speedfade(2,1,0,255,0,50)
@@ -181,8 +170,6 @@ while 1:
     acabsl.speedfade(1,5,0,255,0,50)
     time.sleep(2.7)
 
-//AND FADE BACK TO THE FIRST COLORS
-//TOPROW
     acabsl.speedfade(5,0,255,0,0,50)
     acabsl.speedfade(5,1,255,0,0,50)
     acabsl.speedfade(6,1,255,0,0,50)
@@ -202,7 +189,6 @@ while 1:
     acabsl.speedfade(6,5,255,0,0,50)
     acabsl.speedfade(7,5,255,0,0,50)
 
-//MIDDLE
     acabsl.speedfade(3,0,0,255,0,50)
     acabsl.speedfade(3,1,0,255,0,50)
     acabsl.speedfade(4,0,0,255,0,50)
@@ -216,7 +202,6 @@ while 1:
     acabsl.speedfade(4,4,0,255,0,50)
     acabsl.speedfade(4,5,0,255,0,50)
 
-//BOTTOM
     acabsl.speedfade(1,1,0,0,255,50)
     acabsl.speedfade(2,0,0,0,255,50)
     acabsl.speedfade(2,1,0,0,255,50)
@@ -237,7 +222,6 @@ while 1:
     acabsl.speedfade(1,5,0,0,255,50)
     time.sleep(2.7)
 
-//START THE RED STRIPE
     acabsl.send(5,0,255,0,0)
     acabsl.send(5,1,255,0,0)
     acabsl.send(6,1,255,0,0)
@@ -257,7 +241,6 @@ while 1:
     acabsl.send(6,5,255,0,0)
     acabsl.send(7,5,255,0,0)
 
-//AND THE GREEN ONE
     acabsl.send(3,0,0,255,0)
     acabsl.send(3,1,0,255,0)
     acabsl.send(4,0,0,255,0)
@@ -271,7 +254,6 @@ while 1:
     acabsl.send(4,4,0,255,0)
     acabsl.send(4,5,0,255,0)
 
-//AND THE BLUE ONE
     acabsl.send(1,1,0,0,255)
     acabsl.send(2,0,0,0,255)
     acabsl.send(2,1,0,0,255)
@@ -292,9 +274,6 @@ while 1:
     acabsl.send(1,5,0,0,255)
     time.sleep(0.02)
 
-//NOW THE FADE
-
-//TOP ROW
     acabsl.speedfade(5,0,0,255,0,50)
     acabsl.speedfade(5,1,0,255,0,50)
     acabsl.speedfade(6,1,0,255,0,50)
@@ -314,7 +293,6 @@ while 1:
     acabsl.speedfade(6,5,0,255,0,50)
     acabsl.speedfade(7,5,0,255,0,50)
 
-//MIDDLE ROW
     acabsl.speedfade(3,0,0,0,255,50)
     acabsl.speedfade(3,1,0,0,255,50)
     acabsl.speedfade(4,0,0,0,255,50)
@@ -328,7 +306,6 @@ while 1:
     acabsl.speedfade(4,4,0,0,255,50)
     acabsl.speedfade(4,5,0,0,255,50)
 
-//BOTTOM ROW
     acabsl.speedfade(1,1,255,0,0,50)
     acabsl.speedfade(2,0,255,0,0,50)
     acabsl.speedfade(2,1,255,0,0,50)
@@ -349,8 +326,6 @@ while 1:
     acabsl.speedfade(1,5,255,0,0,50)
     time.sleep(2.7)
 
-//AND ANOTHER FADE
-//TOPROW
     acabsl.speedfade(5,0,0,0,255,50)
     acabsl.speedfade(5,1,0,0,255,50)
     acabsl.speedfade(6,1,0,0,255,50)
@@ -370,7 +345,6 @@ while 1:
     acabsl.speedfade(6,5,0,0,255,50)
     acabsl.speedfade(7,5,0,0,255,50)
 
-//MIDDLE
     acabsl.speedfade(3,0,255,0,0,50)
     acabsl.speedfade(3,1,255,0,0,50)
     acabsl.speedfade(4,0,255,0,0,50)
@@ -384,7 +358,6 @@ while 1:
     acabsl.speedfade(4,4,255,0,0,50)
     acabsl.speedfade(4,5,255,0,0,50)
 
-//BOTTOM
     acabsl.speedfade(1,1,0,255,0,50)
     acabsl.speedfade(2,0,0,255,0,50)
     acabsl.speedfade(2,1,0,255,0,50)
@@ -405,8 +378,6 @@ while 1:
     acabsl.speedfade(1,5,0,255,0,50)
     time.sleep(2.7)
 
-//AND FADE BACK TO THE FIRST COLORS
-//TOPROW
     acabsl.speedfade(5,0,255,0,0,50)
     acabsl.speedfade(5,1,255,0,0,50)
     acabsl.speedfade(6,1,255,0,0,50)
@@ -426,7 +397,6 @@ while 1:
     acabsl.speedfade(6,5,255,0,0,50)
     acabsl.speedfade(7,5,255,0,0,50)
 
-//MIDDLE
     acabsl.speedfade(3,0,0,255,0,50)
     acabsl.speedfade(3,1,0,255,0,50)
     acabsl.speedfade(4,0,0,255,0,50)
@@ -440,7 +410,6 @@ while 1:
     acabsl.speedfade(4,4,0,255,0,50)
     acabsl.speedfade(4,5,0,255,0,50)
 
-//BOTTOM
     acabsl.speedfade(1,1,0,0,255,50)
     acabsl.speedfade(2,0,0,0,255,50)
     acabsl.speedfade(2,1,0,0,255,50)
@@ -461,7 +430,6 @@ while 1:
     acabsl.speedfade(1,5,0,0,255,50)
     time.sleep(2.7)
 
-//START THE RED STRIPE
     acabsl.send(5,0,255,0,0)
     acabsl.send(5,1,255,0,0)
     acabsl.send(6,1,255,0,0)
@@ -481,7 +449,6 @@ while 1:
     acabsl.send(6,5,255,0,0)
     acabsl.send(7,5,255,0,0)
 
-//AND THE GREEN ONE
     acabsl.send(3,0,0,255,0)
     acabsl.send(3,1,0,255,0)
     acabsl.send(4,0,0,255,0)
@@ -495,7 +462,6 @@ while 1:
     acabsl.send(4,4,0,255,0)
     acabsl.send(4,5,0,255,0)
 
-//AND THE BLUE ONE
     acabsl.send(1,1,0,0,255)
     acabsl.send(2,0,0,0,255)
     acabsl.send(2,1,0,0,255)
@@ -516,9 +482,6 @@ while 1:
     acabsl.send(1,5,0,0,255)
     time.sleep(0.02)
 
-//NOW THE FADE
-
-//TOP ROW
     acabsl.speedfade(5,0,0,255,0,50)
     acabsl.speedfade(5,1,0,255,0,50)
     acabsl.speedfade(6,1,0,255,0,50)
@@ -538,7 +501,6 @@ while 1:
     acabsl.speedfade(6,5,0,255,0,50)
     acabsl.speedfade(7,5,0,255,0,50)
 
-//MIDDLE ROW
     acabsl.speedfade(3,0,0,0,255,50)
     acabsl.speedfade(3,1,0,0,255,50)
     acabsl.speedfade(4,0,0,0,255,50)
@@ -552,7 +514,6 @@ while 1:
     acabsl.speedfade(4,4,0,0,255,50)
     acabsl.speedfade(4,5,0,0,255,50)
 
-//BOTTOM ROW
     acabsl.speedfade(1,1,255,0,0,50)
     acabsl.speedfade(2,0,255,0,0,50)
     acabsl.speedfade(2,1,255,0,0,50)
@@ -573,8 +534,6 @@ while 1:
     acabsl.speedfade(1,5,255,0,0,50)
     time.sleep(2.7)
 
-//AND ANOTHER FADE
-//TOPROW
     acabsl.speedfade(5,0,0,0,255,50)
     acabsl.speedfade(5,1,0,0,255,50)
     acabsl.speedfade(6,1,0,0,255,50)
@@ -594,7 +553,6 @@ while 1:
     acabsl.speedfade(6,5,0,0,255,50)
     acabsl.speedfade(7,5,0,0,255,50)
 
-//MIDDLE
     acabsl.speedfade(3,0,255,0,0,50)
     acabsl.speedfade(3,1,255,0,0,50)
     acabsl.speedfade(4,0,255,0,0,50)
@@ -608,7 +566,6 @@ while 1:
     acabsl.speedfade(4,4,255,0,0,50)
     acabsl.speedfade(4,5,255,0,0,50)
 
-//BOTTOM
     acabsl.speedfade(1,1,0,255,0,50)
     acabsl.speedfade(2,0,0,255,0,50)
     acabsl.speedfade(2,1,0,255,0,50)
@@ -629,8 +586,6 @@ while 1:
     acabsl.speedfade(1,5,0,255,0,50)
     time.sleep(2.7)
 
-//AND FADE BACK TO THE FIRST COLORS
-//TOPROW
     acabsl.speedfade(5,0,255,0,0,50)
     acabsl.speedfade(5,1,255,0,0,50)
     acabsl.speedfade(6,1,255,0,0,50)
@@ -650,7 +605,6 @@ while 1:
     acabsl.speedfade(6,5,255,0,0,50)
     acabsl.speedfade(7,5,255,0,0,50)
 
-//MIDDLE
     acabsl.speedfade(3,0,0,255,0,50)
     acabsl.speedfade(3,1,0,255,0,50)
     acabsl.speedfade(4,0,0,255,0,50)
@@ -664,7 +618,6 @@ while 1:
     acabsl.speedfade(4,4,0,255,0,50)
     acabsl.speedfade(4,5,0,255,0,50)
 
-//BOTTOM
     acabsl.speedfade(1,1,0,0,255,50)
     acabsl.speedfade(2,0,0,0,255,50)
     acabsl.speedfade(2,1,0,0,255,50)
@@ -685,7 +638,6 @@ while 1:
     acabsl.speedfade(1,5,0,0,255,50)
     time.sleep(2.7)
 
-//START THE RED STRIPE
     acabsl.send(5,0,255,0,0)
     acabsl.send(5,1,255,0,0)
     acabsl.send(6,1,255,0,0)
@@ -705,7 +657,6 @@ while 1:
     acabsl.send(6,5,255,0,0)
     acabsl.send(7,5,255,0,0)
 
-//AND THE GREEN ONE
     acabsl.send(3,0,0,255,0)
     acabsl.send(3,1,0,255,0)
     acabsl.send(4,0,0,255,0)
@@ -719,7 +670,6 @@ while 1:
     acabsl.send(4,4,0,255,0)
     acabsl.send(4,5,0,255,0)
 
-//AND THE BLUE ONE
     acabsl.send(1,1,0,0,255)
     acabsl.send(2,0,0,0,255)
     acabsl.send(2,1,0,0,255)
@@ -740,9 +690,6 @@ while 1:
     acabsl.send(1,5,0,0,255)
     time.sleep(0.02)
 
-//NOW THE FADE
-
-//TOP ROW
     acabsl.speedfade(5,0,0,255,0,50)
     acabsl.speedfade(5,1,0,255,0,50)
     acabsl.speedfade(6,1,0,255,0,50)
@@ -762,7 +709,6 @@ while 1:
     acabsl.speedfade(6,5,0,255,0,50)
     acabsl.speedfade(7,5,0,255,0,50)
 
-//MIDDLE ROW
     acabsl.speedfade(3,0,0,0,255,50)
     acabsl.speedfade(3,1,0,0,255,50)
     acabsl.speedfade(4,0,0,0,255,50)
@@ -776,7 +722,6 @@ while 1:
     acabsl.speedfade(4,4,0,0,255,50)
     acabsl.speedfade(4,5,0,0,255,50)
 
-//BOTTOM ROW
     acabsl.speedfade(1,1,255,0,0,50)
     acabsl.speedfade(2,0,255,0,0,50)
     acabsl.speedfade(2,1,255,0,0,50)
@@ -797,8 +742,6 @@ while 1:
     acabsl.speedfade(1,5,255,0,0,50)
     time.sleep(2.7)
 
-//AND ANOTHER FADE
-//TOPROW
     acabsl.speedfade(5,0,0,0,255,50)
     acabsl.speedfade(5,1,0,0,255,50)
     acabsl.speedfade(6,1,0,0,255,50)
@@ -818,7 +761,6 @@ while 1:
     acabsl.speedfade(6,5,0,0,255,50)
     acabsl.speedfade(7,5,0,0,255,50)
 
-//MIDDLE
     acabsl.speedfade(3,0,255,0,0,50)
     acabsl.speedfade(3,1,255,0,0,50)
     acabsl.speedfade(4,0,255,0,0,50)
@@ -832,7 +774,6 @@ while 1:
     acabsl.speedfade(4,4,255,0,0,50)
     acabsl.speedfade(4,5,255,0,0,50)
 
-//BOTTOM
     acabsl.speedfade(1,1,0,255,0,50)
     acabsl.speedfade(2,0,0,255,0,50)
     acabsl.speedfade(2,1,0,255,0,50)
@@ -853,8 +794,6 @@ while 1:
     acabsl.speedfade(1,5,0,255,0,50)
     time.sleep(2.7)
 
-//AND FADE BACK TO THE FIRST COLORS
-//TOPROW
     acabsl.speedfade(5,0,255,0,0,50)
     acabsl.speedfade(5,1,255,0,0,50)
     acabsl.speedfade(6,1,255,0,0,50)
@@ -874,7 +813,6 @@ while 1:
     acabsl.speedfade(6,5,255,0,0,50)
     acabsl.speedfade(7,5,255,0,0,50)
 
-//MIDDLE
     acabsl.speedfade(3,0,0,255,0,50)
     acabsl.speedfade(3,1,0,255,0,50)
     acabsl.speedfade(4,0,0,255,0,50)
@@ -888,7 +826,6 @@ while 1:
     acabsl.speedfade(4,4,0,255,0,50)
     acabsl.speedfade(4,5,0,255,0,50)
 
-//BOTTOM
     acabsl.speedfade(1,1,0,0,255,50)
     acabsl.speedfade(2,0,0,0,255,50)
     acabsl.speedfade(2,1,0,0,255,50)

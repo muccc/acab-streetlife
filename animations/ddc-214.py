@@ -63,7 +63,6 @@ while 1:
     acabsl.send(7,5,0,0,0)
     time.sleep(1.0)
 
-// PAT1
     acabsl.speedfade(1,1,255,0,0,193)
     acabsl.speedfade(2,0,255,0,0,193)
     acabsl.speedfade(2,1,255,0,0,193)
@@ -112,10 +111,10 @@ while 1:
     acabsl.speedfade(6,5,255,0,0,193)
     acabsl.speedfade(7,5,255,0,0,193)
 
-//SLEEP
+#SLEEP
     time.sleep(2.0)
 
-// START CHANGE 1
+# START CHANGE 1
     acabsl.speedfade(5,0,255,0,0,193)
     acabsl.speedfade(5,1,255,0,0,193)
     acabsl.speedfade(6,1,255,0,0,193)
@@ -151,7 +150,7 @@ while 1:
     acabsl.speedfade(0,5,255,0,0,193)
     acabsl.speedfade(1,5,255,0,0,193)
 
-// START CHANGE 2
+# START CHANGE 2
     acabsl.speedfade(5,0,0,255,0,193)
     acabsl.speedfade(5,1,0,255,0,193)
     acabsl.speedfade(6,1,0,255,0,193)
@@ -187,7 +186,7 @@ while 1:
     acabsl.speedfade(0,5,0,255,0,193)
     acabsl.speedfade(1,5,0,255,0,193)
 
-// CHANGE COLORS
+# CHANGE COLORS
     acabsl.speedfade(1,1,110,26,195,148)
     acabsl.speedfade(2,0,110,26,195,148)
     acabsl.speedfade(2,1,110,26,195,148)
@@ -292,7 +291,7 @@ while 1:
     acabsl.speedfade(0,5,255,168,0,189)
     acabsl.speedfade(1,5,255,168,0,189)
 
-// BLINKEN
+# BLINKEN
     acabsl.send(0,0,0,0,0)
     acabsl.send(0,1,0,0,0)
     acabsl.send(0,2,0,0,0)

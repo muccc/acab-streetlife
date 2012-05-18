@@ -11,7 +11,6 @@ def rc():
 def rid():
     return [random.randint(0,8),random.randint(0,6)]
 
-
 while 1:
     acabsl.speedfade(0,0,0,0,255,300)
     acabsl.speedfade(0,1,0,0,255,300)

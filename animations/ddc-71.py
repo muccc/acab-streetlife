@@ -13,7 +13,7 @@ def rid():
 
 
 while 1:
-#SEE HTTP://EN.WIKIPEDIA.ORG#/WIKI/GREEN_FLASH
+#SEE HTTP:#EN.WIKIPEDIA.ORG#/WIKI/GREEN_FLASH
     acabsl.send(0,0,104,130,165)
     acabsl.send(0,1,104,130,165)
     acabsl.send(0,2,104,130,165)
@@ -209,7 +209,7 @@ while 1:
     acabsl.speedfade(7,4,0,255,0,309)
     acabsl.speedfade(7,5,0,255,0,309)
     time.sleep(0.05)
-#SEE HTTP://EN.WIKIPEDIA.ORG#/WIKI/GREEN_FLASH
+#SEE HTTP:#EN.WIKIPEDIA.ORG#/WIKI/GREEN_FLASH
     acabsl.send(0,0,104,130,165)
     acabsl.send(0,1,104,130,165)
     acabsl.send(0,2,104,130,165)

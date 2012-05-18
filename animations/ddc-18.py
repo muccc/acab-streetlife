@@ -13,7 +13,7 @@ def rid():
 
 
 while 1:
-# CREATED USING HTTP://PASTEBIN.COM/F7F36F8CD
+# CREATED USING HTTP:#PASTEBIN.COM/F7F36F8CD
 
     acabsl.send(0,0,0,0,0)
     acabsl.send(0,1,0,0,0)
