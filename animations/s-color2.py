@@ -25,6 +25,8 @@ for row in range(0,6):
       maxdist = dist
 
 hoffset = 0
+update()
+
 while 1:
   #hoffset += random.gauss(0.01,0.02)
   hoffset += 0.1
@@ -39,6 +41,7 @@ while 1:
       h = (h+hoffset) % 1.
       r,g,b = colorsys.hsv_to_rgb(h, dist, 1.)
       send(col, row, r*255, g*255, b*255, tick)
+  update()
   time.sleep(tick)
     
 

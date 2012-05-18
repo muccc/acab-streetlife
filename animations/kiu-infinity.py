@@ -10,15 +10,16 @@ seq = 	[
 l = 1
 s = 0.1
 
+acabsl.update()
 for c in range(0,16):
     for r in range(0,6):
 	acabsl.send(c,r,0,0,255, 0.5)
+acabsl.update()
 
 time.sleep(0.5)
 
 i = 0
 
-acabsl.update()
 while 1:
     acabsl.send(4+seq[0][i],seq[1][i],255,255,255, 0.5)
 

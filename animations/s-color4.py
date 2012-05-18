@@ -26,6 +26,7 @@ for row in range(0,8):
       maxdist = dist
 
 hoffset = 0
+update()
 while 1:
   midcol = min(14,max(1, midcol + random.gauss(0,0.1)))
   midrow = min(4,max(1, midrow + random.gauss(0,0.1)))
