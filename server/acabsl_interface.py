@@ -126,7 +126,7 @@ def sendUpdate(mode):
     if mode and not buffered:
         buffered = True
         for i in interfaces:
-            sendSetColor(0,0,0,0,interfaces[i])
+            sendMSFade(0,0,0,0,1500,interfaces[i])
     buffered = mode
     if buffered:
         cmd = "%cU"%chr(0)
