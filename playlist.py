@@ -43,6 +43,7 @@ def getPlaylist():
 
             #[30, ["die_bar_thema.py"]],
             #[5, ["jamaikabeat.py"]],
+            [30, ["space_invaders.py"]] ,
             #[time_in_seconds, [simultaniois_animation1, simultanious_animation2, ....]]
     ]
     for entry in playlist:
