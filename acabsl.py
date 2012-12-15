@@ -7,15 +7,25 @@ PORT=8080
 UDPHOST="127.0.0.1"
 UDPPORT=5005
 SIMULATORPORT=5006
+
+WALLSIZEX=8
+WALLSIZEY=6
+NOOFWALLS=2
+
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-def send(x,y,r,g,b,t=0):
+def send(w,x,y,r,g,b,t=0):
+  w=int(w)
   x=int(x)
   y=int(y)
   r=int(r)
   g=int(g)
   b=int(b)
   ms = int(t * 1000)
+
+  # recalculate x and y based on input x,y and wall no w
+  x=((w*WALLSIZEX)+x)
+
   msg = "%c%cC%c%c%c%c%c"%(x,y,r,g,b,ms>>8,ms&0xFF)
   sock.sendto(msg, (UDPHOST, UDPPORT))
   sock.sendto(msg, (UDPHOST, SIMULATORPORT))

@@ -4,11 +4,13 @@ import colorsys
 import random
 import time
 
+NOOFWALLS=2
 tick = 0.2
 
 def setcol(col, r, g, b, time):
-    for i in range(0,6):
-    	send(col,i,r,g,b,time);
+    for wall in range(NOOFWALLS):
+        for i in range(0,6):
+	    send(wall,col,i,r,g,b,time);
     update()
 h = 0
 col = 0
@@ -18,7 +20,7 @@ while 1:
     h = h % 1.
 
     col += 1
-    col = col % 16
+    col = col % 8
 
     r,g,b = colorsys.hsv_to_rgb(h, 1., 1.)
     setcol(col, r*255, g*255, b*255, tick*3)
