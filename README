@@ -48,11 +48,15 @@ Example:
   
   #enable double buffering
   acabsl.update()
+
+  wall1 = 0
+  wall2 = 1
   
   #let every pixel fade to red
-  for x in range(16):
+  for x in range(8):
       for y in range(6):
-          acabsl.send(w,x,y,255,0,0,500)
+          acabsl.send(wall1,x,y,255,0,0,500)
+          acabsl.send(wall2,x,y,255,0,0,500)
   
   #execute all fades at once
   acabsl.update()
