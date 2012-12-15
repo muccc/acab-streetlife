@@ -4,24 +4,33 @@ You can get our software on github: https://github.com/muccc/acab-streetlife
 Animations are created as python scripts which run on the
 computer controlling the installation.
 
-The ACAB wall has 16x6 pixels. They are addressed using their x and y coordinates.
+In the multiwall setting the ACAB wall has two walls with 8x6 pixels each. They are addressed using the wall number [0,1] and their x and y coordinates.
 The setup looks like this: (x,y)
 
-  (0,0), (1,0) ... (14,0), (15,0)
-  (0,1), (1,1) ... (14,1), (15,1)
+Wall1:
+  (0,0,0), (0,1,0) ... (0,6,0), (1,7,0)
+  (0,0,1), (0,1,1) ... (0,6,1), (1,7,1)
     .      .          .       .
     .      .          .       .
     .      .          .       .
-  (0,4), (1,4) ... (14,4), (15,4)
-  (0,5), (1,5) ... (14,5), (15,5)
+  (0,0,4), (0,1,4) ... (0,6,4), (1,7,4)
+  (0,0,5), (0,1,5) ... (0,6,5), (1,7,5)
 
+Wall2:
+  (1,0,0), (1,1,0) ... (1,6,0), (1,7,0)
+  (1,0,1), (1,1,1) ... (1,6,1), (1,7,1)
+    .      .          .       .
+    .      .          .       .
+    .      .          .       .
+  (1,0,4), (1,1,4) ... (1,6,4), (1,7,4)
+  (1,0,5), (1,1,5) ... (1,6,5), (1,7,5)
 
 Use the acabsl library for our git repository to create your own scripts.
 
 It provides two methods:
 
-  acabsl.send(x,y,r,g,b,time):
-      Send a new color to pixel (x,y).
+  acabsl.send(w,x,y,r,g,b,time):
+      Send a new color to pixel (x,y) on wall no w.
       r,g,b are 0-255
       time is in milliseconds:
           time=0  => Instant update
@@ -43,7 +52,7 @@ Example:
   #let every pixel fade to red
   for x in range(16):
       for y in range(6):
-          acabsl.send(x,y,255,0,0,500)
+          acabsl.send(w,x,y,255,0,0,500)
   
   #execute all fades at once
   acabsl.update()
