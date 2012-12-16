@@ -39,17 +39,22 @@ def update(buffered = True):
   sock.sendto(msg, (UDPHOST, UDPPORT))
   sock.sendto(msg, (UDPHOST, SIMULATORPORT))
     
-def speedfade(x,y,r,g,b,speed):
+def speedfade(w,x,y,r,g,b,speed):
+  w=int(w)
   x=int(x)
   y=int(y)
   r=int(r)
   g=int(g)
   b=int(b)
+  
+  # recalculate x and y based on input x,y and wall no w
+  x=((w*WALLSIZEX)+x)
+  
   msg = "%c%cF%c%c%c%c%c"%(x,y,r,g,b,speed>>8,speed&0xFF)
   sock.sendto(msg, (UDPHOST, UDPPORT))
   sock.sendto(msg, (UDPHOST, SIMULATORPORT))
 
-def matrix(targetsize_x=16,targetsize_y=6):
+def matrix(targetsize_x=WALLSIZEX,targetsize_y=WALLSIZEY):
   x=0
   y=0
   matrix = []
