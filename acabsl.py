@@ -1,12 +1,12 @@
 import urllib2
 import socket
 
-HOST="127.1"
-PORT=8080
+#HOST="127.1"
+#PORT=8080
 
-UDPHOST="127.0.0.1"
-UDPPORT=5005
-SIMULATORPORT=5006
+UDPHOST="localhost"
+UDPPORT=5008
+#SIMULATORPORT=4006
 
 WALLSIZEX=8
 WALLSIZEY=6
@@ -28,7 +28,7 @@ def send(w,x,y,r,g,b,t=0):
 
   msg = "%c%cC%c%c%c%c%c"%(x,y,r,g,b,ms>>8,ms&0xFF)
   sock.sendto(msg, (UDPHOST, UDPPORT))
-  sock.sendto(msg, (UDPHOST, SIMULATORPORT))
+  #sock.sendto(msg, (UDPHOST, SIMULATORPORT))
 
 def update(buffered = True):
   if buffered:
@@ -37,7 +37,7 @@ def update(buffered = True):
     msg = "%c%cU%c%c%c%c%c"%(0,0,0,0,0,0,0) 
 
   sock.sendto(msg, (UDPHOST, UDPPORT))
-  sock.sendto(msg, (UDPHOST, SIMULATORPORT))
+  #sock.sendto(msg, (UDPHOST, SIMULATORPORT))
     
 def speedfade(w,x,y,r,g,b,speed):
   w=int(w)
@@ -52,7 +52,7 @@ def speedfade(w,x,y,r,g,b,speed):
   
   msg = "%c%cF%c%c%c%c%c"%(x,y,r,g,b,speed>>8,speed&0xFF)
   sock.sendto(msg, (UDPHOST, UDPPORT))
-  sock.sendto(msg, (UDPHOST, SIMULATORPORT))
+  #sock.sendto(msg, (UDPHOST, SIMULATORPORT))
 
 def matrix(targetsize_x=WALLSIZEX,targetsize_y=WALLSIZEY):
   x=0

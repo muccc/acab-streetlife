@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import pygame
 from pygame.locals import *
 import sys
@@ -9,14 +11,14 @@ import Queue
 import sys
 
 UDP_IP="127.0.0.1"
-UDP_PORT=5006
+UDP_PORT=int(sys.argv[2])
 q = Queue.Queue(100)
 
 
 xsize = 60
 ysize = 40
 
-xpixels = 16
+xpixels = 8
 ypixels = 6
 
 acab = [[[0,0,0,0,0,0,0,0,0] for col in range(ypixels)] for row in range(xpixels)]
@@ -54,7 +56,7 @@ pygame.init()
 
 screen = pygame.display.set_mode((xpixels*xsize, ypixels*ysize))
 screen.fill((255, 255, 255))
-
+pygame.display.set_caption(sys.argv[1])
 updatethread = threading.Thread(target=handle_events)
 updatethread.start()
 

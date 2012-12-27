@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import socket
 import thread
 import time
@@ -25,6 +26,9 @@ walls = [{'host': 'localhost', 'port': 5001, 'simhost': 'localhost', 'simport': 
 inputs = [{'port': 5007, 'priority': 0, 'timeout': 1},
           {'port': 5008, 'priority': 1, 'timeout': 1}]
 
+simulation = sys.argv[1] == 'simulation'
+nosimulation = sys.argv[1] == 'nosimulation'
+
 input_sockets = []
 for i in inputs:
     i['socket'] = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -42,8 +46,10 @@ def is_timed_out(i):
     return time.time() - i['timestamp'] > i['timeout']
 
 def send_to_wall(data, wall):
-    wall['socket'].sendto(data, (wall['host'], wall['port']))
-    wall['socket'].sendto(data, (wall['simhost'], wall['simport']))
+    if not simulation:
+        wall['socket'].sendto(data, (wall['host'], wall['port']))
+    if not nosimulation: 
+        wall['socket'].sendto(data, (wall['simhost'], wall['simport']))
 
 def find_wall(x,y):
     # hack for congress
@@ -68,13 +74,13 @@ def forward(data, source):
         x = ord(data[0])
         y = ord(data[1])
         cmd = data[2]
-        print x,y,cmd
+        #print x,y,cmd
 
         if cmd != 'U':
             wall = find_wall(x, y)
             x,y = translate_for_wall(x,y,wall)
             data = '%c%c%s'%(chr(x), chr(y), data[2:])
-            print '->', x, y, wall['simport']
+            #print '->', x, y, wall['simport']
             send_to_wall(data, wall)
             if wall not in tainted['source']:
                 tainted['source'].append(wall)

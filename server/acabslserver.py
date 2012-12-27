@@ -6,7 +6,7 @@ import Queue
 import sys
 
 UDP_IP="0.0.0.0"
-UDP_PORT=5005
+UDP_PORT=int(sys.argv[1])
 q = Queue.Queue(100)
 
 def writer():

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+./acabsimulator.py "Wall 0" 4001 &
+./acabsimulator.py "Wall 1" 4002 &
+
+./server/acabslrouter.py simulation &
+
+echo press enter to stop the simulation
+read dummy
+
+kill `pidof -x acabslrouter.py`
+kill `pidof -x acabsimulator.py`

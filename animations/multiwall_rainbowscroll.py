@@ -10,7 +10,7 @@ tick = 0.2
 def setcol(col, r, g, b, time):
     for wall in range(NOOFWALLS):
         for i in range(0,6):
-	    send(wall,col,i,r,g,b,time);
+            send(wall,col,i,r,g,b,time);
     update()
 h = 0
 col = 0
