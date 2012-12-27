@@ -25,7 +25,7 @@ Wall2:
   (1,0,4), (1,1,4) ... (1,6,4), (1,7,4)
   (1,0,5), (1,1,5) ... (1,6,5), (1,7,5)
 
-Use the acabsl library for our git repository to create your own scripts.
+Use the acabsl library from our git repository to create your own scripts.
 
 It provides two methods:
 
@@ -39,7 +39,7 @@ It provides two methods:
   acabsl.update():
       Use this command if you want to use double buffering.
       Use it once before you do your first acabsl.send() call.
-      The use it everytime you want new commands to be executed.
+      Then use it everytime you want new commands to be executed.
 
 
 Example:
@@ -65,12 +65,15 @@ Example:
 Have a look at the scripts in the animations directory for examples. We also have audio examples ;)
 
 
-Execute the simulator.py file to run a simulation of the wall on your computer:
-  python simulator.py
+Execute the startsimulation file to run a simulation of the walls on your computer:
+  ./startsimulation
+
+It will open two windows with simulated acab walls. Use your imagination to form cylinders for 29c3 ;)
 
 Then execute the script you wrote to display it on the simulator.
 
-Send new scripts via a pull request to our github account: https://github.com/muccc/acab-streetlife
+Send new scripts via a pull request to our github account: https://github.com/muccc/acab-streetlife and we will put them
+into rotation on the walls.
 
 Have fun :)
 
