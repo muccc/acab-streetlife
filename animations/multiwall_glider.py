@@ -125,37 +125,38 @@ def pattern(dimensions, x, y, color, ftime, pixels, draw = True):
         acabsl.update()
         time.sleep(ftime)
 
-fill(DIM, (0, 0, 0), 0)
-hlscan(DIM, 1, (255, 0, 0), (0, 255, 0), 0.1, 0)
+while True:
+    fill(DIM, (0, 0, 0), 0)
+    hlscan(DIM, 1, (255, 0, 0), (0, 255, 0), 0.1, 0)
 
-lifeform(DIM, 1, 2, (255, 0, 0), 1)
-fill(DIM, (0, 0, 0), 1)
+    lifeform(DIM, 1, 2, (255, 0, 0), 1)
+    fill(DIM, (0, 0, 0), 1)
 
-vlscan(DIM, 1, (255, 0, 0), (0, 0, 255), 0.2, 0)
-vlscan(DIM, -1, (0, 255, 0), (0, 0, 0), 0.2, 0)
+    vlscan(DIM, 1, (255, 0, 0), (0, 0, 255), 0.2, 0)
+    vlscan(DIM, -1, (0, 255, 0), (0, 0, 0), 0.2, 0)
 
-hpscan(DIM, 1, (0, 0, 0), 0.1, 0, partial(lifeform, y=2, color=(255, 255, 0)))
+    hpscan(DIM, 1, (0, 0, 0), 0.1, 0, partial(lifeform, y=2, color=(255, 255, 0)))
 
-fill(DIM, (0, 0, 255), 3)
-fill(DIM, (0, 255, 255), 2)
-fill(DIM, (0, 255, 0), 1)
+    fill(DIM, (0, 0, 255), 3)
+    fill(DIM, (0, 255, 255), 2)
+    fill(DIM, (0, 255, 0), 1)
 
-hlscan(DIM, 1, (255, 0, 0), (0, 255, 0), 0.1, 0)
-hlscan(DIM, -1, (255, 0, 0), (0, 128, 128), 0.1, 0)
-hlscan(DIM, 1, (255, 0, 0), (64, 0, 128), 0.1, 0)
-hlscan(DIM, 1, (255, 0, 0), (0, 0, 0), 0.2, 0.3)
+    hlscan(DIM, 1, (255, 0, 0), (0, 255, 0), 0.1, 0)
+    hlscan(DIM, -1, (255, 0, 0), (0, 128, 128), 0.1, 0)
+    hlscan(DIM, 1, (255, 0, 0), (64, 0, 128), 0.1, 0)
+    hlscan(DIM, 1, (255, 0, 0), (0, 0, 0), 0.2, 0.3)
 
-fill(DIM, (0, 255, 0), 3)
-fill(DIM, (0, 0, 0), 3)
+    fill(DIM, (0, 255, 0), 3)
+    fill(DIM, (0, 0, 0), 3)
 
-hlscan(DIM, 1, (255, 0, 0), (0, 0, 0), 0, 0.5)
-hlscan(DIM, -1, (255, 0, 0), (0, 255, 0), 0, 0.5, True)
+    hlscan(DIM, 1, (255, 0, 0), (0, 0, 0), 0, 0.5)
+    hlscan(DIM, -1, (255, 0, 0), (0, 255, 0), 0, 0.5, True)
 
-fill(DIM, (0, 0, 0), 5)
+    fill(DIM, (0, 0, 0), 5)
 
-hpscan(DIM, 1, (255, 0, 0), 0.1, 0, partial(lifeform, y=2, color=(255, 255, 0)))
-hpscan(DIM, 1, (0, 0, 0), 0.1, 0, partial(lifeform, y=1, color=(0, 255, 0)))
-hpscan(DIM, 1, (0, 0, 255), 0.1, 0, partial(lifeform, y=3, color=(255, 255, 0)))
-hpscan(DIM, 1, (0, 0, 0), 0.1, 0, partial(lifeform, y=2, color=(255, 255, 0)))
+    hpscan(DIM, 1, (255, 0, 0), 0.1, 0, partial(lifeform, y=2, color=(255, 255, 0)))
+    hpscan(DIM, 1, (0, 0, 0), 0.1, 0, partial(lifeform, y=1, color=(0, 255, 0)))
+    hpscan(DIM, 1, (0, 0, 255), 0.1, 0, partial(lifeform, y=3, color=(255, 255, 0)))
+    hpscan(DIM, 1, (0, 0, 0), 0.1, 0, partial(lifeform, y=2, color=(255, 255, 0)))
 
-fill(DIM, (0, 0, 0), 5)
+    fill(DIM, (0, 0, 0), 5)
