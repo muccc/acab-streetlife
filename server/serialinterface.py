@@ -54,7 +54,7 @@ class SerialInterface:
 
 
     def write(self,message):
-        print 'writing', list(message)
+        #print 'writing', list(message)
         if self.dummy:
             return
         try:
