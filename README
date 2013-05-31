@@ -24,7 +24,7 @@ It provides two methods:
 
   acabsl.send(x,y,r,g,b,time,w):
       Send a new color to pixel (<x>,<y>) on wall no <w>. If you ommit 'w', the
-      server will choose a wall for you, when the scripts gets executed.
+      server will choose a wall for you, when the script gets executed.
 
       'r','g','b' are in [0-255]
 
@@ -86,7 +86,7 @@ Send new scripts via a pull request to our github account: https://github.com/mu
 into rotation on the walls.
 
 You can also directly stream your animation to the wall if you supply your script with the following
-arguments: '--host=192.168.2.2 --port=5010'
+arguments: '--host=192.168.20.2 --port=6002'
 
 Have fun :)
 
