@@ -6,8 +6,12 @@ import Queue
 import sys
 
 UDP_IP="0.0.0.0"
-UDP_PORT=int(sys.argv[1])
+
+config_file = sys.argv[1]
+execfile(config_file)
+
 q = Queue.Queue(100)
+acabsl_interface.init(serials, interfaces, matrix)
 
 def writer():
     while 1:
@@ -26,8 +30,6 @@ def writer():
             if cmd == 'C':
                 #print 'set color' 
                 acabsl_interface.send(x,y,r,g,b,ms/1000.)
-            elif cmd == 'F':
-                acabsl_interface.sendSpeedFade(x,y,r,g,b,ms/1000.)
             elif cmd == 'U':
                 buffered = False
                 if ord(data[0]): buffered = True
