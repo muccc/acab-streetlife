@@ -32,12 +32,13 @@ It provides two methods:
           'time'=0  => Instant update
           'time'>0  => Fade to the new color in <time> seconds
 
-  acabsl.update(w):
+  acabsl.update():
       Use this command if you want to use double buffering.
       Use it once before you do your first acabsl.send() call.
       Then use it everytime you want new commands to be executed.
       
-      Currently this command affects all walls at the same time.
+      This command only affects walls which have been modified since the
+      last call to acabsl.update()
 
 It also provides the following constants:
 acabsl.WALLSIZEX:
