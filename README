@@ -30,9 +30,12 @@ Use the acabsl library from our git repository to create your own scripts.
 It provides two methods:
 
   acabsl.send(x,y,r,g,b,time,w):
-      Send a new color to pixel (<x>,<y>) on wall no <w>. If you ommit 'w'
-      'r','g','b' are 0-255
-      time is in milliseconds:
+      Send a new color to pixel (<x>,<y>) on wall no <w>. If you ommit 'w', the
+      server will choose a wall for you, when the scripts gets executed.
+
+      'r','g','b' are in [0-255]
+
+      time is in seconds:
           'time'=0  => Instant update
           'time'>0  => Fade to the new color in <time> seconds
 
