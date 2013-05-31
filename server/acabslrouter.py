@@ -19,11 +19,11 @@ with lower priority will be activated.
 """
 
 #walls = [[host, port, startx, starty, sizex, sizey, socket],
-walls = [{'host': 'localhost', 'port': 5001, 'simhost': 'localhost', 'simport': 4001, 'startx': 0, 'starty': 0, 'sizex': 16, 'sizey': 6}]
+walls = [{'host': 'localhost', 'port': 5000, 'simhost': 'localhost', 'simport': 4000, 'startx': 0, 'starty': 0, 'sizex': 16, 'sizey': 6}]
 
 #inputs = [[port, priority, timeout, socket],
-inputs = [{'port': 5007, 'priority': 0, 'timeout': 1},
-          {'port': 5008, 'priority': 1, 'timeout': 1}]
+inputs = [{'port': 6000, 'priority': 0, 'timeout': 1},
+          {'port': 6001, 'priority': 1, 'timeout': 1}]
 
 simulation = sys.argv[1] == 'simulation'
 nosimulation = sys.argv[1] == 'nosimulation'

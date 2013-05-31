@@ -3,7 +3,7 @@ import socket
 import sys, getopt
 
 UDPHOST="localhost"
-UDPPORT=5008
+UDPPORT=6000
 
 WALLSIZEX=16
 WALLSIZEY=6
