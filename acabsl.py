@@ -5,9 +5,9 @@ import sys, getopt
 UDPHOST="localhost"
 UDPPORT=5008
 
-WALLSIZEX=8
+WALLSIZEX=16
 WALLSIZEY=6
-NOOFWALLS=2
+NOOFWALLS=1
 WALL=0
 
 # Throws an error if an option is not recognized

@@ -19,8 +19,7 @@ with lower priority will be activated.
 """
 
 #walls = [[host, port, startx, starty, sizex, sizey, socket],
-walls = [{'host': 'localhost', 'port': 5001, 'simhost': 'localhost', 'simport': 4001, 'startx': 0, 'starty': 0, 'sizex': 8, 'sizey': 6},
-         {'host': 'localhost', 'port': 5002, 'simhost': 'localhost', 'simport': 4002, 'startx': 8, 'starty': 0, 'sizex': 8, 'sizey': 6}]
+walls = [{'host': 'localhost', 'port': 5001, 'simhost': 'localhost', 'simport': 4001, 'startx': 0, 'starty': 0, 'sizex': 16, 'sizey': 6}]
 
 #inputs = [[port, priority, timeout, socket],
 inputs = [{'port': 5007, 'priority': 0, 'timeout': 1},
@@ -52,10 +51,10 @@ def send_to_wall(data, wall):
         wall['socket'].sendto(data, (wall['simhost'], wall['simport']))
 
 def find_wall(x,y):
-    # hack for congress
-    if x < 8:
-        return walls[0]
-    return walls[1]
+    # hack for dmm-hackerbruecke
+    #if x < 16:
+    #    return walls[0]
+    return walls[0]
 
 def translate_for_wall(x,y,wall):
     nx = x - wall['startx']
@@ -89,8 +88,8 @@ def forward(data, source):
                 send_to_wall(data, wall)
             tainted['source'] = []
     except Exception as e:
-        print "Unexpected error:", e
-
+        import traceback
+        traceback.print_exc()
 
 while True:
     readable = select.select(input_sockets, [], [])[0]

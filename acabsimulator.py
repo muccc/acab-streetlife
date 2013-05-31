@@ -18,7 +18,7 @@ q = Queue.Queue(100)
 xsize = 60
 ysize = 40
 
-xpixels = 8
+xpixels = 16
 ypixels = 6
 
 acab = [[[0,0,0,0,0,0,0,0,0] for col in range(ypixels)] for row in range(xpixels)]
@@ -111,7 +111,8 @@ def writer():
             elif cmd == 'U':
                 pass
         except Exception as e:
-            print "Unexpected error:", e
+            import traceback
+            traceback.print_exc()
 
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
