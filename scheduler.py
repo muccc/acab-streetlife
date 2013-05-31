@@ -23,9 +23,9 @@ while 1:
   pids=open(pidfile,"w")
   pids.close()
   for animation in i[1]:
-    p=subprocess.Popen(["python", animation])
+    p=subprocess.Popen(animation)
     processlist.append(p)
-    print "[" + str(p.pid) + "] " + animation
+    print "[" + str(p.pid) + "] " + str(animation)
     pids= open(pidfile,'a')
     pids.write(str(p.pid)+"\n")
     pids.close()

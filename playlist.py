@@ -12,11 +12,9 @@ def ddc_chooser():
 
 def getPlaylist():
     playlist = [
-            #[time_in_seconds, [simultaniois_animation1, simultanious_animation2, ....]]
-            [20, ["wall0_screw.py", "wall1_rainbowscroll.py"]],
-            [20, ["multiwall_rainbowscroll.py"]],
-            [20, ["warp_core.py"]],
+            #[time_in_seconds, [[simultanious_animation1, argument1, ...], [simultanious_animation2, argument1, ...], ...]]
+            [20, [["python","animations/screw.py","wall=0"], ["python","animations/rainbowscroll.py","--wall=1"]]],
+            [20, [["python","animations/multiwall_rainbowscroll.py"]]],
+            [20, [["python","animations/multiwall_warp_core.py"]]],
     ]
-    for entry in playlist:
-        entry[1] = [ 'animations/'+path for path in entry[1]]
     return playlist
