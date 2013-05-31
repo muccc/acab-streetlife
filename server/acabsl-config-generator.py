@@ -4,7 +4,39 @@ import time
 import sys
 import os
 
-config_file = open(sys.argv[1], 'w')
+def get_matrix(matrix):
+    m = '['
+    for line in matrix:
+        m+='['
+        for entry in line:
+            if entry != None:
+                m+='(0x%02X,%d), '%(entry[0], entry[1])
+            else:
+                m+= 'None, '
+        m = m[:-2] + '],\n'
+    m = m[:-2] + ']\n'
+    return m
+
+def print_matrix(matrix):
+    print "Currently known matrix:"
+    print get_matrix(matrix)
+
+def write_config(port, serials, interfaces, matrix):
+    config_file = open(sys.argv[1], 'w')
+    
+    config_file.write("UDP_PORT = %d\n"%port)
+    config_file.write("serials = %s\n"%str(serials))
+    config_file.write("interfaces = %s\n"%str(interfaces))
+
+    if len(matrix) > 0:
+        config_file.write("matrix = ")
+        m = get_matrix(matrix)
+        m = m.split('\n')
+        config_file.write(m[0]+'\n')
+
+        for line in m[1:]:
+            config_file.write("          " + line + '\n')
+    config_file.close()
 
 try:
     serials1 = set(os.listdir('/dev/serial/by-id'))
@@ -13,7 +45,7 @@ except:
 
 serials1 = set()
 
-raw_input("Please attach the USB to RS485 bridges and press enter.")
+raw_input("Please attach the USB to RS485 bridges and press enter.: ")
 
 serials2 = set(os.listdir('/dev/serial/by-id'))
 
@@ -24,15 +56,15 @@ if len(serials) == 0:
     sys.exit(1)
 
 for serial in serials:
-    print "Found device", serial
+    print "Found device: ", serial
 
 interfaces = range(len(serials))
 
-config_file.write("UDP_PORT = 5004\n")
-config_file.write("serials = %s\n"%(str(serials)))
-config_file.write("interfaces = %s\n"%(str(interfaces)))
+matrix = []
 
-acabsl_interface.init(serials, interfaces, [])
+write_config(5004, serials, interfaces, matrix)
+
+acabsl_interface.init(serials, interfaces, matrix)
 
 def get_number(message, base=10, default=None):
     number = None
@@ -67,28 +99,11 @@ print "Your matrix is",xsize,"X",ysize,"big."
 
 min_address = get_number("Please enter the smallest lamp address (in hexadecimal)[10]: ", 16, 0x10)
 max_address = get_number("Please enter the smallest lamp address (in hexadecimal)[90]: ", 16, 0x90)
-print "Tested address range: %02X - %02X"%(min_address, max_address)
+print "Tested address range: %02X - %02X (%d addresses)"%(min_address, max_address, max_address-min_address+1)
 
 addresses = range(min_address, max_address+1)
 
 matrix = [[None for x in range(xsize)] for y in range(ysize)]
-
-def get_matrix(matrix):
-    m = '['
-    for line in matrix:
-        m+='['
-        for entry in line:
-            if entry != None:
-                m+='(0x%02X,%d), '%(entry[0], entry[1])
-            else:
-                m+= 'None, '
-        m = m[:-2] + '],\n'
-    m = m[:-2] + ']\n'
-    return m
-
-def print_matrix(matrix):
-    print "Currently known matrix:"
-    print get_matrix(matrix)
 
 def get_first_unknown_index(matrix):
     for x in range(len(matrix[0])):
@@ -116,6 +131,8 @@ def find_interface(interfaces):
     red_interfaces, green_interfaces = half(interfaces)
     blue_interfaces = []
     
+    print 'Looking for the correct interface. Press Q to abort'
+    
     abort = False
     while not abort:
         set_interfaces(red_interfaces, 255, 0, 0)
@@ -138,17 +155,23 @@ def find_interface(interfaces):
             continue
 
         if result != '' and result in  'rgb':
+            print "There was an error: The lamp ahould not have this color"
+            abort = True
+        
+        if result == 'Q':
             abort = True
 
-    print "There was an error. Aborting."
+    print "Aborting."
     return None
-
+    
 def find_lamp_address(interface, addresses):
     acabsl_interface.sendSetColor(0, 0, 0, 255, interface)
     red_addresses, green_addresses = half(addresses)
     blue_addresses = []
     
+    print 'Looking for the lamp\'s address. Press Q to abort'
     abort = False
+
     while not abort:
         set_lamps(red_addresses, interface, 255, 0, 0)
         set_lamps(green_addresses, interface, 0, 255, 0)
@@ -170,37 +193,42 @@ def find_lamp_address(interface, addresses):
             continue
     
         if result != '' and result in  'rgb':
+            print "There was an error: The lamp ahould not have this color"
+            abort = True
+        
+        if result == 'Q':
             abort = True
 
-    print "There was an error. Aborting."
+    print "Aborting."
     return None
-    
+
+write_config(5004, serials, interfaces, matrix)
+
 while True:
     print_matrix(matrix)
     x,y = get_first_unknown_index(matrix)
     if x == None or y == None:
         break
-    x,y = get_tuple("Coordinate to test: [%d,%d]: "%(x,y), (x,y))
-    print "Searching lamp at coordinate (%d,%d):"%(x,y)
+    x,y = get_tuple("Coordinate to test (-1,-1 to quit): [%d,%d]: "%(x,y), (x,y))
+
+    if x==-1 and y==-1:
+        print "Aborting."
+        break
+
+    print "Starting to search for lamp at coordinate (%d,%d):"%(x,y)
+
     interface = find_interface(interfaces)
     if interface == None:
         continue
-    lamp_address = find_lamp_address(interface, addresses)
 
+    lamp_address = find_lamp_address(interface, addresses)
     if lamp_address == None:
         continue
 
     addresses.remove(lamp_address)
     
     matrix[y][x] = (lamp_address, interface)
+    write_config(5004, serials, interfaces, matrix)
 
 
-config_file.write("matrix = ")
-m = get_matrix(matrix)
-m = m.split('\n')
-config_file.write(m[0]+'\n')
-
-for line in m[1:]:
-    config_file.write("          " + line + '\n')
-config_file.close()
 
