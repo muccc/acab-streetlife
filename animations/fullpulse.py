@@ -11,7 +11,7 @@ def set(r,g,b,time):
     for x in  range(acabsl.WALLSIZEX):
         for y in range(acabsl.WALLSIZEY):
             for wall in range(acabsl.NOOFWALLS):
-                acabsl.send(wall,x,y,r,g,b,time)
+                acabsl.send(x,y,r,g,b,time,wall)
 h = 0
 col = 0
 acabsl.update()

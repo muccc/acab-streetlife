@@ -21,7 +21,7 @@ def fill(dimensions, color, ftime, draw = True):
     for w in range(walls):
         for col in range(cols):
             for l in range(lines):
-                acabsl.send(w, col, l, r, g, b, ftime)
+                acabsl.send(col, l, r, g, b, ftime, w)
 
     if draw:
         acabsl.update()
@@ -118,7 +118,7 @@ def pattern(dimensions, x, y, color, ftime, pixels, draw = True):
         w, c, l, (r, g, b) = map_pixel(dimensions, x, y, p)
 
         if w>-1 and c>-1 and l>-1 and w<walls and c<cols and l<lines:
-            acabsl.send(w, c, l, r, g, b, ftime)
+            acabsl.send(c, l, r, g, b, ftime, w)
 
 
     if draw:

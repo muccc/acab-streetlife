@@ -21,7 +21,7 @@ def blank_walls():
   for col in range(cols):
     for row in range(rows):
       for wall in range(wall_count):
-        send(wall,col,row,0,0,0,0);
+        send(col,row,0,0,0,0,wall);
   update()
 
 def render_frame(wall, image_data, angle):
@@ -31,9 +31,9 @@ def render_frame(wall, image_data, angle):
       x += angle
       x = x % cols
       if type(image_data[ptr]) == int:
-        send(wall,x,y,image_data[ptr],image_data[ptr],image_data[ptr],0);
+        send(x,y,image_data[ptr],image_data[ptr],image_data[ptr],0,wall);
       else:
-        send(wall,x,y,image_data[ptr][0],image_data[ptr][1],image_data[ptr][2],0);
+        send(x,y,image_data[ptr][0],image_data[ptr][1],image_data[ptr][2],0,wall);
       ptr += 1
   update()
 

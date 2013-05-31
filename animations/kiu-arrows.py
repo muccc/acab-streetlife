@@ -13,42 +13,42 @@ wall = 0
 
 def drawa(c,r,c1):
 
-    acabsl.send(wall,c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+    acabsl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade,wall)
     for x in range(1,c):
-	acabsl.send(wall,x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+	acabsl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade,wall)
 
     for y in range(0,r):
-	acabsl.send(wall,c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+	acabsl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade,wall)
     acabsl.update()
 
 def drawb(c,r,c1):
 
-    acabsl.send(wall,c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+    acabsl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade,wall)
     for x in range(c,7):
-	acabsl.send(wall,x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+	acabsl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade,wall)
 
     for y in range(0,r):
-	acabsl.send(wall,c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+	acabsl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade,wall)
     acabsl.update()
 
 def drawc(c,r,c1):
 
-    acabsl.send(wall,c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+    acabsl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade,wall)
     for x in range(c,7):
-	acabsl.send(wall,x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+	acabsl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade,wall)
 
     for y in range(r,6):
-	acabsl.send(wall,c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+	acabsl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade,wall)
     acabsl.update()
 
 def drawd(c,r,c1):
 
-    acabsl.send(wall,c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+    acabsl.send(c,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade,wall)
     for x in range(1,c):
-	acabsl.send(wall,x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+	acabsl.send(x,r,cs[0][c1],cs[1][c1],cs[2][c1],tfade,wall)
 
     for y in range(r,6):
-	acabsl.send(wall,c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade)
+	acabsl.send(c,y,cs[0][c1],cs[1][c1],cs[2][c1],tfade,wall)
     acabsl.update()
 
 
@@ -56,7 +56,7 @@ def drawd(c,r,c1):
 acabsl.update()
 for c in range(0,8):
     for r in range(0,6):
-        acabsl.send(wall,c,r,0,0,0, 0.5)
+        acabsl.send(c,r,0,0,0, 0.5)
 acabsl.update()
 time.sleep(0.5)
 

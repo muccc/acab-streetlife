@@ -1,20 +1,34 @@
 import urllib2
 import socket
-
-#HOST="127.1"
-#PORT=8080
+import sys, getopt
 
 UDPHOST="localhost"
 UDPPORT=5008
-#SIMULATORPORT=4006
 
 WALLSIZEX=8
 WALLSIZEY=6
 NOOFWALLS=2
+WALL=0
+
+# Throws an error if an option is not recognized
+# TODO: allow unknown options
+
+opts, args = getopt.getopt(sys.argv[1:],"",["host=","port=","wall="])
+for opt, arg in opts:
+    if opt == '--wall':
+        WALL = int(arg)
+    if opt == '--port':
+        UDPPORT = int(arg)
+    if opt == '--host':
+        UDPHOST = arg
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-def send(w,x,y,r,g,b,t=0):
+def set_target(host, port):
+    UDPHOST = host
+    UDPPORT = port
+
+def send(x,y,r,g,b,t=0,w=WALL):
   w=int(w)
   x=int(x)
   y=int(y)
@@ -28,7 +42,6 @@ def send(w,x,y,r,g,b,t=0):
 
   msg = "%c%cC%c%c%c%c%c"%(x,y,r,g,b,ms>>8,ms&0xFF)
   sock.sendto(msg, (UDPHOST, UDPPORT))
-  #sock.sendto(msg, (UDPHOST, SIMULATORPORT))
 
 def update(buffered = True):
   if buffered:
@@ -37,23 +50,7 @@ def update(buffered = True):
     msg = "%c%cU%c%c%c%c%c"%(0,0,0,0,0,0,0) 
 
   sock.sendto(msg, (UDPHOST, UDPPORT))
-  #sock.sendto(msg, (UDPHOST, SIMULATORPORT))
     
-def speedfade(w,x,y,r,g,b,speed):
-  w=int(w)
-  x=int(x)
-  y=int(y)
-  r=int(r)
-  g=int(g)
-  b=int(b)
-  
-  # recalculate x and y based on input x,y and wall no w
-  x=((w*WALLSIZEX)+x)
-  
-  msg = "%c%cF%c%c%c%c%c"%(x,y,r,g,b,speed>>8,speed&0xFF)
-  sock.sendto(msg, (UDPHOST, UDPPORT))
-  #sock.sendto(msg, (UDPHOST, SIMULATORPORT))
-
 def matrix(targetsize_x=WALLSIZEX,targetsize_y=WALLSIZEY):
   x=0
   y=0

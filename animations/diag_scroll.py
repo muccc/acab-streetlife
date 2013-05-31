@@ -12,16 +12,16 @@ wall1 = 1
 
 def setcol(col, r, g, b, time):
     row = int(float(col)/8.*6)
-    acabsl.send(wall0,col,row,r,g,b,time);
+    acabsl.send(col,row,r,g,b,time,wall0);
     col = 7 - col
-    acabsl.send(wall1,col,row,r,g,b,time);
+    acabsl.send(col,row,r,g,b,time,wall1);
     acabsl.update()
 
 def black(time):
     for x in  range(acabsl.WALLSIZEX):
         for y in range(acabsl.WALLSIZEY):
             for wall in range(acabsl.NOOFWALLS):
-                acabsl.send(wall,x,y,0,0,0,time)
+                acabsl.send(x,y,0,0,0,time,wall)
 h = 0
 col = 0
 black(tick)

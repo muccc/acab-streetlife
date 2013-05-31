@@ -5,14 +5,13 @@ import random
 import time
 
 TICK = 0.2
-WALL = 0
 NOOFPIXELSX=8
 NOOFPIXELSY=6
 
 def setcol(col, r, g, b, time):
     for i in range(0,NOOFPIXELSY):
         c = (col+i+1)%(NOOFPIXELSX)
-        send(WALL,c,i,r,g,b,time);
+        send(c,i,r,g,b,time);
     update()
 
 h = 0

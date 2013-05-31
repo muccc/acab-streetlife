@@ -5,11 +5,10 @@ import random
 import time
 
 tick = 0.2
-wall = 1
 
 def setcol(col, r, g, b, time):
     for i in range(0,6):
-        send(wall,col,i,r,g,b,time);
+        send(col,i,r,g,b,time);
     update()
 h = 0
 col = 0

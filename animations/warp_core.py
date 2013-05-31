@@ -21,17 +21,17 @@ def blank_walls():
   for col in range(cols):
     for row in range(rows):
       for wall in range(wall_count):
-        send(wall,col,row,0,0,0,0);
+        send(col,row,0,0,0,0,wall);
   update()
 
 def warp_ring(wall, row, time):
   for i in range(cols):
     if row < rows - 1: 
-      send(wall,i,row+1,r/shade,g/shade,b/shade,time);
+      send(i,row+1,r/shade,g/shade,b/shade,time,wall);
     if row <= rows - 1:
-      send(wall,i,row,r,g,b,time);
+      send(i,row,r,g,b,time,wall);
     if row > 0 and row <= rows:
-      send(wall,i, row-1,r/shade,g/shade,b/shade,time);
+      send(i, row-1,r/shade,g/shade,b/shade,time,wall);
 
   update()
 
