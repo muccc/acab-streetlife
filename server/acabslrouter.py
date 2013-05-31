@@ -23,7 +23,13 @@ walls = [{'host': 'localhost', 'port': 5000, 'simhost': 'localhost', 'simport': 
 
 #inputs = [[port, priority, timeout, socket],
 inputs = [{'port': 6000, 'priority': 0, 'timeout': 1},
-          {'port': 6001, 'priority': 1, 'timeout': 1}]
+          {'port': 6001, 'priority': 1, 'timeout': 10},
+          {'port': 6002, 'priority': 2, 'timeout': 10},
+          {'port': 7777, 'priority': 3, 'timeout': 1}]
+
+for i in inputs:
+    i['timestamp'] = 0
+
 
 simulation = sys.argv[1] == 'simulation'
 nosimulation = sys.argv[1] == 'nosimulation'
@@ -81,12 +87,16 @@ def forward(data, source):
             data = '%c%c%s'%(chr(x), chr(y), data[2:])
             #print '->', x, y, wall['simport']
             send_to_wall(data, wall)
-            if wall not in tainted['source']:
-                tainted['source'].append(wall)
+            if source not in tainted:
+                tainted[source] = []
+            if wall not in tainted[source]:
+                tainted[source].append(wall)
         else:
-            for wall in tainted['source']:
+            if source not in tainted:
+                return
+            for wall in tainted[source]:
                 send_to_wall(data, wall)
-            tainted['source'] = []
+            tainted[source] = []
     except Exception as e:
         import traceback
         traceback.print_exc()

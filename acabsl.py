@@ -40,7 +40,6 @@ def send(x,y,r,g,b,t=0,w=WALL):
 
   # recalculate x and y based on input x,y and wall no w
   x=((w*WALLSIZEX)+x)
-  print x,y,r,g,b,ms>>8,ms&0xFF
   msg = "%c%cC%c%c%c%c%c"%(x,y,r,g,b,ms>>8,ms&0xFF)
   sock.sendto(msg, (UDPHOST, UDPPORT))
 
