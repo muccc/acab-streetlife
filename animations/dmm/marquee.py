@@ -8,10 +8,10 @@ import time
 import string
 
 #Siehe letzte Zeile
-DEIN_TEXT="http://butzel.info"
-
+DEIN_TEXT="Hackerbruecke ACAB"
+DEIN_TEXT="ozapft,is.der staatstrojaner-mit dem bagger durchs schluesselloch spannen"
 tick = 0.1
-back_r=0
+back_r=32
 back_g=0
 back_b=0
 
@@ -39,7 +39,7 @@ Font_Q=	((0,0,1,1,0),(0,1,0,0,1),(0,1,0,0,1),(0,1,0,0,1),(0,1,0,1,1),(0,0,1,1,1)
 Font_R=	((0,1,1,1,0),(0,1,0,0,1),(0,1,0,0,1),(0,1,1,1,0),(0,1,0,1,0),(0,1,0,0,1))	
 Font_S=	((0,0,1,1,1),(0,1,0,0,0),(0,1,0,0,0),(0,0,1,1,1),(0,0,0,0,1),(0,1,1,1,0))	
 Font_T=	((0,1,1,1,1),(0,1,0,1,0),(0,0,0,1,0),(0,0,0,1,0),(0,0,0,1,0),(0,0,0,1,0))	
-Font_U=	((0,1,0,0,1),(0,1,0,0,1),(0,1,0,0,1),(0,1,0,0,1),(0,1,0,0,1),(0,0,1,1,1))	
+Font_U=	((0,1,0,0,1),(0,1,0,0,1),(0,1,0,0,1),(0,1,0,0,1),(0,1,0,0,1),(0,1,1,1,1))	
 Font_V=	((0,1,0,0,1),(0,1,0,0,1),(0,1,0,0,1),(0,1,0,0,1),(0,0,1,1,0),(0,0,1,1,0))	
 Font_W=	((0,1,0,0,1),(0,1,0,0,1),(0,1,0,0,1),(0,1,0,0,1),(0,1,1,1,1),(0,1,0,0,1))	
 Font_X=	((0,1,0,0,1),(0,1,0,0,1),(0,0,1,1,0),(0,0,1,1,0),(0,1,0,0,1),(0,1,0,0,1))	
@@ -121,7 +121,7 @@ def printLetter( letter, x,r,g,b):
 	Font_Letter=Font_ABC[letter]
 	for fy in range(6):
 		for fx in range(5):
-			if x+fx>=0:
+			if (x+fx>=0) and(x+fx<17) :
 				if Font_Letter[fy][fx] == 1:
 					send(x+fx,fy,r, g,b, tick)
 				else:
@@ -131,14 +131,14 @@ def printLetter( letter, x,r,g,b):
 def printMarquee( text,r,g,b):
 	printCLS()
 	text=text.upper()+" "
-	pos_x = 16
+	pos_x = 8
 	while 1:
+		update()
 		pos_x=pos_x-1
 		time.sleep(tick*5)
-		update()
 		for act_l in range(len(text)):
 			printLetter(ord(text[act_l]),(act_l*5)+pos_x,r,g,b)
- 		if(pos_x<1-len(text)*5):
+ 		if(pos_x<0-len(text)*5):
 			pos_x=16
 
-printMarquee(DEIN_TEXT,16,204,16)
+printMarquee(DEIN_TEXT,0,255,0)
