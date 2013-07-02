@@ -17,6 +17,7 @@ maxy = WALLSIZEY
 # TODO: allow unknown options
 
 opts, args = getopt.getopt(sys.argv[1:],"",["host=","port=","wall="])
+#print opts, args
 for opt, arg in opts:
     if opt == '--wall':
         WALL = int(arg)
@@ -44,6 +45,7 @@ def send(x,y,r,g,b,t=0,w=WALL):
   # recalculate x and y based on input x,y and wall no w
   x=((w*WALLSIZEX)+x)
   msg = "%c%cC%c%c%c%c%c"%(x,y,r,g,b,ms>>8,ms&0xFF)
+  #print list(msg)
   sock.sendto(msg, (UDPHOST, UDPPORT))
 
 def update(buffered = True):
