@@ -19,12 +19,17 @@ with lower priority will be activated.
 """
 
 #walls = [[host, port, startx, starty, sizex, sizey, socket],
-walls = [{'host': 'localhost', 'port': 5001, 'simhost': 'localhost', 'simport': 4001, 'startx': 0, 'starty': 0, 'sizex': 8, 'sizey': 6},
-         {'host': 'localhost', 'port': 5002, 'simhost': 'localhost', 'simport': 4002, 'startx': 8, 'starty': 0, 'sizex': 8, 'sizey': 6}]
+walls = [{'host': 'localhost', 'port': 5000, 'simhost': 'localhost', 'simport': 4000, 'startx': 0, 'starty': 0, 'sizex': 16, 'sizey': 6}]
 
 #inputs = [[port, priority, timeout, socket],
-inputs = [{'port': 5007, 'priority': 0, 'timeout': 1},
-          {'port': 5008, 'priority': 1, 'timeout': 1}]
+inputs = [{'port': 6000, 'priority': 0, 'timeout': 1},
+          {'port': 6001, 'priority': 1, 'timeout': 5},
+          {'port': 6002, 'priority': 2, 'timeout': 1},
+          {'port': 7777, 'priority': 3, 'timeout': 1}]
+
+for i in inputs:
+    i['timestamp'] = 0
+
 
 simulation = sys.argv[1] == 'simulation'
 nosimulation = sys.argv[1] == 'nosimulation'
@@ -32,7 +37,7 @@ nosimulation = sys.argv[1] == 'nosimulation'
 input_sockets = []
 for i in inputs:
     i['socket'] = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    i['socket'].bind(('localhost',i['port']))
+    i['socket'].bind(('0.0.0.0',i['port']))
     input_sockets.append(i['socket'])
 
 for w in walls:
@@ -52,10 +57,10 @@ def send_to_wall(data, wall):
         wall['socket'].sendto(data, (wall['simhost'], wall['simport']))
 
 def find_wall(x,y):
-    # hack for congress
-    if x < 8:
-        return walls[0]
-    return walls[1]
+    # hack for dmm-hackerbruecke
+    #if x < 16:
+    #    return walls[0]
+    return walls[0]
 
 def translate_for_wall(x,y,wall):
     nx = x - wall['startx']
@@ -82,15 +87,19 @@ def forward(data, source):
             data = '%c%c%s'%(chr(x), chr(y), data[2:])
             #print '->', x, y, wall['simport']
             send_to_wall(data, wall)
-            if wall not in tainted['source']:
-                tainted['source'].append(wall)
+            if source not in tainted:
+                tainted[source] = []
+            if wall not in tainted[source]:
+                tainted[source].append(wall)
         else:
-            for wall in tainted['source']:
+            if source not in tainted:
+                return
+            for wall in tainted[source]:
                 send_to_wall(data, wall)
-            tainted['source'] = []
+            tainted[source] = []
     except Exception as e:
-        print "Unexpected error:", e
-
+        import traceback
+        traceback.print_exc()
 
 while True:
     readable = select.select(input_sockets, [], [])[0]

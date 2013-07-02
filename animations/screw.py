@@ -1,16 +1,15 @@
 from acabsl import send
 from acabsl import update
+import acabsl
+
 import colorsys
 import random
 import time
 
 TICK = 0.2
-NOOFPIXELSX=8
-NOOFPIXELSY=6
-
 def setcol(col, r, g, b, time):
-    for i in range(0,NOOFPIXELSY):
-        c = (col+i+1)%(NOOFPIXELSX)
+    for i in range(0,acabsl.WALLSIZEY):
+        c = (col+i+1)%(acabsl.WALLSIZEX)
         send(c,i,r,g,b,time);
     update()
 
@@ -22,7 +21,7 @@ while 1:
     h = h % 1.
 
     col += 1
-    col = col % 8
+    col = col % acabsl.WALLSIZEX
 
     r,g,b = colorsys.hsv_to_rgb(h, 1., 1.)
     setcol(col, r*255, g*255, b*255, TICK*3)

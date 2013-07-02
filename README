@@ -4,26 +4,19 @@ You can get our software on github: https://github.com/muccc/acab-streetlife
 Animations are created as python scripts which run on the
 computer controlling the installation.
 
-In the multiwall setting the ACAB wall has two walls with 8x6 pixels each. They are addressed using the wall number [0,1] and their x and y coordinates.
-The setup looks like this: (x,y,wall)
+In the multi wall condifuration, ACAB has two walls with 8x6 pixels each. They are addressed using the wall number [0,1] and their x and y coordinates.
 
-Wall1:
-  (0,0,0), (1,0,0) ... (6,0,0), (7,0,0)
-  (0,1,0), (1,1,0) ... (6,1,0), (7,1,0)
-    .      .          .       .
-    .      .          .       .
-    .      .          .       .
-  (0,4,0), (1,4,0) ... (6,4,0), (7,4,0)
-  (0,5,0), (1,5,0) ... (6,5,0), (7,5,0)
+In the single wall configuration, ACAB has a single wall with 16x8 pixels.
 
-Wall2:
-  (0,0,1), (1,0,1) ... (6,0,1), (7,0,1)
-  (0,1,1), (1,1,1) ... (6,1,1), (7,1,1)
+The setup looks like this: (x,y)
+
+  (0,0), (1,0) ... (15,0), (16,0)
+  (0,1), (1,1) ... (15,1), (16,1)
     .      .          .       .
     .      .          .       .
     .      .          .       .
-  (0,4,1), (1,4,1) ... (6,4,1), (7,4,1)
-  (0,5,1), (1,5,1) ... (6,5,1), (7,5,1)
+  (0,4), (1,4) ... (15,4), (16,4)
+  (0,5), (1,5) ... (15,5), (16,5)
 
 Use the acabsl library from our git repository to create your own scripts.
 
@@ -31,7 +24,7 @@ It provides two methods:
 
   acabsl.send(x,y,r,g,b,time,w):
       Send a new color to pixel (<x>,<y>) on wall no <w>. If you ommit 'w', the
-      server will choose a wall for you, when the scripts gets executed.
+      server will choose a wall for you, when the script gets executed.
 
       'r','g','b' are in [0-255]
 
@@ -39,12 +32,24 @@ It provides two methods:
           'time'=0  => Instant update
           'time'>0  => Fade to the new color in <time> seconds
 
-  acabsl.update(w):
+  acabsl.update():
       Use this command if you want to use double buffering.
       Use it once before you do your first acabsl.send() call.
       Then use it everytime you want new commands to be executed.
       
-      Currently this command affects all walls at the same time.
+      This command only affects walls which have been modified since the
+      last call to acabsl.update()
+
+It also provides the following constants:
+acabsl.WALLSIZEX:
+      Size of a wall in X direction
+
+acabsl.WALLSIZEY:
+      Size of a wall in X direction
+
+acabsl.NOOFWALLS:
+      Number of walls available
+
 Example:
 
   import acabsl
@@ -52,14 +57,17 @@ Example:
   #enable double buffering
   acabsl.update()
 
-  wall1 = 0
-  wall2 = 1
-  
-  #let every pixel fade to red
-  for x in range(8):
-      for y in range(6):
-          acabsl.send(x,y,255,0,0,500,wall1)
-          acabsl.send(x,y,255,0,0,500,wall2)
+  # let every pixel of the wall chosen by the server fade to red
+  for x in range(acabsl.WALLSIZEX):
+      for y in range(range.WALLSIZEY):
+          acabsl.send(x,y,255,0,0,500)
+  '''
+  # let every pixel of every wall fade to red
+  for wall in range(acabsl.NOOFWALLS):
+      for x in range(acabsl.WALLSIZEX):
+          for y in range(range.WALLSIZEY):
+              acabsl.send(x,y,255,0,0,500,wall)
+  '''
   
   #execute all fades at once
   acabsl.update()
@@ -72,14 +80,22 @@ A simulator is available for local animation testing. To use it you have to inst
   apt-get install python-pygame
 
 Execute the startsimulation file to run a simulation of the walls on your computer:
+
   ./startsimulation
 
-It will open two windows with simulated acab walls. Use your imagination to form cylinders for 29c3 ;)
+Optionally you can modify the size of the simulator window by adding a resize factor. The follow example will reduce the simulator to half size:
+
+  ./startsimulation 0.5
+
+It will open two windows with simulated acab walls.
 
 Then execute the script you wrote to display it on the simulator.
 
 Send new scripts via a pull request to our github account: https://github.com/muccc/acab-streetlife and we will put them
 into rotation on the walls.
+
+You can also directly stream your animation to the wall if you supply your script with the following
+arguments: '--host=192.168.20.2 --port=6002'
 
 Have fun :)
 
