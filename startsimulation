@@ -1,6 +1,6 @@
 #!/bin/sh
 
-./acabsimulator.py "Wall 0" 4000 &
+./acabsimulator.py "Wall 0" 4000 $1 &
 
 ./server/acabslrouter.py simulation &
 
