@@ -26,6 +26,7 @@ inputs = [{'port': 6000, 'priority': 0, 'timeout': 1},
           {'port': 6001, 'priority': 1, 'timeout': 5},
           {'port': 6002, 'priority': 2, 'timeout': 1},
           {'port': 7777, 'priority': 3, 'timeout': 1}]
+          {'port': 9999, 'priority': 4, 'timeout': 1}]
 
 for i in inputs:
     i['timestamp'] = 0
