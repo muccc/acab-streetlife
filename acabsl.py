@@ -39,7 +39,7 @@ def send(x,y,r,g,b,t=0,w=WALL):
   r = min(max(0,int(r)),255)
   g = min(max(0,int(g)),255)
   b = min(max(0,int(b)),255)
-  ms = min(max(0, int(t * 1000)),65536)
+  ms = min(max(0, int(t * 1000)),65535)
 
   # recalculate x and y based on input x,y and wall no w
   x=((w*WALLSIZEX)+x)
