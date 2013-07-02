@@ -1,22 +1,31 @@
 #!/usr/bin/python
 
 from acabsl import send
+from acabsl import update
+import acabsl
+
 import time
 import sys
 t = .3
-wall = int(sys.argv[1])
-x = int(sys.argv[2])
 x = int(sys.argv[1])
+y = int(sys.argv[2])
+t = float(sys.argv[3])
 
+acabsl.UDPHOST = "acab"
+acabsl.UDPPORT = 6002
 
 while 1:
-    send(wall,x,y,255,0,0,.1)
+    send(x,y,255,0,0,t)
+    #update()
     time.sleep(t)
-    send(wall,x,y,0,255,0,.1)
+    send(x,y,0,255,0,t)
+    #update()
     time.sleep(t)
-    send(wall,x,y,0,0,255,.1)
+    send(x,y,0,0,255,t)
+    #update()
     time.sleep(t)
-    send(wall,x,y,0,0,0,.1)
+    send(x,y,0,0,0,t)
+    #update()
     time.sleep(t)
 
 
