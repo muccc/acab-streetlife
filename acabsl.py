@@ -3,12 +3,15 @@ import socket
 import sys, getopt
 
 UDPHOST="localhost"
-UDPPORT=5008
+UDPPORT=6000
 
-WALLSIZEX=8
+WALLSIZEX=16
 WALLSIZEY=6
-NOOFWALLS=2
+NOOFWALLS=1
 WALL=0
+
+maxx = WALLSIZEX*NOOFWALLS
+maxy = WALLSIZEY
 
 # Throws an error if an option is not recognized
 # TODO: allow unknown options
@@ -29,17 +32,17 @@ def set_target(host, port):
     UDPPORT = port
 
 def send(x,y,r,g,b,t=0,w=WALL):
-  w=int(w)
-  x=int(x)
-  y=int(y)
-  r=int(r)
-  g=int(g)
-  b=int(b)
-  ms = int(t * 1000)
+  w = min(max(0,int(w)),NOOFWALLS)
+  x = min(max(0,int(x)),maxx)
+  y = min(max(0,int(y)),maxy)
+
+  r = min(max(0,int(r)),255)
+  g = min(max(0,int(g)),255)
+  b = min(max(0,int(b)),255)
+  ms = min(max(0, int(t * 1000)),65535)
 
   # recalculate x and y based on input x,y and wall no w
   x=((w*WALLSIZEX)+x)
-
   msg = "%c%cC%c%c%c%c%c"%(x,y,r,g,b,ms>>8,ms&0xFF)
   sock.sendto(msg, (UDPHOST, UDPPORT))
 

@@ -9,16 +9,20 @@ import thread
 import time
 import Queue
 import sys
+from string import atof
 
 UDP_IP="127.0.0.1"
 UDP_PORT=int(sys.argv[2])
 q = Queue.Queue(100)
 
+try: f = atof(sys.argv[3])
+except:
+    f = 1
 
-xsize = 60
-ysize = 40
+xsize = int(60*f)
+ysize = int(40*f)
 
-xpixels = 8
+xpixels = 16
 ypixels = 6
 
 acab = [[[0,0,0,0,0,0,0,0,0] for col in range(ypixels)] for row in range(xpixels)]
@@ -111,7 +115,8 @@ def writer():
             elif cmd == 'U':
                 pass
         except Exception as e:
-            print "Unexpected error:", e
+            import traceback
+            traceback.print_exc()
 
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

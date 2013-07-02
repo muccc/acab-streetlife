@@ -4,6 +4,9 @@ import time
 import os
 import signal
 import random
+import sys
+
+port = int(sys.argv[1])
 
 pidfile='/tmp/animation_pids'
 
@@ -23,7 +26,7 @@ while 1:
   pids=open(pidfile,"w")
   pids.close()
   for animation in i[1]:
-    p=subprocess.Popen(animation)
+    p=subprocess.Popen(animation+['--port=%d'%port])
     processlist.append(p)
     print "[" + str(p.pid) + "] " + str(animation)
     pids= open(pidfile,'a')

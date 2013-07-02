@@ -28,7 +28,6 @@ def writer():
             msl = ord(data[7])
             ms = (msh<<8) + msl;
             if cmd == 'C':
-                #print 'set color' 
                 acabsl_interface.send(x,y,r,g,b,ms/1000.)
             elif cmd == 'U':
                 buffered = False

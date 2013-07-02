@@ -1,0 +1,6 @@
+#!/bin/sh
+cd /home/acab/acab-streetlife
+python server/acabslrouter.py nosimulation &
+python server/acabslserver.py server/config-club.py &
+python animations/s-color4-faster.py --port=6000 &
+su acab -c "screen -A -m -d -S scheduler python scheduler.py 6001"

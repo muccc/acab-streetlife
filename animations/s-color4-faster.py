@@ -1,11 +1,13 @@
-from acabsl_legacy import send
-from acabsl_legacy import update
+import acabsl
+from acabsl import send
+from acabsl import update
+
 import colorsys
 import random
 import time
 import math
 
-tick = 0.4
+tick = 0.15
 
 def setcol(col, r, g, b, time):
     for i in range(0,6):
@@ -14,11 +16,12 @@ def setcol(col, r, g, b, time):
 h = 0
 col = 0
 
-midcol = 8
-midrow = 2
+midcol = acabsl.WALLSIZEX/2
+midrow = acabsl.WALLSIZEY/2
+
 maxdist = 0
-for row in range(0,8):
-  for col in range(0,20):
+for row in range(0,acabsl.WALLSIZEY):
+  for col in range(0,acabsl.WALLSIZEX):
     dc = col - midcol
     dr = row - midrow
     dist = math.sqrt(dc**2+dr**2)
@@ -28,16 +31,16 @@ for row in range(0,8):
 hoffset = 0
 update()
 while 1:
-  midcol = min(14,max(1, midcol + random.gauss(0,0.1)))
-  midrow = min(4,max(1, midrow + random.gauss(0,0.1)))
+  midcol = min(acabsl.WALLSIZEX-2,max(1, midcol + random.gauss(0,0.1)))
+  midrow = min(acabsl.WALLSIZEY-2,max(1, midrow + random.gauss(0,0.1)))
 
   #hoffset += random.gauss(0.01,0.02)
   hoffset += 0.03
   hoffset = hoffset % 1.
   #t = time.time()
 
-  for row in range(0,6):
-    for col in range(0,16):
+  for row in range(0,acabsl.WALLSIZEY):
+    for col in range(0,acabsl.WALLSIZEX):
       dc = col - midcol
       dr = row - midrow
       dist = math.sqrt(dc**2+dr**2)/maxdist
