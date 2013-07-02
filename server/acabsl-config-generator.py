@@ -137,7 +137,7 @@ def find_interface(interfaces):
     while not abort:
         set_interfaces(red_interfaces, 255, 0, 0)
         set_interfaces(green_interfaces, 0, 255, 0)
-        set_interfaces(blue_interfaces, 0, 0, 255)
+        set_interfaces(blue_interfaces, 0, 0, 0)
 
         result = raw_input("Which color does the lamp have? (r,g,b): ")
         if result == 'r' and len(red_interfaces) == 1:
@@ -165,7 +165,7 @@ def find_interface(interfaces):
     return None
     
 def find_lamp_address(interface, addresses):
-    acabsl_interface.sendSetColor(0, 0, 0, 255, interface)
+    acabsl_interface.sendSetColor(0, 0, 0, 0, interface)
     red_addresses, green_addresses = half(addresses)
     blue_addresses = []
     
@@ -175,7 +175,7 @@ def find_lamp_address(interface, addresses):
     while not abort:
         set_lamps(red_addresses, interface, 255, 0, 0)
         set_lamps(green_addresses, interface, 0, 255, 0)
-        set_lamps(blue_addresses, interface, 0, 0, 255)
+        set_lamps(blue_addresses, interface, 0, 0, 0)
 
         result = raw_input("Which color does the lamp have? (r,g,b): ")
         if result == 'r' and len(red_addresses) == 1:
@@ -217,11 +217,23 @@ while True:
 
     print "Starting to search for lamp at coordinate (%d,%d):"%(x,y)
 
+    if matrix[y][x] != None:
+        addresses.append(matrix[y][x][0])
+
     interface = find_interface(interfaces)
+    set_interfaces(interfaces, 0, 0, 0)
+
     if interface == None:
         continue
 
     lamp_address = find_lamp_address(interface, addresses)
+
+    for i in range(3):
+        acabsl_interface.sendSetColor(lamp_address, 255, 255, 255, interface)
+        time.sleep(.2)
+        acabsl_interface.sendSetColor(lamp_address, 0, 0, 0, interface)
+        time.sleep(.2)
+
     if lamp_address == None:
         continue
 
