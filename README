@@ -75,9 +75,17 @@ Example:
 
 Have a look at the scripts in the animations directory for examples. We also have audio examples ;)
 
+A simulator is available for local animation testing. To use it you have to install the pygame library. The command to install pygame on debian based systems is:
+
+  apt-get install python-pygame
 
 Execute the startsimulation file to run a simulation of the walls on your computer:
+
   ./startsimulation
+
+Optionally you can modify the size of the simulator window by adding a resize factor. The follow example will reduce the simulator to half size:
+
+  ./startsimulation 0.5
 
 It will open two windows with simulated acab walls.
 

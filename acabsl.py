@@ -10,6 +10,9 @@ WALLSIZEY=6
 NOOFWALLS=1
 WALL=0
 
+maxx = WALLSIZEX*NOOFWALLS
+maxy = WALLSIZEY
+
 # Throws an error if an option is not recognized
 # TODO: allow unknown options
 
@@ -29,9 +32,9 @@ def set_target(host, port):
     UDPPORT = port
 
 def send(x,y,r,g,b,t=0,w=WALL):
-  w = max(0,int(w))
-  x = max(0,int(x))
-  y = max(0,int(y))
+  w = min(max(0,int(w)),NOOFWALLS)
+  x = min(max(0,int(x)),maxx)
+  y = min(max(0,int(y)),maxy)
 
   r = min(max(0,int(r)),255)
   g = min(max(0,int(g)),255)

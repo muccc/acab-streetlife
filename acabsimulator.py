@@ -9,14 +9,18 @@ import thread
 import time
 import Queue
 import sys
+from string import atof
 
 UDP_IP="127.0.0.1"
 UDP_PORT=int(sys.argv[2])
 q = Queue.Queue(100)
 
+try: f = atof(sys.argv[3])
+except:
+    f = 1
 
-xsize = 60
-ysize = 40
+xsize = int(60*f)
+ysize = int(40*f)
 
 xpixels = 16
 ypixels = 6

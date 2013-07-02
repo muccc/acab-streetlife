@@ -23,8 +23,8 @@ walls = [{'host': 'localhost', 'port': 5000, 'simhost': 'localhost', 'simport': 
 
 #inputs = [[port, priority, timeout, socket],
 inputs = [{'port': 6000, 'priority': 0, 'timeout': 1},
-          {'port': 6001, 'priority': 1, 'timeout': 10},
-          {'port': 6002, 'priority': 2, 'timeout': 10},
+          {'port': 6001, 'priority': 1, 'timeout': 5},
+          {'port': 6002, 'priority': 2, 'timeout': 1},
           {'port': 7777, 'priority': 3, 'timeout': 1}]
 
 for i in inputs:
@@ -37,7 +37,7 @@ nosimulation = sys.argv[1] == 'nosimulation'
 input_sockets = []
 for i in inputs:
     i['socket'] = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    i['socket'].bind(('localhost',i['port']))
+    i['socket'].bind(('0.0.0.0',i['port']))
     input_sockets.append(i['socket'])
 
 for w in walls:
