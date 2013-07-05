@@ -98,7 +98,7 @@ ysize = get_number("Please enter the vertical dimension [6]: ",10, 6)
 print "Your matrix is",xsize,"X",ysize,"big."
 
 min_address = get_number("Please enter the smallest lamp address (in hexadecimal)[10]: ", 16, 0x10)
-max_address = get_number("Please enter the smallest lamp address (in hexadecimal)[90]: ", 16, 0x90)
+max_address = get_number("Please enter the biggest lamp address (in hexadecimal)[90]: ", 16, 0x90)
 print "Tested address range: %02X - %02X (%d addresses)"%(min_address, max_address, max_address-min_address+1)
 
 addresses = range(min_address, max_address+1)
