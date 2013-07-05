@@ -6,7 +6,9 @@ computer controlling the installation.
 
 In the multi wall configuration, ACAB has two walls with 8x6 pixels each. They are addressed using the wall number [0,1] and their x and y coordinates.
 
-In the single wall configuration, ACAB has a single wall with 16x6 pixels.
+<del> In the single wall configuration, ACAB has a single wall with 16x6 pixels. </del>
+
+For sigint13, the wall has a configuration of 13x5 pixels.
 
 The setup looks like this: (x,y)
 
@@ -95,7 +97,7 @@ Send new scripts via a pull request to our github account: https://github.com/mu
 into rotation on the walls.
 
 You can also directly stream your animation to the wall if you supply your script with the following
-arguments: '--host=<REPLACE WITH HOST AT INSTALLATION> --port=6002'
+arguments: '--host=94.45.234.38 --port=6002'
 
 Have fun :)
 
