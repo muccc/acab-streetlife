@@ -19,7 +19,7 @@ def getPlaylist():
             [20, [["python","animations/multiwall_rainbowscroll.py"]]],
             [20, [["python","animations/s-color4-faster.py"]]],
             [20, [["python","animations/gameoflife.py"]]],
-            [20, [["python","animations/dmm/hackerbrucke.py"]]],
+#            [20, [["python","animations/dmm/hackerbrucke.py"]]],
             #[20, [["python","animations/dmm/dt.py"]]],
 #            [20, [["python","animations/dmm/uhrzeit.py"]]],
             [20, [["python","animations/multiwall_warp_core.py"]]],
