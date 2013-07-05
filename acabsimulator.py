@@ -22,8 +22,8 @@ except:
 xsize = int(60*f)
 ysize = int(40*f)
 
-xpixels = 16
-ypixels = 6
+xpixels = 13
+ypixels = 5
 
 acab = [[[0,0,0,0,0,0,0,0,0] for col in range(ypixels)] for row in range(xpixels)]
 
