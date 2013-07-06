@@ -22,6 +22,6 @@ def getPlaylist():
 #            [20, [["python","animations/dmm/hackerbrucke.py"]]],
             #[20, [["python","animations/dmm/dt.py"]]],
 #            [20, [["python","animations/dmm/uhrzeit.py"]]],
-            [20, [["python","animations/multiwall_warp_core.py"]]],
+#            [20, [["python","animations/multiwall_warp_core.py"]]],
     ]
     return playlist
