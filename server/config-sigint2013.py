@@ -1,0 +1,9 @@
+UDP_PORT = 5000
+serials = ['/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A400fvDu-if00-port0', '/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A400fvDs-if00-port0', '/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A400fvDr-if00-port0', '/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A400fvDq-if00-port0', '/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A10044Xm-if00-port0']
+interfaces = [0, 1, 2, 3, 4]
+matrix = [[(None, None), (0x3B,4), (None, None), (0x43,0), (None, None), (0x28,2), (None, None), (0x47,2), (None, None), (0x4B,1), (None, None), (0x2E,3), (None, None)],
+          [(0x14,4), (0x5B,4), (0x26,0), (0x20,0), (0x59,0), (0x51,2), (0x53,2), (0x29,2), (0x1B,1), (0x4E,1), (0x2B,1), (0x6F,3), (0x62,3)],
+          [(0x46,4), (0x1F,4), (0x1A,0), (0x6C,0), (0x15,0), (0x5E,2), (0x6D,2), (0x34,2), (0x24,1), (0x6B,1), (0x40,1), (0x11,3), (0x36,3)],
+          [(0x2D,4), (0x16,4), (0x52,0), (0x35,0), (0x17,0), (0x48,2), (0x31,2), (0x4C,2), (0x60,1), (0x19,1), (0x3E,1), (0x37,3), (0x33,3)],
+          [(0x39,4), (0x63,4), (0x22,0), (0x32,0), (0x90,0), (0x2C,2), (0x49,2), (0x64,2), (0x18,1), (0x6A,1), (0x42,1), (0x5D,3), (0x30,3)]]
+          
