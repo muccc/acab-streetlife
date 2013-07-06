@@ -241,14 +241,14 @@ while True:
 
         lamp_address = find_lamp_address(interface, addresses)
 
+        if lamp_address == None:
+            continue
+
         for i in range(3):
             acabsl_interface.sendSetColor(lamp_address, 255, 255, 255, interface)
             time.sleep(.2)
             acabsl_interface.sendSetColor(lamp_address, 0, 0, 0, interface)
             time.sleep(.2)
-
-        if lamp_address == None:
-            continue
 
         addresses.remove(lamp_address)
     
