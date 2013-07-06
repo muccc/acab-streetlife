@@ -63,7 +63,7 @@ def send(x,y,r,g,b,t):
 
     lamp = matrix[y][x]
 
-    if lamp is not None:
+    if (lamp is not None) and (lamp != (None, None)):
         if ms == 0:
             sendSetColor(lamp[0],r,g,b,lamp[1])
         else:
