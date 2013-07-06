@@ -64,7 +64,7 @@ interfaces = range(len(serials))
 
 matrix = []
 
-write_config(5004, serials, interfaces, matrix)
+write_config(5000, serials, interfaces, matrix)
 
 acabsl_interface.init(serials, interfaces, matrix)
 
@@ -213,7 +213,7 @@ def find_lamp_address(interface, addresses):
     print "Aborting."
     return None
 
-write_config(5004, serials, interfaces, matrix)
+write_config(5000, serials, interfaces, matrix)
 
 while True:
     print_matrix(matrix)
@@ -257,7 +257,7 @@ while True:
         interface = None
         
     matrix[y][x] = (lamp_address, interface)
-    write_config(5004, serials, interfaces, matrix)
+    write_config(5000, serials, interfaces, matrix)
 
 
 
