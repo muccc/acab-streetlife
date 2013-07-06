@@ -63,10 +63,11 @@ def send(x,y,r,g,b,t):
 
     lamp = matrix[y][x]
 
-    if ms == 0:
-        sendSetColor(lamp[0],r,g,b,lamp[1])
-    else:
-        sendMSFade(lamp[0],r,g,b,ms,lamp[1])
+    if (lamp is not None) and (lamp != (None, None)):
+        if ms == 0:
+            sendSetColor(lamp[0],r,g,b,lamp[1])
+        else:
+            sendMSFade(lamp[0],r,g,b,ms,lamp[1])
 
 def high(x):
     return (x>>8)&0xff;

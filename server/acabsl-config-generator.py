@@ -9,10 +9,12 @@ def get_matrix(matrix):
     for line in matrix:
         m+='['
         for entry in line:
-            if entry != None:
-                m+='(0x%02X,%d), '%(entry[0], entry[1])
+            if entry == None:
+                m += 'None, '
+            elif entry == (None, None):
+                m += '(None, None), '
             else:
-                m+= 'None, '
+                m += '(0x%02X,%d), '%(entry[0], entry[1])
         m = m[:-2] + '],\n'
     m = m[:-2] + ']\n'
     return m
@@ -131,10 +133,11 @@ def find_interface(interfaces):
     red_interfaces, green_interfaces = half(interfaces)
     blue_interfaces = []
     
-    print 'Looking for the correct interface. Press Q to abort'
+    print "Looking for the correct interface. Press 'Q' to abort. Press 'N' if the lamp does not exist."
     
     abort = False
-    while not abort:
+    skip = False
+    while (not abort) and (not skip):
         set_interfaces(red_interfaces, 255, 0, 0)
         set_interfaces(green_interfaces, 0, 255, 0)
         set_interfaces(blue_interfaces, 0, 0, 0)
@@ -161,15 +164,23 @@ def find_interface(interfaces):
         if result == 'Q':
             abort = True
 
-    print "Aborting."
-    return None
+        if result == 'N':
+            skip = True
+
+    if abort: 
+        print "Aborting."
+        return None
+    
+    if skip:
+        print "Skipping this lamp"
+        return 'skip'
     
 def find_lamp_address(interface, addresses):
     acabsl_interface.sendSetColor(0, 0, 0, 0, interface)
     red_addresses, green_addresses = half(addresses)
     blue_addresses = []
     
-    print 'Looking for the lamp\'s address. Press Q to abort'
+    print 'Looking for the lamp\'s address. Press Q to abort.'
     abort = False
 
     while not abort:
@@ -193,7 +204,7 @@ def find_lamp_address(interface, addresses):
             continue
     
         if result != '' and result in  'rgb':
-            print "There was an error: The lamp ahould not have this color"
+            print "There was an error: The lamp should not have this color"
             abort = True
         
         if result == 'Q':
@@ -226,19 +237,25 @@ while True:
     if interface == None:
         continue
 
-    lamp_address = find_lamp_address(interface, addresses)
+    if interface != 'skip':
 
-    for i in range(3):
-        acabsl_interface.sendSetColor(lamp_address, 255, 255, 255, interface)
-        time.sleep(.2)
-        acabsl_interface.sendSetColor(lamp_address, 0, 0, 0, interface)
-        time.sleep(.2)
+        lamp_address = find_lamp_address(interface, addresses)
 
-    if lamp_address == None:
-        continue
+        for i in range(3):
+            acabsl_interface.sendSetColor(lamp_address, 255, 255, 255, interface)
+            time.sleep(.2)
+            acabsl_interface.sendSetColor(lamp_address, 0, 0, 0, interface)
+            time.sleep(.2)
 
-    addresses.remove(lamp_address)
+        if lamp_address == None:
+            continue
+
+        addresses.remove(lamp_address)
     
+    else:
+        lamp_address = None
+        interface = None
+        
     matrix[y][x] = (lamp_address, interface)
     write_config(5004, serials, interfaces, matrix)
 
