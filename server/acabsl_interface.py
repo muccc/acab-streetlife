@@ -112,6 +112,7 @@ def write(msg, interface):
         if fullmessage[interface]:
             print 'reactivating bridge'
             fullmessage[interface] = False
+            bridges[interface][1].write('\\F')
         bridges[interface][0].put(msg)
     else:
         if fullmessage[interface] == False:

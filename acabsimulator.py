@@ -10,8 +10,9 @@ import time
 import Queue
 import sys
 from string import atof
+import acabsl
 
-UDP_IP="127.0.0.1"
+UDP_IP="0.0.0.0"
 UDP_PORT=int(sys.argv[2])
 q = Queue.Queue(100)
 
@@ -22,8 +23,8 @@ except:
 xsize = int(60*f)
 ysize = int(40*f)
 
-xpixels = 13
-ypixels = 5
+xpixels = acabsl.WALLSIZEX
+ypixels = acabsl.WALLSIZEY
 
 acab = [[[0,0,0,0,0,0,0,0,0] for col in range(ypixels)] for row in range(xpixels)]
 
