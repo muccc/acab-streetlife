@@ -6,7 +6,10 @@ import signal
 import random
 import sys
 
-port = int(sys.argv[1])
+playlist = __import__(sys.argv[1])
+port = int(sys.argv[2])
+WALLSIZEX = int(sys.argv[3])
+WALLSIZEY = int(sys.argv[4])
 
 pidfile='/tmp/animation_pids'
 
@@ -26,7 +29,7 @@ while 1:
   pids=open(pidfile,"w")
   pids.close()
   for animation in i[1]:
-    p=subprocess.Popen(animation+['--port=%d'%port])
+    p=subprocess.Popen(animation+['--port=%d' % port, '--wallsizex=%d' % WALLSIZEX, '--wallsizey=%d' % WALLSIZEY])
     processlist.append(p)
     print "[" + str(p.pid) + "] " + str(animation)
     pids= open(pidfile,'a')

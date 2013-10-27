@@ -17,23 +17,23 @@ The different streams can have different priorities and
 timeouts. After a stream has a timeout, the next stream
 with lower priority will be activated.
 """
+simulation = sys.argv[1] == 'simulation'
+nosimulation = sys.argv[1] == 'nosimulation'
 
-#walls = [[host, port, startx, starty, sizex, sizey, socket],
-walls = [{'host': 'localhost', 'port': 5000, 'simhost': 'localhost', 'simport': 4000, 'startx': 0, 'starty': 0, 'sizex': 16, 'sizey': 6}]
+server_base_port = int(sys.argv[2])
+router_base_port = int(sys.argv[3])
+
+walls = [{'host': 'localhost', 'port': server_base_port, 'simhost': '83.133.179.134', 'simport': server_base_port, 'startx': 0, 'starty': 0}]
 
 #inputs = [[port, priority, timeout, socket],
-inputs = [{'port': 6000, 'priority': 0, 'timeout': 1},
-          {'port': 6001, 'priority': 1, 'timeout': 5},
-          {'port': 6002, 'priority': 2, 'timeout': 1},
-          {'port': 7777, 'priority': 3, 'timeout': 1},
-          {'port': 9999, 'priority': 4, 'timeout': 1}]
+inputs = [{'port': router_base_port + 0, 'priority': 0, 'timeout': 1},
+          {'port': router_base_port + 1, 'priority': 1, 'timeout': 5},
+          {'port': router_base_port + 2, 'priority': 2, 'timeout': 5},
+          {'port': router_base_port + 3, 'priority': 3, 'timeout': 5},
+          {'port': router_base_port + 4, 'priority': 4, 'timeout': 5}]
 
 for i in inputs:
     i['timestamp'] = 0
-
-
-simulation = sys.argv[1] == 'simulation'
-nosimulation = sys.argv[1] == 'nosimulation'
 
 input_sockets = []
 for i in inputs:
