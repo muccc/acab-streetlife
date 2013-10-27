@@ -114,6 +114,24 @@ def get_first_unknown_index(matrix):
                 return (x,y)
     return None, None
 
+def get_next_unknown_index(matrix):
+    last_good = None
+
+    for x in range(len(matrix[0])):
+        for y in range(len(matrix)):
+            if matrix[y][x] != None:
+                last_good = (x,y)
+    
+    if last_good == None:
+        return 0, 0
+    
+    next_bad = (last_good[0], last_good[1] + 1)
+    
+    if next_bad[1] == ysize:
+        next_bad[0]+=1
+        next_bad[1]=0
+    return next_bad
+
 for interface in interfaces:
     acabsl_interface.sendSetColor(0, 0, 0, 0, interface)
 
@@ -128,6 +146,13 @@ def set_lamps(addresses, interface, r, g, b):
     for address in addresses:
         acabsl_interface.sendSetColor(address, r, g, b, interface)
 
+def set_known_addresses(r, g, b):
+    for x in range(len(matrix[0])):
+        for y in range(len(matrix)):
+            if matrix[y][x] != None and matrix[y][x] != (None, None):
+                acabsl_interface.sendSetColor(matrix[y][x][0], r, g, b, matrix[y][x][1])
+
+
 def find_interface(interfaces):
     set_interfaces(interfaces, 0, 0, 255)
     red_interfaces, green_interfaces = half(interfaces)
@@ -141,6 +166,8 @@ def find_interface(interfaces):
         set_interfaces(red_interfaces, 255, 0, 0)
         set_interfaces(green_interfaces, 0, 255, 0)
         set_interfaces(blue_interfaces, 0, 0, 0)
+	
+        set_known_addresses(0, 0, 0)	
 
         result = raw_input("Which color does the lamp have? (r,g,b): ")
         if result == 'r' and len(red_interfaces) == 1:
@@ -218,6 +245,7 @@ write_config(5000, serials, interfaces, matrix)
 while True:
     print_matrix(matrix)
     x,y = get_first_unknown_index(matrix)
+    #x,y = get_next_unknown_index(matrix)
     if x == None or y == None:
         break
     x,y = get_tuple("Coordinate to test (-1,-1 to quit): [%d,%d]: "%(x,y), (x,y))
