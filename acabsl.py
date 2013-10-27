@@ -9,14 +9,17 @@ WALLSIZEX=6
 WALLSIZEY=8
 NOOFWALLS=1
 WALL=0
-
-maxx = WALLSIZEX*NOOFWALLS
-maxy = WALLSIZEY
-
 # Throws an error if an option is not recognized
 # TODO: allow unknown options
 
-opts, args = getopt.getopt(sys.argv[1:],"",["host=","port=","wall="])
+
+#opts, args = getopt.getopt(sys.argv[1:],"",["host=","port=","wall=","wallsizex=","wallsizey="])
+
+filtered = [e for e in sys.argv[1:] if e.split('=')[0] in ["--host", "--port", "--wall", "--wallsizex", "--wallsizey"]]
+print filtered
+#filtered = [e for e in sys.argv[1:] if '=' in e]
+
+opts, args = getopt.getopt(filtered,"",["host=","port=","wall=","wallsizex=","wallsizey="])
 #print opts, args
 for opt, arg in opts:
     if opt == '--wall':
@@ -25,6 +28,13 @@ for opt, arg in opts:
         UDPPORT = int(arg)
     if opt == '--host':
         UDPHOST = arg
+    if opt == '--wallsizex':
+        WALLSIZEX = int(arg)
+    if opt == '--wallsizey':
+        WALLSIZEY = int(arg)
+
+maxx = WALLSIZEX*NOOFWALLS
+maxy = WALLSIZEY
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
