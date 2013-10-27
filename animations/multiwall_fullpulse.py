@@ -24,9 +24,11 @@ while 1:
 
     r,g,b = colorsys.hsv_to_rgb(h, 1., 1.)
     set(r*255, g*255, b*255, tick)
+    acabsl.update()
     time.sleep(tick*3)
 
     set(0, 0, 0, tick*3)
+    acabsl.update()
     time.sleep(tick*3)
 
     
