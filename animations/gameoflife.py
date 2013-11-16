@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from acabsl import send
 from acabsl import update
 import acabsl

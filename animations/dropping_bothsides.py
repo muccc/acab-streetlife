@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from acabsl import send
 from acabsl import update
 import acabsl
@@ -10,8 +15,8 @@ tick = 0.2
 
 def setcol(col, r, g, b, rtime):
     for i in range(0,acabsl.WALLSIZEY):
-        send(col,i,r,g,b,rtime);
-	send(acabsl.WALLSIZEX - col - 1,i,r,g,b,rtime);
+        send(col,i,r,g,b,rtime,0);
+	send(acabsl.WALLSIZEX - col - 1,i,r,g,b,rtime,0);
     	update()
 	time.sleep(tick)
 h = 0
