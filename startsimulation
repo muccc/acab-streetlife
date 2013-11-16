@@ -2,7 +2,7 @@
 
 ./acabsimulator.py "Wall 0" 4000 $1 &
 
-./server/acabslrouter.py simulation &
+./server/acabslrouter.py simulation 4000 6000&
 
 echo press enter to stop the simulation
 read dummy
