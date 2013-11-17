@@ -1,0 +1,21 @@
+
+body {
+  font: 17pt/22pt "Helvetica Neue", Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: -0.75pt;
+  margin: 1.2em 1.5em;
+  color: #ccc;
+  background-color: #000;
+  background-image:url('img/blau_gruen.jpg');
+  background-repeat:no-repeat;
+  background-position:right top;
+  background-size: 80% Auto;
+}
+
+h1 { font-size: 1.2 em; margin-bottom: 3em;}
+a { color: #777; text-decoration: none; }
+a:visited { color: #666; }
+a:hover { color: #fff; }
+div.main { max-width: 24em; }
+div.text {background-color:#000; opacity:0.7; text-align: justify; padding: 20px;}
+    
