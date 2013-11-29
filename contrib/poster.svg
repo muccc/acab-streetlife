@@ -10,8 +10,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="2104.7244"
-   height="2979.9211"
+   width="1488.189"
+   height="2104.7244"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
@@ -39,9 +39,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.24748737"
-     inkscape:cx="1238.2173"
-     inkscape:cy="1684.9427"
+     inkscape:zoom="0.35355339"
+     inkscape:cx="1254.3797"
+     inkscape:cy="1282.6803"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -90,30 +90,30 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,1927.5591)">
-    <rect
-       style="fill:#000000;fill-opacity:1;stroke:#28220b;stroke-width:2.97954654999999979;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="rect2987"
-       width="2114.3062"
-       height="2982.8777"
-       x="-0.010226715"
-       y="-1919.0768"
-       ry="0" />
+     transform="translate(0,1052.3624)">
     <flowRoot
        xml:space="preserve"
        id="flowRoot3765"
-       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
          id="flowRegion3767"><rect
            id="rect3769"
            width="1834.2858"
            height="1497.1428"
            x="165.71428"
            y="711.34973" /></flowRegion><flowPara
-         id="flowPara3771" /></flowRoot>    <flowRoot
+         id="flowPara3771" /></flowRoot>    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#28220b;stroke-width:2.10339403;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect2987"
+       width="1492.5824"
+       height="2105.7456"
+       x="1.9897733"
+       y="-1051.9447"
+       ry="0" />
+    <flowRoot
        xml:space="preserve"
        id="flowRoot3773"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="translate(-90,-2015.5591)"><flowRegion
+       transform="matrix(0.70594433,0,0,0.70594433,-39.537997,-1120.0558)"><flowRegion
          id="flowRegion3775"><rect
            id="rect3777"
            width="1718.8572"
@@ -121,8 +121,8 @@
            x="257.14285"
            y="825.63544" /></flowRegion><flowPara
          style="font-size:72px;text-align:justify;text-anchor:start;fill:#ffffff"
-         id="flowPara3797">acab ist eine Eigenentwicklung des CCC München. Inspiriert vom Projekt Blinkenlights stellt jede einzelne Box - von innen mit einer RGB-LED beleuchtet - ein Pixel eines Bild-schirms dar. Die “intelligenten” Lampen sind miteinander verbunden und können über USB oder über ein Netzwerk angesteuert werden. Die benötigten Steuer-Platinen wurden ehren-amtlich von Vereinsmitgliedern entworfen. Neben einer Vielzahl von Anwendungssoftware entstanden im Laufe der Jahre auch einige Kunstprojekte - die bislang grösste Installation mit 100 Lampen war von August bis November 2010 die Illumination des alten Hertie an der Tegernseer Landstrasse 64.</flowPara></flowRoot>    <g
-       transform="matrix(0.42203113,0,0,0.42203113,886.46471,758.54228)"
+         id="flowPara3797">acab ist eine Eigenentwicklung des CCC München. Inspiriert vom Projekt Blinkenlights stellt jede einzelne Box - von innen mit einer RGB-LED beleuchtet - ein Pixel eines Bild-schirms dar. Die “intelligenten” Lampen sind miteinander verbunden und können über USB oder über ein Netzwerk angesteuert werden. Die benötigten Steuerplatinen wurden ehren-amtlich von Vereinsmitgliedern entworfen. Neben einer Vielzahl von Anwendungssoftware entstanden im Laufe der Jahre auch einige Kunstprojekte - die bislang grösste Installation mit 100 Lampen war von August bis November 2010 die Illumination des alten Hertie an der Tegernseer Landstrasse 64 (Puerto Giesing).</flowPara></flowRoot>    <g
+       transform="matrix(0.29793048,0,0,0.29793048,653.79173,826.30531)"
        style="fill:#000000;display:inline"
        id="g3052">
       <g
@@ -220,7 +220,7 @@
     </g>
     <g
        id="g3042"
-       transform="translate(-51.757813,0)">
+       transform="matrix(0.70594433,0,0,0.70594433,-8.541142,302.81669)">
       <g
          transform="translate(1.257813,-110)"
          id="g3831">
@@ -248,7 +248,7 @@
     </g>
     <g
        id="g3950"
-       transform="matrix(1.4800019,0,0,1.4800019,-444.08332,802.10647)">
+       transform="matrix(1.0447989,0,0,1.0447989,-283.50111,869.0592)">
       <path
          d="m 1316.3136,-1708.4446 39.7527,0 c 4.3464,0 7.842,3.4995 7.842,7.842 l 0,33.1175 c 0,4.3414 -3.4956,7.8419 -7.842,7.8419 l -39.7527,0 c -4.3464,0 -7.842,-3.5005 -7.842,-7.8419 l 0,-33.1175 c 0,-4.3425 3.4956,-7.842 7.842,-7.842 z"
          style="fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none"
