@@ -23,7 +23,7 @@ nosimulation = sys.argv[1] == 'nosimulation'
 server_base_port = int(sys.argv[2])
 router_base_port = int(sys.argv[3])
 
-walls = [{'host': 'localhost', 'port': server_base_port, 'simhost': '83.133.179.134', 'simport': server_base_port, 'startx': 0, 'starty': 0}]
+walls = [{'host': 'localhost', 'port': server_base_port, 'simhost': '0.0.0.0', 'simport': server_base_port, 'startx': 0, 'starty': 0}]
 
 #inputs = [[port, priority, timeout, socket],
 inputs = [{'port': router_base_port + 0, 'priority': 0, 'timeout': 1},

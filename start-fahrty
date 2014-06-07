@@ -1,0 +1,7 @@
+#!/bin/sh
+python server/acabslrouter.py nosimulation 7004 8000 &
+python server/acabslserver.py server/config-fahrty.py &
+#python animations/s-color4-faster.py --port=8000 --wallsizex=2 --wallsizey=4 &
+python animations/init.py
+
+screen -A -m -d -S schedulerfahrty python scheduler.py playlist-fahrty 8001 2 4
