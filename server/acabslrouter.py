@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import socket
 import thread
 import time
@@ -17,13 +17,9 @@ The different streams can have different priorities and
 timeouts. After a stream has a timeout, the next stream
 with lower priority will be activated.
 """
-simulation = sys.argv[1] == 'simulation'
-nosimulation = sys.argv[1] == 'nosimulation'
 
-server_base_port = int(sys.argv[2])
-router_base_port = int(sys.argv[3])
-
-walls = [{'host': 'localhost', 'port': server_base_port, 'simhost': '0.0.0.0', 'simport': server_base_port, 'startx': 0, 'starty': 0}]
+config = sys.argv[1]
+execfile(config)
 
 #inputs = [[port, priority, timeout, socket],
 inputs = [{'port': router_base_port + 0, 'priority': 0, 'timeout': 1},
@@ -54,7 +50,7 @@ def is_timed_out(i):
 def send_to_wall(data, wall):
     if not simulation:
         wall['socket'].sendto(data, (wall['host'], wall['port']))
-    if not nosimulation: 
+    else:
         wall['socket'].sendto(data, (wall['simhost'], wall['simport']))
 
 def find_wall(x,y):

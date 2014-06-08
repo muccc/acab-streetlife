@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import acabsl_interface
 import thread
 import time
@@ -23,10 +24,11 @@ def print_matrix(matrix):
     print "Currently known matrix:"
     print get_matrix(matrix)
 
-def write_config(port, serials, interfaces, matrix):
+def write_config(serials, interfaces, matrix):
     config_file = open(sys.argv[1], 'w')
     
-    config_file.write("UDP_PORT = %d\n"%port)
+    config_file.write("server_ip = '0.0.0.0'\n")
+    config_file.write("server_port = 5000\n")
     config_file.write("serials = %s\n"%str(serials))
     config_file.write("interfaces = %s\n"%str(interfaces))
 
@@ -37,7 +39,20 @@ def write_config(port, serials, interfaces, matrix):
         config_file.write(m[0]+'\n')
 
         for line in m[1:]:
-            config_file.write("          " + line + '\n')
+            if line:
+                config_file.write("          " + line)
+            config_file.write('\n')
+
+    config_file.write("simulation = False\n")
+    config_file.write("router_base_port = 8000\n")
+    config_file.write("""
+walls = [
+  { 'host': 'localhost', 'port': server_port,
+    'simhost': '0.0.0.0', 'simport': server_port,
+    'startx': 0, 'starty': 0},
+]
+""")
+
     config_file.close()
 
 try:
@@ -64,7 +79,7 @@ interfaces = range(len(serials))
 
 matrix = []
 
-write_config(5000, serials, interfaces, matrix)
+write_config(serials, interfaces, matrix)
 
 acabsl_interface.init(serials, interfaces, matrix)
 
@@ -240,7 +255,7 @@ def find_lamp_address(interface, addresses):
     print "Aborting."
     return None
 
-write_config(5000, serials, interfaces, matrix)
+write_config(serials, interfaces, matrix)
 
 while True:
     print_matrix(matrix)
@@ -285,7 +300,5 @@ while True:
         interface = None
         
     matrix[y][x] = (lamp_address, interface)
-    write_config(5000, serials, interfaces, matrix)
-
-
+    write_config(serials, interfaces, matrix)
 

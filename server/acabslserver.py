@@ -5,8 +5,6 @@ import time
 import Queue
 import sys
 
-UDP_IP="0.0.0.0"
-
 config_file = sys.argv[1]
 execfile(config_file)
 
@@ -39,7 +37,7 @@ def writer():
 
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sock.bind((UDP_IP,UDP_PORT))
+sock.bind((server_ip,server_port))
 thread.start_new_thread(writer,())
 
 while True:
