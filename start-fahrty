@@ -1,0 +1,9 @@
+#!/bin/sh
+CONFIG=server/config-fahrty.py
+python server/acabslrouter.py $CONFIG &
+python server/acabslserver.py $CONFIG &
+
+#python animations/s-color4-faster.py --port=8000 --wallsizex=2 --wallsizey=4 &
+python animations/init.py
+
+screen -A -m -d -S schedulerfahrty python scheduler.py playlist-fahrty 8001 2 4

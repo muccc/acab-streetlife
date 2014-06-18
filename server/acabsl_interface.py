@@ -38,6 +38,11 @@ def init(s, i, m):
     bridges = map(createBridge,serials)
     for bridge in bridges:
         bridge[1].write('\\F')
+        # Put all lamps into the pause state
+        msg = '\x00S\x01'
+        msg = "\x5c\x30%s\x5c\x31"%(msg.replace("\\","\\\\"))
+        msg = msg.replace("\\","\\\\")
+        bridge[1].write(msg)
         thread.start_new_thread(interfaceHandler,bridge)
 
     buffered = False
