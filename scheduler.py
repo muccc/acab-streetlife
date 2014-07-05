@@ -1,5 +1,4 @@
 import subprocess
-import playlist
 import time
 import os
 import signal
