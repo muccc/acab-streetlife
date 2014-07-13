@@ -1,7 +1,0 @@
-#!/bin/sh
-killall -9 python
-sleep 2
-
-cd /home/acab/acab-streetlife
-./start-wall
-./start-decke
