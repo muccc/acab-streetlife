@@ -1,11 +1,15 @@
 #!/bin/sh
 
 ./acabsimulator.py "Wall 0" 4000 $1 &
+SIM_PID=$!
 
-./server/acabslrouter.py simulation 4000 6000&
+./server/acabslrouter.py server/simulation-config.py simulation &
+RTR_PID=$!
 
-echo press enter to stop the simulation
+echo Now you can send animations to the simulator. For example:
+echo     $ animations/gameoflife.py
+echo Press enter to stop the simulation.
 read dummy
 
-kill `pidof -x acabslrouter.py`
-kill `pidof -x acabsimulator.py`
+kill $SIM_PID
+kill $RTR_PID

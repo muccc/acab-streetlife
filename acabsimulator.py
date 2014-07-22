@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 
 import pygame
 from pygame.locals import *
@@ -110,7 +110,7 @@ def writer():
                     if diff[i] < 0:
                         data[3+i] = -data[3+i]
                         data[6+i] = -data[6+i]
-                print data
+                print(data)
                 acab[x][y] = data
 
             elif cmd == 'U':
@@ -129,6 +129,6 @@ while True:
     if not q.full():
         q.put(data)
     else:
-        print 'ignoring data'
+        print('ignoring data')
 
 
