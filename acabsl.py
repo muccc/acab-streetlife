@@ -1,12 +1,11 @@
-import urllib2
 import socket
 import sys, getopt
 
 UDPHOST="localhost"
 UDPPORT=6002
 
-WALLSIZEX=6
-WALLSIZEY=8
+WALLSIZEX=14
+WALLSIZEY=6
 NOOFWALLS=1
 WALL=0
 # Throws an error if an option is not recognized
