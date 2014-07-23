@@ -33,6 +33,7 @@ It provides two methods:
             'time'=0  => Instant update
             'time'>0  => Fade to the new color in <time> seconds
 
+
     acabsl.update():
 
         Use this command if you want to use double buffering.
@@ -45,13 +46,10 @@ It provides two methods:
 It also provides the following constants:
 
     acabsl.WALLSIZEX:
-
         Size of a wall in X direction
-
 
     acabsl.WALLSIZEY:
         Size of a wall in X direction
-
 
     acabsl.NOOFWALLS:
         Number of walls available
