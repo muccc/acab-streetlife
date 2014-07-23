@@ -4,19 +4,17 @@ You can get our software on github: https://github.com/muccc/acab-streetlife
 Animations are created as python scripts which run on the
 computer controlling the installation.
 
-In the multi wall configuration, ACAB has two walls with 8x6 pixels each. They are addressed using the wall number [0,1] and their x and y coordinates.
-
-In the single wall configuration, ACAB has a single wall with 16x6 pixels.
+The wall has 14x6 Pixels.
 
 The setup looks like this: (x,y)
 
-  (0,0), (1,0) ... (15,0), (16,0)
-  (0,1), (1,1) ... (15,1), (16,1)
+  (0,0), (1,0) ... (12,0), (13,0)
+  (0,1), (1,1) ... (12,1), (13,1)
     .      .          .       .
     .      .          .       .
     .      .          .       .
-  (0,4), (1,4) ... (15,4), (16,4)
-  (0,5), (1,5) ... (15,5), (16,5)
+  (0,4), (1,4) ... (12,4), (13,4)
+  (0,5), (1,5) ... (12,5), (13,5)
 
 Use the acabsl library from our git repository to create your own scripts.
 
@@ -52,28 +50,30 @@ acabsl.NOOFWALLS:
 
 Example:
 
-  import acabsl
-  
-  #enable double buffering
-  acabsl.update()
+    import acabsl
+    
+    #enable double buffering
+    acabsl.update()
+    
+    # let every pixel of the wall chosen by the server fade to red
+    for x in range(acabsl.WALLSIZEX):
+        for y in range(range.WALLSIZEY):
+            acabsl.send(x,y,255,0,0,500)
+    '''
+    # let every pixel of every wall fade to red
+    for wall in range(acabsl.NOOFWALLS):
+        for x in range(acabsl.WALLSIZEX):
+            for y in range(range.WALLSIZEY):
+                acabsl.send(x,y,255,0,0,500,wall)
+    '''
 
-  # let every pixel of the wall chosen by the server fade to red
-  for x in range(acabsl.WALLSIZEX):
-      for y in range(range.WALLSIZEY):
-          acabsl.send(x,y,255,0,0,500)
-  '''
-  # let every pixel of every wall fade to red
-  for wall in range(acabsl.NOOFWALLS):
-      for x in range(acabsl.WALLSIZEX):
-          for y in range(range.WALLSIZEY):
-              acabsl.send(x,y,255,0,0,500,wall)
-  '''
-  
-  #execute all fades at once
-  acabsl.update()
+    #execute all fades at once
+    acabsl.update()
 
 
 Have a look at the scripts in the animations directory for examples. We also have audio examples ;)
+
+## Test animations using simulator
 
 A simulator is available for local animation testing. To use it you have to install the pygame library. The command to install pygame on Debian based systems is:
 
@@ -94,8 +94,12 @@ Then execute the script you wrote to display it on the simulator.
 Send new scripts via a pull request to our github account: https://github.com/muccc/acab-streetlife and we will put them
 into rotation on the walls.
 
+## Send animation to real wall
+
 You can also directly stream your animation to the wall if you supply your script with the following
-arguments: '--host=<REPLACE WITH HOST AT INSTALLATION> --port=6002'
+arguments: '--host=192.168.0.100 --port=6002'
+
+You need to connect to the WLAN with SSID and Password "AllColorsAreBeautiful".
 
 Have fun :)
 
