@@ -105,7 +105,7 @@ into rotation on the walls.
 There are two ways to send your animation to the real wall
 
 ###From the ep14-wireless network
-Supply your script with the following arguments: '--host=172.16.16.37 --port=6002'
+Supply your script with the following arguments: '--host=172.16.0.90 --port=6002'
 
 ###Alternative
 You need to connect to the WLAN with SSID and Password "AllColorsAreBeautiful".
