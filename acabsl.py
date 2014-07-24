@@ -15,7 +15,7 @@ WALL=0
 #opts, args = getopt.getopt(sys.argv[1:],"",["host=","port=","wall=","wallsizex=","wallsizey="])
 
 filtered = [e for e in sys.argv[1:] if e.split('=')[0] in ["--host", "--port", "--wall", "--wallsizex", "--wallsizey"]]
-print filtered
+print(filtered)
 #filtered = [e for e in sys.argv[1:] if '=' in e]
 
 opts, args = getopt.getopt(filtered,"",["host=","port=","wall=","wallsizex=","wallsizey="])
@@ -53,15 +53,15 @@ def send(x,y,r,g,b,t=0,w=WALL):
 
   # recalculate x and y based on input x,y and wall no w
   x=((w*WALLSIZEX)+x)
-  msg = "%c%cC%c%c%c%c%c"%(x,y,r,g,b,ms>>8,ms&0xFF)
+  msg = bytearray([x,y,ord('C'),r,g,b,ms>>8,ms&0xFF])
   #print list(msg)
   sock.sendto(msg, (UDPHOST, UDPPORT))
 
 def update(buffered = True):
   if buffered:
-    msg = "%c%cU%c%c%c%c%c"%(1,0,0,0,0,0,0)
+    msg = bytearray([1,0,ord('U'),0,0,0,0,0])
   else:
-    msg = "%c%cU%c%c%c%c%c"%(0,0,0,0,0,0,0) 
+    msg = bytearray([0,0,ord('U'),0,0,0,0,0])
 
   sock.sendto(msg, (UDPHOST, UDPPORT))
     
