@@ -9,6 +9,7 @@ body {
   background-repeat:no-repeat;
   background-position:right top;
   background-size: 80% Auto;
+  word-wrap: break-word;
 }
 h1 { font-size: 1.2 em; margin-bottom: 3em;}
 a { color: #777; text-decoration: none; }
