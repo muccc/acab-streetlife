@@ -2,6 +2,9 @@
 * @file: highslide.css 
 * @version: 4.1.9
 */
+body {
+        background-color:#000;
+}
 .highslide-container div {
 	font-family: Verdana, Helvetica;
 	font-size: 10pt;
