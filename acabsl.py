@@ -38,6 +38,7 @@ maxy = WALLSIZEY
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 def set_target(host, port):
+    global UDPHOST,UDPPORT
     UDPHOST = host
     UDPPORT = port
 
@@ -81,3 +82,11 @@ def matrix(targetsize_x=WALLSIZEX,targetsize_y=WALLSIZEY):
 
 update(False)
 update(False)
+
+def set_all(r,g,b):
+    for w in range(NOOFWALLS):
+        for x in range(WALLSIZEX):
+            for y in range(WALLSIZEY):
+                send(x,y,r,g,b,0,w)
+    update()
+
