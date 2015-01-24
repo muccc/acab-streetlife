@@ -27,13 +27,14 @@ import getopt
 from math import atan2, degrees
 import acabsl_rconfig
 
-options, remainder = getopt.getopt(sys.argv[1:], 'h:p:vc:i:rd', [
+options, remainder = getopt.getopt(sys.argv[1:], 'h:p:vc:i:rdx:', [
         'host=',
         'port=',
         'verbose',
         'cam=',
         'interfaces=',
         'run',
+        'pixel=',
         'diff'
         ])
 
@@ -69,6 +70,8 @@ for opt, arg in options:
         autostart=1
     elif opt in ('-d', '--diff'):
         diffmode=1
+    elif opt in ('-x', '--pixel'):
+        (def_pixel_if,def_pixel_addr)=[int(x) for x in arg.split(',')]
 
 # Init OpenCV
 cap = cv2.VideoCapture(cam_index) # Video capture object
