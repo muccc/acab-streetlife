@@ -64,7 +64,7 @@ for opt, arg in options:
     elif opt in ('-c', '--cam'):
         cam_index=int(arg)
     elif opt in ('-i', '--interfaces'):
-        interfaces=[int(x) for x in arg.split(",")]
+        interfaces=[int(x) for x in arg.split(',')]
     elif opt in ('-r', '--run'):
         autostart=1
     elif opt in ('-d', '--diff'):
@@ -95,9 +95,10 @@ def pixel(x):
 def run(x):
     global pixels
     global grid
-    grid=None
-    pixels=None
     if x==1:
+        acabsl_rconfig.set_all(b_color)
+        grid=None
+        pixels=None
         do_detect()
         print pixels
         grid=gridify(pixels)
@@ -112,7 +113,7 @@ def send_config(grid):
         for point in line:
             cl.append(pixels[point][0])
         config.append(cl)
-    print "config=",config
+    print "config=\n",("\n".join([str(x) for x in config]))
     acabsl_rconfig.send_config(config)
 
 # Setup OpenCV GUI
@@ -266,7 +267,7 @@ def gridify(pixels):
             row.append(cp)
             cp=find_closest_pixel(cp,pixels,-20,20)
         array.append(row)
-        print row
+        #print row
 
         # Next row starts with pixel below leftmost pixel of current row
         cp=find_closest_pixel(row[0],pixels,60,120)
