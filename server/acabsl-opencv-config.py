@@ -8,6 +8,7 @@
 #   - command line "-h acab2" for acabsl server name
 #   - command line "-i 2,3" which interfaces to use on the server
 #   - command line "-c 1" for second camera (if you have internal webcam)
+#   - command line "--diff" for new "differential mode"
 # - make sure whole wall is inside camera, and not too much around it
 # - make sure wall is approximately aligned with picture borders
 # - move the "pixel" slider slowly until any pixel is lit
@@ -26,13 +27,14 @@ import getopt
 from math import atan2, degrees
 import acabsl_rconfig
 
-options, remainder = getopt.getopt(sys.argv[1:], 'h:p:vc:i:r', [
+options, remainder = getopt.getopt(sys.argv[1:], 'h:p:vc:i:rd', [
         'host=',
         'port=',
         'verbose',
         'cam=',
-        'interfaces='
-        'run'
+        'interfaces=',
+        'run',
+        'diff'
         ])
 
 path='/dev/serial/by-id'
@@ -49,6 +51,8 @@ max_addr=0x9f # According to schneider
 def_pixel_if=1  # Which pixel to turn on when starting
 def_pixel_addr=27 # Which pixel to turn on when starting
 min_area=100 # Minimum size of lamp in picture
+base_image=None
+diffmode=0  # Differential mode
 
 for opt, arg in options:
     if opt in ('-h', '--host'):
@@ -63,6 +67,8 @@ for opt, arg in options:
         interfaces=[int(x) for x in arg.split(",")]
     elif opt in ('-r', '--run'):
         autostart=1
+    elif opt in ('-d', '--diff'):
+        diffmode=1
 
 # Init OpenCV
 cap = cv2.VideoCapture(cam_index) # Video capture object
@@ -70,6 +76,10 @@ cap.open(cam_index) # Enable the camera
 
 # Init rconfig 
 acabsl_rconfig.set_target(UDP_IP,UDP_PORT)
+
+if diffmode==1:
+    b_color=(0,0,0)
+    f_color=(255,0,0)
 
 # Global vars
 pixels=None
@@ -107,12 +117,16 @@ def send_config(grid):
 
 # Setup OpenCV GUI
 cv2.namedWindow('ctrl')
-cv2.createTrackbar('H-','ctrl', 90,255,nothing)
-cv2.createTrackbar('H+','ctrl',140,255,nothing)
-cv2.createTrackbar('S-','ctrl', 20,255,nothing)
-cv2.createTrackbar('S+','ctrl',255,255,nothing)
-cv2.createTrackbar('V-','ctrl',100,255,nothing)
-cv2.createTrackbar('V+','ctrl',255,255,nothing)
+if diffmode ==0:
+    cv2.createTrackbar('H-','ctrl', 90,255,nothing)
+    cv2.createTrackbar('H+','ctrl',140,255,nothing)
+    cv2.createTrackbar('S-','ctrl', 20,255,nothing)
+    cv2.createTrackbar('S+','ctrl',255,255,nothing)
+    cv2.createTrackbar('V-','ctrl',100,255,nothing)
+    cv2.createTrackbar('V+','ctrl',255,255,nothing)
+else:
+    cv2.createTrackbar('V-','ctrl',210,255,nothing)
+    cv2.createTrackbar('V+','ctrl',255,255,nothing)
 cv2.createTrackbar('pixel_if','ctrl',def_pixel_if,len(interfaces)-1,pixel)
 cv2.createTrackbar('pixel_addr','ctrl',def_pixel_addr,255,pixel)
 cv2.createTrackbar('run','ctrl',0,1,run)
@@ -124,7 +138,7 @@ def pt(x):
 
 # Find coordinates of the lamp
 def find_pixel(show):
-    global pixels
+    global pixels,base_image
     ret, frame = cap.read()
     if ret!=True or frame is None:
         print "Image Aquisition error"
@@ -134,8 +148,17 @@ def find_pixel(show):
     img=cv2.GaussianBlur(frame, (5,5), 0)
     img=cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    lower=np.array([cv2.getTrackbarPos('H-','ctrl'), cv2.getTrackbarPos('S-','ctrl'), cv2.getTrackbarPos('V-','ctrl') ],np.uint8)
-    upper=np.array([cv2.getTrackbarPos('H+','ctrl'), cv2.getTrackbarPos('S+','ctrl'), cv2.getTrackbarPos('V+','ctrl') ],np.uint8)
+    if diffmode==0:
+        lower=np.array([cv2.getTrackbarPos('H-','ctrl'), cv2.getTrackbarPos('S-','ctrl'), cv2.getTrackbarPos('V-','ctrl') ],np.uint8)
+        upper=np.array([cv2.getTrackbarPos('H+','ctrl'), cv2.getTrackbarPos('S+','ctrl'), cv2.getTrackbarPos('V+','ctrl') ],np.uint8)
+    else:
+        img=frame
+        if base_image is None or cv2.waitKey(1)&0xff == 115: # 's'
+            base_image=cv2.split(img)[0]
+        img = abs((cv2.split(img)[0])/2+128-base_image/2)
+        cv2.imshow('img',img)
+        lower=np.array([cv2.getTrackbarPos('V-','ctrl')])
+        upper=np.array([cv2.getTrackbarPos('V+','ctrl')])
     separated=cv2.inRange(img,lower,upper)
 #    cv2.imshow('img',separated)
 
