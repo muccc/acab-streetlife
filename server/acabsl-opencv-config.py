@@ -27,7 +27,7 @@ import getopt
 from math import atan2, degrees
 import acabsl_rconfig
 
-options, remainder = getopt.getopt(sys.argv[1:], 'h:p:vc:i:rdx:', [
+options, remainder = getopt.getopt(sys.argv[1:], 'h:p:vc:i:rdx:g:', [
         'host=',
         'port=',
         'verbose',
@@ -35,6 +35,7 @@ options, remainder = getopt.getopt(sys.argv[1:], 'h:p:vc:i:rdx:', [
         'interfaces=',
         'run',
         'pixel=',
+        'grid=',
         'diff'
         ])
 
@@ -51,6 +52,8 @@ min_addr=0x10 # According to schneider
 max_addr=0x9f # According to schneider
 def_pixel_if=1  # Which pixel to turn on when starting
 def_pixel_addr=27 # Which pixel to turn on when starting
+grid_x=20
+grid_y=30
 min_area=100 # Minimum size of lamp in picture
 base_image=None
 diffmode=0  # Differential mode
@@ -72,6 +75,8 @@ for opt, arg in options:
         diffmode=1
     elif opt in ('-x', '--pixel'):
         (def_pixel_if,def_pixel_addr)=[int(x) for x in arg.split(',')]
+    elif opt in ('-g', '--grid'):
+        (grid_x,grid_y)=[int(x) for x in arg.split(',')]
 
 # Init OpenCV
 cap = cv2.VideoCapture(cam_index) # Video capture object
@@ -268,12 +273,12 @@ def gridify(pixels):
         row=[]
         while cp is not None: # Gather up pixels to the right
             row.append(cp)
-            cp=find_closest_pixel(cp,pixels,-20,20)
+            cp=find_closest_pixel(cp,pixels,-grid_x,grid_x)
         array.append(row)
         #print row
 
         # Next row starts with pixel below leftmost pixel of current row
-        cp=find_closest_pixel(row[0],pixels,60,120)
+        cp=find_closest_pixel(row[0],pixels,90-grid_y,90+grid_y)
 
     # We're done.
     height=len(array)
