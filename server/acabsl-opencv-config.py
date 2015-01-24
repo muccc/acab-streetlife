@@ -150,7 +150,7 @@ def find_pixel(show):
         if area > min_area and show:
             cv2.drawContours(frame,[contour],0,(0,0,255), 2)
 
-    if not largest_contour == None:
+    if not largest_contour is None:
         moment = cv2.moments(largest_contour)
         x=int(moment["m10"]/moment["m00"])
         y=int(moment["m01"]/moment["m00"])
@@ -158,12 +158,12 @@ def find_pixel(show):
             cv2.circle(frame,(x,y),3,(0,255,255),-1)
 
     if show:
-        if not pixels == None:
+        if not pixels is None:
             for (px,pos) in pixels:
                 cv2.circle(frame,pos,3,(255,0,0),-1)
                 cv2.putText(frame,str(px), (pos[0]+5,pos[1]-5), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255,0,0))
         try:
-            if not grid == None:
+            if not grid is None:
                 # Debugging output
                 for y in xrange(len(grid[0])):
                     for x in xrange(len(grid)):
@@ -174,7 +174,7 @@ def find_pixel(show):
         except IndexError:
             pass
         cv2.imshow('frame',frame)
-    if largest_contour == None:
+    if largest_contour is None:
         return (0,0)
     else:
         return (x,y)
@@ -225,7 +225,7 @@ def find_closest_pixel(spixel,pixels,amin,amax):
     for (ct,(idx,(x2,y2))) in enumerate(pixels):
         (d,a)=dist(p0,(x2,y2))
         if a>amin and a<amax and d>0:
-            if mind==None or d<mind:
+            if mind is None or d<mind:
                 mind=d
                 minc=ct
     return minc
@@ -237,9 +237,9 @@ def gridify(pixels):
     # Start with pixel closest to the origin
     pixels.insert(0,[(0,0),(0,0)])
     cp=find_closest_pixel(0,pixels,0,90)
-    while cp!=None:
+    while cp is not None:
         row=[]
-        while cp!=None: # Gather up pixels to the right
+        while cp is not None: # Gather up pixels to the right
             row.append(cp)
             cp=find_closest_pixel(cp,pixels,-20,20)
         array.append(row)
@@ -278,7 +278,7 @@ def gridify(pixels):
     return array
 
 
-if pixels != None:
+if pixels is not None:
     grid=gridify(pixels)
     send_config(grid)
 
