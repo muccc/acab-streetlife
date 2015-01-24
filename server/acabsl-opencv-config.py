@@ -6,7 +6,7 @@
 #   - check if it correctly detected the number of interfaces
 # - locally run "server/acabsl-opencv-config.py"
 #   - command line "-h acab2" for acabsl server name
-#   - command line "-i 3" for number of interfaces on acabsl server
+#   - command line "-i 2,3" which interfaces to use on the server
 #   - command line "-c 1" for second camera (if you have internal webcam)
 # - make sure whole wall is inside camera, and not too much around it
 # - make sure wall is approximately aligned with picture borders
