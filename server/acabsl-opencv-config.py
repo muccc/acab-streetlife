@@ -43,10 +43,11 @@ autostart=0
 cam_index=0 # Default camera is at index 0.
 b_color=(0,255,0) # Background color
 f_color=(0,0,255) # Foreground color
-interfaces=3
+interfaces=[0,1,2]
 min_addr=0x10 # According to schneider
 max_addr=0x9f # According to schneider
-def_pixel=27 # Which pixel to turn on when starting
+def_pixel_if=1  # Which pixel to turn on when starting
+def_pixel_addr=27 # Which pixel to turn on when starting
 min_area=100 # Minimum size of lamp in picture
 
 for opt, arg in options:
@@ -59,7 +60,7 @@ for opt, arg in options:
     elif opt in ('-c', '--cam'):
         cam_index=int(arg)
     elif opt in ('-i', '--interfaces'):
-        interfaces=int(arg)
+        interfaces=[int(x) for x in arg.split(",")]
     elif opt in ('-r', '--run'):
         autostart=1
 
@@ -79,7 +80,7 @@ def nothing(x):
 
 def pixel(x):
     acabsl_rconfig.set_all(b_color)
-    acabsl_rconfig.set_lamp((x/256,x%256),f_color)
+    acabsl_rconfig.set_lamp((interfaces[cv2.getTrackbarPos('pixel_if','ctrl')],cv2.getTrackbarPos('pixel_addr','ctrl')),f_color)
 
 def run(x):
     global pixels
@@ -112,7 +113,8 @@ cv2.createTrackbar('S-','ctrl', 20,255,nothing)
 cv2.createTrackbar('S+','ctrl',255,255,nothing)
 cv2.createTrackbar('V-','ctrl',100,255,nothing)
 cv2.createTrackbar('V+','ctrl',255,255,nothing)
-cv2.createTrackbar('pixel','ctrl',def_pixel,3*256-1,pixel)
+cv2.createTrackbar('pixel_if','ctrl',def_pixel_if,len(interfaces)-1,pixel)
+cv2.createTrackbar('pixel_addr','ctrl',def_pixel_addr,255,pixel)
 cv2.createTrackbar('run','ctrl',0,1,run)
 
 # Get coordinates of "pixel"
@@ -183,7 +185,7 @@ def do_detect():
     pixels=[]
     acabsl_rconfig.set_all(b_color)
     idx=0
-    for i in xrange(interfaces):
+    for i in interfaces:
         for a in xrange(min_addr,max_addr):
             px=(i,a)
             print "Testing: ",px,
