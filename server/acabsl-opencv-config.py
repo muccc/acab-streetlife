@@ -40,7 +40,7 @@ options, remainder = getopt.getopt(sys.argv[1:], 'h:p:vc:i:rdx:g:', [
         ])
 
 path='/dev/serial/by-id'
-UDP_IP="acab2"
+UDP_IP="acab2.club.muc.ccc.de"
 UDP_PORT=5555
 verbose=0
 autostart=0
