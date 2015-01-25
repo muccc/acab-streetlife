@@ -96,9 +96,15 @@ grid=None
 def nothing(x):
     pass
 
+# callback for pixel trackbar
 def pixel(x):
     set_all(b_color)
     acabsl_rconfig.set_lamp((interfaces[cv2.getTrackbarPos('pixel_if','ctrl')],cv2.getTrackbarPos('pixel_addr','ctrl')),f_color)
+
+# callback for pixel interface trackbar
+def pixel_if(x):
+    # 0 -> all lamps on currently selected interface
+    pixel(0)
 
 def set_all(color):
     global interfaces
@@ -142,7 +148,7 @@ if diffmode ==0:
 else:
     cv2.createTrackbar('V-','ctrl',210,255,nothing)
     cv2.createTrackbar('V+','ctrl',255,255,nothing)
-cv2.createTrackbar('pixel_if','ctrl',def_pixel_if,len(interfaces)-1,pixel)
+cv2.createTrackbar('pixel_if','ctrl',def_pixel_if,len(interfaces)-1,pixel_if)
 cv2.createTrackbar('pixel_addr','ctrl',def_pixel_addr,255,pixel)
 cv2.createTrackbar('run','ctrl',0,1,run)
 
