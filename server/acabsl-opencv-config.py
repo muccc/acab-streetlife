@@ -125,7 +125,7 @@ def send_config(grid):
     acabsl_rconfig.send_config(config)
 
 # Setup OpenCV GUI
-cv2.namedWindow('ctrl')
+cv2.namedWindow('ctrl', cv2.WINDOW_NORMAL)
 if diffmode ==0:
     cv2.createTrackbar('H-','ctrl', 90,255,nothing)
     cv2.createTrackbar('H+','ctrl',140,255,nothing)
@@ -205,6 +205,7 @@ def find_pixel(show):
                             cv2.line(frame,pt(grid[x-1][y]),pt(grid[x][y]),(255,0,0))
         except IndexError:
             pass
+        cv2.namedWindow('frame', cv2.WINDOW_NORMAL)
         cv2.imshow('frame',frame)
     if largest_contour is None:
         return (0,0)
