@@ -97,8 +97,14 @@ def nothing(x):
     pass
 
 def pixel(x):
-    acabsl_rconfig.set_all(b_color)
+    set_all(b_color)
     acabsl_rconfig.set_lamp((interfaces[cv2.getTrackbarPos('pixel_if','ctrl')],cv2.getTrackbarPos('pixel_addr','ctrl')),f_color)
+
+def set_all(color):
+    global interfaces
+    for i in interfaces:
+        # 0 -> all lamps of interface i
+        acabsl_rconfig.set_lamp((i, 0),color)
 
 def run(x):
     global pixels
@@ -216,7 +222,7 @@ def find_pixel(show):
 def do_detect():
     global pixels
     pixels=[]
-    acabsl_rconfig.set_all(b_color)
+    set_all(b_color)
     idx=0
     for i in interfaces:
         for a in xrange(min_addr,max_addr):
