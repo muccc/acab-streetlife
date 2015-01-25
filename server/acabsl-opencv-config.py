@@ -45,9 +45,16 @@ UDP_PORT=5555
 verbose=0
 autostart=0
 cam_index=0 # Default camera is at index 0.
+
 b_color=(0,255,0) # Background color
 f_color=(0,0,255) # Foreground color
-interfaces=[0,1,2]
+#b_color=(0,0,0) # Background color
+#f_color=(255,0,0) # Foreground color
+
+interfaces=[0, 1, 2]
+#interfaces=[2, 3]
+#interfaces=xrange(5)
+
 min_addr=0x10 # According to schneider
 max_addr=0x9f # According to schneider
 def_pixel_if=1  # Which pixel to turn on when starting
@@ -81,6 +88,8 @@ for opt, arg in options:
 # Init OpenCV
 cap = cv2.VideoCapture(cam_index) # Video capture object
 cap.open(cam_index) # Enable the camera
+cap.set(cv2.cv.CV_CAP_PROP_EXPOSURE, 0)
+#cap.set(cv2.cv.CV_CAP_PROP_WHITE_BALANCE, 0) # not implemented yet
 
 # Init rconfig 
 acabsl_rconfig.set_target(UDP_IP,UDP_PORT)
@@ -100,6 +109,9 @@ def nothing(x):
 def pixel(x):
     set_all(b_color)
     acabsl_rconfig.set_lamp((interfaces[cv2.getTrackbarPos('pixel_if','ctrl')],cv2.getTrackbarPos('pixel_addr','ctrl')),f_color)
+    #i = interfaces[cv2.getTrackbarPos('interface','ctrl')];
+    #acabsl_rconfig.set_lamp((i, x),f_color)
+    #print " (0x%0X,%i)" % (x, i)
 
 # callback for pixel interface trackbar
 def pixel_if(x):
@@ -139,8 +151,10 @@ def send_config(grid):
 # Setup OpenCV GUI
 cv2.namedWindow('ctrl', cv2.WINDOW_NORMAL)
 if diffmode ==0:
+    cv2.resizeWindow('ctrl', 1000, 300)
     cv2.createTrackbar('H-','ctrl', 90,255,nothing)
     cv2.createTrackbar('H+','ctrl',140,255,nothing)
+    raw_input('')
     cv2.createTrackbar('S-','ctrl', 20,255,nothing)
     cv2.createTrackbar('S+','ctrl',255,255,nothing)
     cv2.createTrackbar('V-','ctrl',100,255,nothing)
