@@ -78,13 +78,6 @@ for opt, arg in options:
     elif opt in ('-g', '--grid'):
         (grid_x,grid_y)=[int(x) for x in arg.split(',')]
 
-# Init OpenCV
-cap = cv2.VideoCapture(cam_index) # Video capture object
-cap.open(cam_index) # Enable the camera
-
-# Init rconfig 
-acabsl_rconfig.set_target(UDP_IP,UDP_PORT)
-
 if diffmode==1:
     b_color=(0,0,0)
     f_color=(255,0,0)
@@ -92,6 +85,7 @@ if diffmode==1:
 # Global vars
 pixels=None
 grid=None
+cap=None
 
 def nothing(x):
     pass
@@ -135,22 +129,6 @@ def send_config(grid):
         config.append(cl)
     print "config=\n",("\n".join([str(x) for x in config]))
     acabsl_rconfig.send_config(config)
-
-# Setup OpenCV GUI
-cv2.namedWindow('ctrl', cv2.WINDOW_NORMAL)
-if diffmode ==0:
-    cv2.createTrackbar('H-','ctrl', 90,255,nothing)
-    cv2.createTrackbar('H+','ctrl',140,255,nothing)
-    cv2.createTrackbar('S-','ctrl', 20,255,nothing)
-    cv2.createTrackbar('S+','ctrl',255,255,nothing)
-    cv2.createTrackbar('V-','ctrl',100,255,nothing)
-    cv2.createTrackbar('V+','ctrl',255,255,nothing)
-else:
-    cv2.createTrackbar('V-','ctrl',210,255,nothing)
-    cv2.createTrackbar('V+','ctrl',255,255,nothing)
-cv2.createTrackbar('pixel_if','ctrl',def_pixel_if,len(interfaces)-1,pixel_if)
-cv2.createTrackbar('pixel_addr','ctrl',def_pixel_addr,255,pixel)
-cv2.createTrackbar('run','ctrl',0,1,run)
 
 # Get coordinates of "pixel"
 def pt(x):
@@ -322,20 +300,50 @@ def gridify(pixels):
 
     return array
 
+def main():
+    global cap
+    
+    # Init OpenCV
+    cap = cv2.VideoCapture(cam_index) # Video capture object
+    cap.open(cam_index) # Enable the camera
+    cap.set(cv2.cv.CV_CAP_PROP_EXPOSURE, 0)
+    #cap.set(cv2.cv.CV_CAP_PROP_WHITE_BALANCE, 0) # not implemented yet
+    
+    # Init rconfig 
+    acabsl_rconfig.set_target(UDP_IP,UDP_PORT)
+    
+    # Setup OpenCV GUI
+    cv2.namedWindow('ctrl', cv2.WINDOW_NORMAL)
+    if diffmode ==0:
+        cv2.createTrackbar('H-','ctrl', 90,255,nothing)
+        cv2.createTrackbar('H+','ctrl',140,255,nothing)
+        cv2.createTrackbar('S-','ctrl', 20,255,nothing)
+        cv2.createTrackbar('S+','ctrl',255,255,nothing)
+        cv2.createTrackbar('V-','ctrl',100,255,nothing)
+        cv2.createTrackbar('V+','ctrl',255,255,nothing)
+    else:
+        cv2.createTrackbar('V-','ctrl',210,255,nothing)
+        cv2.createTrackbar('V+','ctrl',255,255,nothing)
+    cv2.createTrackbar('pixel_if','ctrl',def_pixel_if,len(interfaces)-1,pixel_if)
+    cv2.createTrackbar('pixel_addr','ctrl',def_pixel_addr,255,pixel)
+    cv2.createTrackbar('run','ctrl',0,1,run)
+    
+    if pixels is not None:
+        grid=gridify(pixels)
+        send_config(grid)
+    
+    run(autostart)
+    
+    acabsl_rconfig.set_all(b_color)
+    pixel(cv2.getTrackbarPos('pixel','ctrl'))
+    
+    while True:
+        find_pixel(True)
+        k = cv2.waitKey(20) & 0xFF
+        if k == 27: # Escape key
+            cv2.destroyAllWindows()
+            cap.release()
+            break
 
-if pixels is not None:
-    grid=gridify(pixels)
-    send_config(grid)
-
-run(autostart)
-
-acabsl_rconfig.set_all(b_color)
-pixel(cv2.getTrackbarPos('pixel','ctrl'))
-
-while True:
-    find_pixel(True)
-    k = cv2.waitKey(20) & 0xFF
-    if k == 27: # Escape key
-        cv2.destroyAllWindows()
-        cap.release()
-        break
+if __name__ == "__main__":
+    main()
