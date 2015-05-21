@@ -183,7 +183,7 @@ def find_pixel(show):
         if not pixels is None:
             for (px,pos) in pixels:
                 cv2.circle(frame,pos,3,(255,0,0),-1)
-                cv2.putText(frame,str(px), (pos[0]+5,pos[1]-5), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255,0,0))
+                cv2.putText(frame,"(0x%x, %d)" % (px[1], px[0]), (pos[0]+5,pos[1]-5), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255,0,0))
         try:
             if not grid is None:
                 # Debugging output
