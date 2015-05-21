@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# vim: set ts=4 sw=4 tw=0 et pm=:
+
 import acabsl_interface
 import sys
 import time
