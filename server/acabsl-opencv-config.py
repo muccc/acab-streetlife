@@ -315,6 +315,7 @@ def main():
     # Setup OpenCV GUI
     cv2.namedWindow('ctrl', cv2.WINDOW_NORMAL)
     if diffmode ==0:
+        cv2.resizeWindow('ctrl', 1000, 300)
         cv2.createTrackbar('H-','ctrl', 90,255,nothing)
         cv2.createTrackbar('H+','ctrl',140,255,nothing)
         cv2.createTrackbar('S-','ctrl', 20,255,nothing)
