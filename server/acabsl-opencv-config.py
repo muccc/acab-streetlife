@@ -100,6 +100,27 @@ def pixel_if(x):
     # 0 -> all lamps on currently selected interface
     pixel(0)
 
+dragstate=None
+# callback for mouse clicks
+def move_point(event,x,y,flags,param):
+    global dragstate,pixels,grid
+    if pixels == None:
+        return
+    p0=(x,y)
+    if event == cv2.EVENT_LBUTTONDOWN:
+        dragstate=find_closest_pixel_pos(p0,pixels)
+        print "click @",p0,"dragging ",dragstate,addr(pixels[dragstate][0])
+    if dragstate != None:
+        pixels[dragstate][1]=p0
+    if event == cv2.EVENT_LBUTTONUP:
+        print "dragged to: ",p0
+        dragstate=None
+        newgrid=gridify(pixels)
+        if(grid!=newgrid):
+            grid=newgrid
+            print "Grid changed!"
+            send_config(grid)
+
 def set_all(color):
     global interfaces
     for i in interfaces:
@@ -341,6 +362,7 @@ def main():
     # Setup OpenCV GUI
     cv2.namedWindow('ctrl', cv2.WINDOW_NORMAL)
     cv2.namedWindow('frame', cv2.WINDOW_NORMAL)
+    cv2.setMouseCallback('frame',move_point)
     if diffmode ==0:
         cv2.resizeWindow('ctrl', 250, 300)
         cv2.createTrackbar('H-','ctrl', 90,255,nothing)
