@@ -243,6 +243,17 @@ def dist((x1,y1),(x2,y2)):
     yD=y2-y1
     return (xD**2+yD**2,degrees(atan2(yD,xD)))
 
+# Finds closest pixel to position p0 in pixel list pixels
+def find_closest_pixel_pos(p0,pixels):
+    mind=None
+    minc=None
+    for (ct,(idx,p1)) in enumerate(pixels):
+        (d,a)=dist(p0,p1)
+        if mind is None or d<mind:
+            mind=d
+            minc=ct
+    return minc
+
 # Finds closest pixel to spixel in pixels with
 # angular constraint (between amin and amax) when seen from spixel
 # spixel is index into pixels array
@@ -264,8 +275,8 @@ def gridify(pixels):
     array=[]
 
     # Start with pixel closest to the origin
-    pixels.insert(0,[(0,0),(0,0)])
-    cp=find_closest_pixel(0,pixels,0,90)
+    cp=find_closest_pixel_pos((0,0),pixels)
+
     while cp is not None:
         row=[]
         while cp is not None: # Gather up pixels to the right
@@ -290,7 +301,6 @@ def gridify(pixels):
 
     # Do some consistency checks
     ccheck=[0]* len(pixels)
-    ccheck[0]=1 # Fake origin pixel is used already
 
     for (y,line) in enumerate(array):
         if len(line)!=width:
