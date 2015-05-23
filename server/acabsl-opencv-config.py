@@ -307,14 +307,24 @@ def gridify(pixels):
 
     return array
 
+class MockCamera(object):
+    def read(self):
+        return (True,np.zeros((900,1400,3), np.uint8))
+    def release(self):
+        pass
+
 def main():
     global cap
+    global pixels,grid
     
     # Init OpenCV
-    cap = cv2.VideoCapture(cam_index) # Video capture object
-    cap.open(cam_index) # Enable the camera
-    cap.set(cv2.cv.CV_CAP_PROP_EXPOSURE, 0)
-    #cap.set(cv2.cv.CV_CAP_PROP_WHITE_BALANCE, 0) # not implemented yet
+    if cam_index <0:
+        cap=MockCamera()
+    else:
+        cap = cv2.VideoCapture(cam_index) # Video capture object
+        cap.open(cam_index) # Enable the camera
+        cap.set(cv2.cv.CV_CAP_PROP_EXPOSURE, 0)
+        #cap.set(cv2.cv.CV_CAP_PROP_WHITE_BALANCE, 0) # not implemented yet
     
     # Init rconfig 
     acabsl_rconfig.set_target(UDP_IP,UDP_PORT)
