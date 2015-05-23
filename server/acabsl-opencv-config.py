@@ -191,18 +191,17 @@ def find_pixel(show):
             for (px,pos) in pixels:
                 cv2.circle(frame,pos,3,(255,0,0),-1)
                 cv2.putText(frame,addr(px), (pos[0]+5,pos[1]-5), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255,0,0))
-        try:
-            if not grid is None:
-                # Debugging output
-                for y in xrange(len(grid[0])):
-                    for x in xrange(len(grid)):
+        if not grid is None:
+            # Debugging output
+            for x in xrange(len(grid)):
+                for y in xrange(len(grid[x])):
+                    try:
                         if y>0:
                             cv2.line(frame,pt(grid[x][y-1]),pt(grid[x][y]),(255,0,0))
                         if x>0:
                             cv2.line(frame,pt(grid[x-1][y]),pt(grid[x][y]),(255,0,0))
-        except IndexError:
-            pass
-        cv2.namedWindow('frame', cv2.WINDOW_NORMAL)
+                    except IndexError:
+                        pass
         cv2.imshow('frame',frame)
     if largest_contour is None:
         return (0,0)
@@ -331,6 +330,7 @@ def main():
     
     # Setup OpenCV GUI
     cv2.namedWindow('ctrl', cv2.WINDOW_NORMAL)
+    cv2.namedWindow('frame', cv2.WINDOW_NORMAL)
     if diffmode ==0:
         cv2.resizeWindow('ctrl', 1000, 300)
         cv2.createTrackbar('H-','ctrl', 90,255,nothing)
@@ -365,3 +365,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
