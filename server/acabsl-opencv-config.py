@@ -127,13 +127,20 @@ def send_config(grid):
         for point in line:
             cl.append(pixels[point][0])
         config.append(cl)
-    print "config=\n",("\n".join([str(x) for x in config]))
+    print "config="
+    for x in config:
+        print "[",", ".join([addr(p) for p in x]),"]"
     acabsl_rconfig.send_config(config)
 
 # Get coordinates of "pixel"
 def pt(x):
     global pixels
     return (pixels[x][1])
+
+# Get beautified address of pixel
+def addr((i,a)):
+    global pixels
+    return "(0x%x, %d)"%(a,i)
 
 # Find coordinates of the lamp
 def find_pixel(show):
@@ -183,7 +190,7 @@ def find_pixel(show):
         if not pixels is None:
             for (px,pos) in pixels:
                 cv2.circle(frame,pos,3,(255,0,0),-1)
-                cv2.putText(frame,"(0x%x, %d)" % (px[1], px[0]), (pos[0]+5,pos[1]-5), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255,0,0))
+                cv2.putText(frame,addr(px), (pos[0]+5,pos[1]-5), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255,0,0))
         try:
             if not grid is None:
                 # Debugging output
@@ -211,7 +218,7 @@ def do_detect():
     for i in interfaces:
         for a in xrange(min_addr,max_addr):
             px=(i,a)
-            print "Testing: ",px,
+            print "Testing: ",addr(px),
             acabsl_rconfig.set_lamp(px,f_color)
             time.sleep(.05)
             for x in range(3):
@@ -294,9 +301,9 @@ def gridify(pixels):
 
     for (ctr,cv) in enumerate(ccheck):
         if cv==0:
-            print "ERROR: pixel %d (%d,%d) remains unused"%((ctr,)+pixels[ctr][0])
+            print "ERROR: pixel %d %s remains unused"%(ctr,addr(pixels[ctr][0]))
         if cv>1:
-            print "ERROR: pixel %d (%d,%d) used %d times"%((ctr,)+pixels[ctr][0]+(cv,))
+            print "ERROR: pixel %d %s used %d times"%(ctr,addr(pixels[ctr][0]),cv)
 
     return array
 
