@@ -93,7 +93,10 @@ def nothing(x):
 # callback for pixel trackbar
 def pixel(x):
     set_all(b_color)
-    acabsl_rconfig.set_lamp((interfaces[cv2.getTrackbarPos('pixel_if','ctrl')],cv2.getTrackbarPos('pixel_addr','ctrl')),f_color)
+    i=interfaces[cv2.getTrackbarPos('pixel_if','ctrl')]
+    px=cv2.getTrackbarPos('pixel_addr','ctrl')
+    acabsl_rconfig.set_lamp((i, px),f_color)
+    print addr((i,px))
 
 # callback for pixel interface trackbar
 def pixel_if(x):
