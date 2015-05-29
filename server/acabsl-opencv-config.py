@@ -362,6 +362,7 @@ def main():
     # Setup OpenCV GUI
     cv2.namedWindow('ctrl', cv2.WINDOW_NORMAL)
     cv2.namedWindow('frame', cv2.WINDOW_NORMAL)
+    cv2.moveWindow('frame', 300, 0)
     cv2.setMouseCallback('frame',move_point)
     if diffmode ==0:
         cv2.resizeWindow('ctrl', 250, 300)
