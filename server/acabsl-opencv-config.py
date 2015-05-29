@@ -379,7 +379,7 @@ def main():
         cv2.createTrackbar('V-','ctrl',210,255,nothing)
         cv2.createTrackbar('V+','ctrl',255,255,nothing)
     cv2.createTrackbar('pixel_if','ctrl',def_pixel_if,len(interfaces)-1,pixel_if)
-    cv2.createTrackbar('pixel_addr','ctrl',def_pixel_addr,255,pixel)
+    cv2.createTrackbar('pixel_addr','ctrl',0,255,pixel)
     cv2.createTrackbar('run','ctrl',0,1,run)
     
     if pixels is not None:
