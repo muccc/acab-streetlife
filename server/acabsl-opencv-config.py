@@ -157,6 +157,10 @@ def send_config(grid):
     for x in config:
         print "[",", ".join([addr(p) for p in x]),"]"
     acabsl_rconfig.send_config(config)
+    print "config was send to server, you can now "
+    print " - quit this program with ESC "
+    print " - drag points to fix grid via left mouse button"
+    
 
 # Get coordinates of "pixel"
 def pt(x):
@@ -398,6 +402,24 @@ def main():
     acabsl_rconfig.set_all(b_color)
     pixel(cv2.getTrackbarPos('pixel','ctrl'))
     
+    
+    if diffmode == 0:
+      print "The wall should now be green and the lamps on the selected interface blue"
+      print "The blue area should be marked with an red line"
+      print "(you can also try the other mode with cmd line option --diff)"
+    else:
+      print "The lamps on the selected interface should now be red, all other lamps black."
+    print ""
+    print "Change pixel_if and pixel_addr slider to see if everything works"
+    print ""   
+    print "If you need to select different interfaces use cmd line option -i 1,2,3,4,5,6"
+    print "For additional options see source code header or https://wiki.muc.ccc.de/acab:setup#auto_configuration_via_webcam "
+    print ""
+    print "When you are ready, move run slider to the right."  
+    print ""
+    print "You can also quit this program by focusing on the other window and hitting ESC. "
+    print ""
+
     while True:
         if cv2.getTrackbarPos('run','ctrl')==1 and not did_run:
             do_run=True
