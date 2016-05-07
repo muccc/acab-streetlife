@@ -357,6 +357,10 @@ def main():
     else:
         cap = cv2.VideoCapture(cam_index) # Video capture object
         cap.open(cam_index) # Enable the camera
+        
+        #cap.set(cv2.cv.CV_CAP_PROP_FRAME_WIDTH,320)
+        #cap.set(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT,200)
+        
         cap.set(cv2.cv.CV_CAP_PROP_EXPOSURE, 0)
         #cap.set(cv2.cv.CV_CAP_PROP_WHITE_BALANCE, 0) # not implemented yet
     
