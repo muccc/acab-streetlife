@@ -43,7 +43,7 @@ path='/dev/serial/by-id'
 UDP_IP="acab2.club.muc.ccc.de"
 UDP_PORT=5555
 verbose=0
-autostart=0
+do_run=False
 cam_index=0 # Default camera is at index 0.
 b_color=(0,255,0) # Background color
 f_color=(0,0,255) # Foreground color
@@ -70,7 +70,7 @@ for opt, arg in options:
     elif opt in ('-i', '--interfaces'):
         interfaces=[int(x) for x in arg.split(',')]
     elif opt in ('-r', '--run'):
-        autostart=1
+        do_run=True
     elif opt in ('-d', '--diff'):
         diffmode=1
     elif opt in ('-x', '--pixel'):
@@ -130,18 +130,18 @@ def set_all(color):
         # 0 -> all lamps of interface i
         acabsl_rconfig.set_lamp((i, 0),color)
 
-def run(x):
+def run():
     global pixels
     global grid
-    if x==1:
-        acabsl_rconfig.set_all(b_color)
-        grid=None
-        pixels=None
-        do_detect()
-        print pixels
-        grid=gridify(pixels)
-        print grid
-        send_config(grid)
+
+    acabsl_rconfig.set_all(b_color)
+    grid=None
+    pixels=None
+    do_detect()
+    print pixels
+    grid=gridify(pixels)
+    print grid
+    send_config(grid)
 
 def send_config(grid):
     # Generate config array
@@ -349,6 +349,7 @@ class MockCamera(object):
 def main():
     global cap
     global pixels,grid
+    global do_run
     
     # Init OpenCV
     if cam_index <0:
@@ -380,18 +381,28 @@ def main():
         cv2.createTrackbar('V+','ctrl',255,255,nothing)
     cv2.createTrackbar('pixel_if','ctrl',def_pixel_if,len(interfaces)-1,pixel_if)
     cv2.createTrackbar('pixel_addr','ctrl',0,255,pixel)
-    cv2.createTrackbar('run','ctrl',0,1,run)
+    cv2.createTrackbar('run','ctrl',0,1,nothing)
     
     if pixels is not None:
         grid=gridify(pixels)
         send_config(grid)
     
-    run(autostart)
+    did_run=False
     
     acabsl_rconfig.set_all(b_color)
     pixel(cv2.getTrackbarPos('pixel','ctrl'))
     
     while True:
+        if cv2.getTrackbarPos('run','ctrl')==1 and not did_run:
+            do_run=True
+        elif cv2.getTrackbarPos('run','ctrl')==0:
+            did_run=0
+
+        if do_run:
+            run()
+            did_run=True
+            do_run=False
+
         find_pixel(True)
         k = cv2.waitKey(20) & 0xFF
         if k == 27: # Escape key
