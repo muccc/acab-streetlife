@@ -106,13 +106,15 @@ def pixel_if(x):
 dragstate=None
 # callback for mouse clicks
 def move_point(event,x,y,flags,param):
-    global dragstate,pixels,grid
+    global dragstate,pixels,grid,b_color,f_color
     if pixels == None:
         return
     p0=(x,y)
     if event == cv2.EVENT_LBUTTONDOWN:
         dragstate=find_closest_pixel_pos(p0,pixels)
         print "click @",p0,"dragging ",dragstate,addr(pixels[dragstate][0])
+        set_all(b_color)
+        acabsl_rconfig.set_lamp(pixels[dragstate][0], f_color)
     if dragstate != None:
         pixels[dragstate][1]=p0
     if event == cv2.EVENT_LBUTTONUP:
