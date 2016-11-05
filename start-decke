@@ -1,7 +1,7 @@
 #!/bin/sh
-python server/acabslrouter.py nosimulation 7000 8000 &
+python server/acabslrouter.py server/config-decke.py &
 python server/acabslserver.py server/config-decke.py &
-python animations/s-color4-faster.py --port=8000 --wallsizex=12 --wallsizey=2 &
-python animations/enerystar.py --port 8003 --wallsizex=12 --wallsizey=2 &
+#python animations/s-color4-faster.py --port=8000 --wallsizex=2 --wallsizey=12 &
+python animations/enerystar.py --port=8003 --wallsizex=2 --wallsizey=12 &
 
-screen -A -m -d -S schedulerdecke python scheduler.py playlist-decke 8001 12 2
+screen -A -m -d -S schedulerdecke python scheduler.py playlist-decke 8001 2 12

@@ -1,0 +1,7 @@
+#!/bin/sh
+python server/acabslrouter.py server/config-32c3.py & #nosimulation 5000 6000 &
+python server/acabslserver.py server/config-32c3.py &
+#python animations/s-color4-faster.py --port=6000 &
+#python animations/enerystar.py --port=6003 &
+
+screen -A -m -d -S 32c3-scheduler python scheduler.py playlist-32c3 6001 16 6 

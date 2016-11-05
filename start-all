@@ -3,5 +3,9 @@ killall -9 python
 sleep 2
 
 cd /home/acab/acab-streetlife
+# ./start-32c3
 ./start-wall
 ./start-decke
+#./start-cccamp
+
+./web-control-server.py &

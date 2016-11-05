@@ -1,7 +1,7 @@
 #!/bin/sh
-python server/acabslrouter.py nosimulation 5000 6000 &
-python server/acabslserver.py server/config-club.py &
-python animations/s-color4-faster.py --port=6000 &
-python animations/enerystar.py --port 6003 &
+python server/acabslrouter.py server/config-wall.py & #nosimulation 5000 6000 &
+python server/acabslserver.py server/config-wall.py &
+#python animations/s-color4-faster.py --port=6000 &
+python animations/enerystar.py --port=6003 &
 
 screen -A -m -d -S wall-scheduler python scheduler.py playlist-wall 6001 6 8
