@@ -3,7 +3,7 @@
 
 import acabsl
 import time
-t = .3
+t = 1.8
 
 acabsl.update()
 

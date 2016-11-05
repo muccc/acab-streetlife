@@ -3,17 +3,18 @@
 from acabsl import send
 from acabsl import update
 import acabsl
+
 import colorsys
 import random
 import time
 
-tick = 3.7
+tick = 2.6
 
 def setcol(col, r, g, b, time):
-    for wall in range(acabsl.NOOFWALLS):
-        for i in range(0,acabsl.WALLSIZEY):
-            send(col,i,r,g,b,time,wall);
+    for i in range(0,acabsl.WALLSIZEY):
+        send(col,i,r,g,b,time);
     update()
+
 h = 0
 col = 0
 update()

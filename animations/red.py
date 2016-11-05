@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+#!/usr/bin/python
 
 import acabsl
 import time
@@ -11,11 +10,11 @@ def set_all(r,g,b):
     for w in range(acabsl.NOOFWALLS):
         for x in range(acabsl.WALLSIZEX):
             for y in range(acabsl.WALLSIZEY):
-                acabsl.send(x,y,r,g,b,1,w)
+                acabsl.send(x,y,r,g,b,0,w)
     acabsl.update()
 
 while 1:
-    set_all(0,0,0)
+    set_all(255,0,0)
     time.sleep(t)
 
 

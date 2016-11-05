@@ -3,7 +3,6 @@
 
 import acabsl
 import time
-import sys
 t = 1
 
 acabsl.update()

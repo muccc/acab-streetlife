@@ -7,7 +7,7 @@ import time
 
 NOOFWALLS=2
 
-tick = 0.5
+tick = 2 
 
 def set(r,g,b,time):
     for x in  range(acabsl.WALLSIZEX):

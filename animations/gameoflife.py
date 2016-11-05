@@ -8,7 +8,7 @@ import colorsys
 import random
 import time
 
-tick = .5
+tick = 2 
 maxX = acabsl.WALLSIZEX
 maxY = acabsl.WALLSIZEY
 aliveC = [0,255,0]

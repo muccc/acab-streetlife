@@ -9,7 +9,7 @@ import random
 import time
 import math
 
-tick = 0.15
+tick = 1.65
 
 def setcol(col, r, g, b, time):
     for i in range(0,6):

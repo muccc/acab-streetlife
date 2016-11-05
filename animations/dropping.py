@@ -8,7 +8,7 @@ import colorsys
 import random
 import time
 
-tick = 0.3
+tick = 1.8 
 
 def setcol(col, r, g, b, rtime):
     for i in range(0,acabsl.WALLSIZEY):
