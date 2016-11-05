@@ -61,6 +61,16 @@ pygame.init()
 
 screen = pygame.display.set_mode((xpixels*xsize, ypixels*ysize))
 screen.fill((255, 255, 255))
+sleep(3)
+screen.fill((255, 0, 0))
+sleep(3)
+screen.fill((0, 255, 0))
+sleep(3)
+screen.fill((0, 0, 255))
+sleep(3)
+screen.fill((255, 255, 255))
+
+
 pygame.display.set_caption(sys.argv[1])
 updatethread = threading.Thread(target=handle_events)
 updatethread.start()

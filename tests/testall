@@ -12,7 +12,8 @@ def set_all(r,g,b):
         for x in range(acabsl.WALLSIZEX):
             for y in range(acabsl.WALLSIZEY):
                 acabsl.send(x,y,r,g,b,0,w)
-    acabsl.update()
+                time.sleep(t)
+                acabsl.update()
 
 while 1:
     set_all(255,0,0)

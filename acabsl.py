@@ -4,8 +4,8 @@ import sys, getopt
 UDPHOST="localhost"
 UDPPORT=6002
 
-WALLSIZEX=6
-WALLSIZEY=8
+WALLSIZEX=16
+WALLSIZEY=16
 NOOFWALLS=1
 WALL=0
 # Throws an error if an option is not recognized
@@ -38,7 +38,8 @@ maxy = WALLSIZEY
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 def set_target(host, port):
-    global UDPHOST,UDPPORT
+    global UDPHOST
+    global UDPPORT
     UDPHOST = host
     UDPPORT = port
 

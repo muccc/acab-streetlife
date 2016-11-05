@@ -3,3 +3,5 @@
 *.a
 *.swp
 *.pyc
+server/config-*
+server/testlamps_andi.py

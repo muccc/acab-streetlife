@@ -47,4 +47,3 @@ while True:
     time.sleep(1)
     set_color(255, 255, 255, 500)
     time.sleep(1)
-
