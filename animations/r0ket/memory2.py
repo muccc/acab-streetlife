@@ -1,6 +1,6 @@
 import acabsl
 import pygame
-import r0ket_input
+#import r0ket_input
 from pygame.locals import *
 from threading import Thread
 from random import randint
@@ -20,11 +20,12 @@ minimumsleep = 0.05
 covered = (33,33,33)
 background = (0,0,0)
 defaulthidecolor = background
-defaultuncover = (0,0,255)
-marked = (44,44,44)
+defaultuncover = (0,255,0)
+marked = (0,0,255)
 
 def send(pos,rgb,fadet=0):
 	acabsl.send(pos[0],pos[1],*rgb,t=fadet)
+	acabsl.update()
 
 def reset():
 	acabsl.update()
@@ -190,7 +191,7 @@ class Player:
 					self.matrix[i][j].covered = False
 
 	def move(self,direction):
-		self.changePosition(*{"up":(0,-1),"down":(0,1),"left":(-1,0),"right":(1,0)}[direction])
+		self.changePosition(*{"up":(0,1),"down":(0,-1),"left":(-1,0),"right":(1,0)}[direction])
 
 	def changePosition(self,x=0,y=0):
 		self.setPosition([(self.marked[0]+x)%self.virtualWidth,(self.marked[1]+y)%self.virtualHeight])
@@ -346,9 +347,9 @@ if __name__ == "__main__":
 	advancedMemoryField = [AdvancedMemoryField,[],True]
 	simpleAnimationField = [SimpleAnimationField,[],False]
 	#handler = Handler(1,width/4,height,[[SimpleMemoryField,[],True]],2)
-	handler = Handler(2,width/4,height,[simpleMemoryField,advancedMemoryField],2)
-	#handler = Handler(1,width/8,height,[simpleAnimationField],2)
-	#handler = Handler(1,width/4,height,[advancedMemoryField],2)
+	handler = Handler(2,width,height,[simpleMemoryField,advancedMemoryField],2)
+	#handler = Handler(1,width/2,height,[simpleAnimationField],2)
+	#handler = Handler(1,width/2,height,[advancedMemoryField],2)
 	handler.initiate()
-	#pygameInputHandler(handler)
-	r0ket_input.RoketInput(handler)
+	pygameInputHandler(handler)
+	#r0ket_input.RoketInput(handler)
