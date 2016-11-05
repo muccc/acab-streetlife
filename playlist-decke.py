@@ -12,20 +12,20 @@ def ddc_chooser():
 
 def getPlaylist():
     playlist = [
-            #[time_in_seconds, [[simultanious_animation1, argument1, ...], [simultanious_animation2, argument1, ...], ...]]
-            #[20, [["python","animations/screw.py","--wall=0"], ["python","animations/rainbowscroll.py","--wall=1"]]],
-            [20, [["python","animations/screw.py","--wall=0"]]],
-            [20, [["python","animations/rainbowscroll.py","--wall=0"]]],
-            [20, [["python","animations/multiwall_rainbowscroll.py"]]],
-            [20, [["python","animations/s-color4-faster.py"]]],
+#            [time_in_seconds, [[simultanious_animation1, argument1, ...], [simultanious_animation2, argument1, ...], ...]]
+#            [20, [["python","animations/black.py","--wall=0"]]],
+#            [20, [["python","animations/screw.py","--wall=0"], ["python","animations/rainbowscroll.py","--wall=1"]]],
+            [20, [["python","animations/screw-slow.py"]]],
+            [20, [["python","animations/rainbowscroll-slow.py"]]],
+#            [20, [["python","animations/s-color4.py"]]],
 #            [20, [["python","animations/gameoflife.py"]]],
-            #[20, [["python","animations/dmm/hackerbrucke.py"]]],
-            [20, [["python","animations/red-sym-scroll.py"]]],
-#            [20, [["python","animations/multiwall_fullpulse.py"]]],
-            #[20, [["python","animations/dropping.py"]]],
 #            [20, [["python","animations/dmm/hackerbrucke.py"]]],
-            #[20, [["python","animations/dmm/dt.py"]]],
+#            [20, [["python","animations/red-sym-scroll.py"]]],
+#            [20, [["python","animations/multiwall_fullpulse.py"]]],
+#            [20, [["python","animations/dropping.py"]]],
+#            [20, [["python","animations/dmm/hackerbrucke.py"]]],
+#            [20, [["python","animations/dmm/dt.py"]]],
 #            [20, [["python","animations/dmm/uhrzeit.py"]]],
- #           [20, [["python","animations/multiwall_warp_core.py"]]],
+#            [20, [["python","animations/multiwall_warp_core.py"]]],
     ]
     return playlist
