@@ -8,8 +8,8 @@ import time
 import string
 
 #Siehe letzte Zeile
-DEIN_TEXT="Hackerbruecke ACAB"
-DEIN_TEXT="ozapft,is.der staatstrojaner-mit dem bagger durchs schluesselloch spannen"
+#DEIN_TEXT="Hackerbruecke ACAB"
+DEIN_TEXT="33C3 im Cyber keilerei        "
 tick = 0.1
 back_r=32
 back_g=0

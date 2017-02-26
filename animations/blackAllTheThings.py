@@ -8,12 +8,18 @@ t = 1
 acabsl.update()
 
 def set_all(r,g,b):
+    set_wall(r,g,b)
+    set_decke(r,g,b)
+
+def set_wall(r,g,b):
     acabsl.set_target("127.0.0.1",6002)
     for w in range(acabsl.NOOFWALLS):
         for x in range(acabsl.WALLSIZEX):
             for y in range(acabsl.WALLSIZEY):
                 acabsl.send(x,y,r,g,b,1,w)
     acabsl.update()
+
+def set_decke(r,g,b):
     acabsl.set_target("127.0.0.1",8002)
     for w in range(acabsl.NOOFWALLS):
         for x in range(acabsl.WALLSIZEX):
@@ -22,7 +28,7 @@ def set_all(r,g,b):
     acabsl.update()
 
 def set_all_to_black():
-        set_all(0,0,0)
+    set_all(0,0,0)
 
 def main():
     while 1:
