@@ -27,6 +27,8 @@ timer = None
 
 state = {
   'all_black' : True,
+  'decke' : True,
+  'wall' : True,
   'all' : 0x000000
 }
 
@@ -62,22 +64,29 @@ def switch_off(name):
 
   if timer is None:
     t_kill = threading.Event()
-    timer = RepeatingTimer(t_kill, animations.blackAllTheThings.set_all_to_black)
+    timer = RepeatingTimer(t_kill, timer_trigger)
     timer.start()
     state[name] = False
 
   return return_state(name)
 
 
+def timer_trigger():
+  if not state['all_black']:
+    animations.blackAllTheThings.set_all_to_black()
+  if not state['decke']:
+    animations.blackAllTheThings.set_decke(0,0,0)
+  if not state['wall']:
+    animations.blackAllTheThings.set_wall(0,0,0)
+
 
 
 @app.route("/acab/<string:name>", methods = ['POST'] )
 def switch_on(name):
-  global timer, t_kill
-
-  stop_timer()
   state[name] = True
-
+  if state['all_black'] and state['decke'] and state['wall']:
+    stop_timer()
+  
   return return_state(name)
 
 current_color = None
