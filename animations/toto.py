@@ -128,6 +128,7 @@ class Handler:
         if not playlist:
             logger.debug("empty playlist")
             return
+        
         logger.info("new playlist: %s" % str(playlist))
         for action in playlist:
             for instruction in action:
