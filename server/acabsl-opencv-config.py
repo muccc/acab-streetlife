@@ -16,7 +16,13 @@
 # - move the "run" slider to 1
 # - watch the script run. It will send the config to the server when done.
 # - If the config looks good you are done.
-# - kill acabsl-rconfig-server.py, and start "server/acabslserver.py server/config-new.py"
+#
+# To run acab in the default muCCC setup:
+# - Move the newly written config to the server/ directory
+# - possibly edit the port numbers in the config (6000: wall, 8000: decke)
+# - kill acabsl-rconfig-server.py,
+# - run the apropriate ./start-<whatever> script
+# - alernatively start "server/acabslserver.py server/config-new.py"
 
 import time
 import cv2
