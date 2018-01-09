@@ -15,6 +15,7 @@
 # - fiddle with H+ and H- sliders so the pixel is well-recognized
 # - move the "run" slider to 1
 # - watch the script run. It will send the config to the server when done.
+# - ` hit "space" while running to skip to the next interface if you are sure it is done
 # - If the config looks good you are done.
 #
 # To run acab in the default muCCC setup:
@@ -271,6 +272,9 @@ def do_detect():
             if cv2.waitKey(1)&0xff == 27: # Escape key
                 cv2.destroyAllWindows()
                 cap.release()
+                break
+            elif cv2.waitKey(1)&0xff == 32: # Space
+                print "SkipIF"
                 break
 
 # calculates length and angle for the vector from p1 to p2
