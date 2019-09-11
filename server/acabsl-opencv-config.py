@@ -205,7 +205,7 @@ def find_pixel(show):
     separated=cv2.inRange(img,lower,upper)
 #    cv2.imshow('img',separated)
 
-    contours,hierarchy=cv2.findContours(separated,cv2.RETR_LIST,cv2.CHAIN_APPROX_SIMPLE)
+    _,contours,hierarchy=cv2.findContours(separated,cv2.RETR_LIST,cv2.CHAIN_APPROX_SIMPLE)
     max_area = min_area
     largest_contour = None
     for idx, contour in enumerate(contours):
@@ -377,8 +377,8 @@ def main():
         #cap.set(cv2.cv.CV_CAP_PROP_FRAME_WIDTH,320)
         #cap.set(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT,200)
         
-        cap.set(cv2.cv.CV_CAP_PROP_EXPOSURE, 0)
-        #cap.set(cv2.cv.CV_CAP_PROP_WHITE_BALANCE, 0) # not implemented yet
+        cap.set(cv2.CAP_PROP_EXPOSURE, 0)
+#        cap.set(cv2.CAP_PROP_WHITE_BALANCE, 0) # not implemented yet
     
     # Init rconfig 
     acabsl_rconfig.set_target(UDP_IP,UDP_PORT)
