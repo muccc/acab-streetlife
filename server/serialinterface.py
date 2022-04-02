@@ -21,23 +21,25 @@ class SerialInterface:
             self.ser.flushInput()
             self.ser.flushOutput()
             if timeout:
-                self.ser.setTimeout(timeout+1)
+                self.ser.timeout = timeout+1
             self.portopen = True
             break
-        except serial.SerialException:
-            #print "Exception while opening", path2device
-            pass
+        except serial.SerialException as e:
+            print(repr(e))
+            print("Exception while opening", path2device)
         time.sleep(1)
-      print "Opened", path2device
+      print("Opened", path2device)
+
     def close(self):
         try:
             self.portopen = False
             self.ser.close()
         except serial.SerialException:
             pass
+
     def reinit(self):
         self.close()
-        #print "reopening"
+        print("reopening")
         while not self.portopen:
             self.__init__(self.path2device, self.baudrate, self.timeout)
             time.sleep(1)
@@ -59,7 +61,8 @@ class SerialInterface:
             return
         try:
             self.ser.write(message)
-        except :
+        except Exception as e:
+            print(repr(e))
             self.reinit()
 
     def readMessage(self):
@@ -75,7 +78,7 @@ class SerialInterface:
             endtime = time.time()
             if len(c) == 0:             #A timout occured
                 if endtime-starttime < self.timeout - 1:
-                    print "port broken"
+                    print("port broken")
                     self.reinit()
                     raise Exception()
                 else:
@@ -101,7 +104,7 @@ class SerialInterface:
             elif stop:
                 if data[0] == 'D':
                     message = '%f %s'%(time.time(), data[2:])
-                    print 'serial debug message:',data
+                    print('serial debug message:',data)
                     #print message
                     data = ""
                     stop = False

@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import acabsl_interface
-import thread
 import time
 import sys
 import os
@@ -21,8 +20,8 @@ def get_matrix(matrix):
     return m
 
 def print_matrix(matrix):
-    print "Currently known matrix:"
-    print get_matrix(matrix)
+    print("Currently known matrix:")
+    print(get_matrix(matrix))
 
 def write_config(serials, interfaces, matrix):
     config_file = open(sys.argv[1], 'w')
@@ -62,20 +61,20 @@ except:
 
 serials1 = set()
 
-raw_input("Please attach the USB to RS485 bridges and press enter.: ")
+input("Please attach the USB to RS485 bridges and press enter.: ")
 
 serials2 = set(os.listdir('/dev/serial/by-id'))
 
 serials = ['/dev/serial/by-id/'+serial for serial in serials2 - serials1]
 
 if len(serials) == 0:
-    print "Found no new devices. Aborting."
+    print("Found no new devices. Aborting.")
     sys.exit(1)
 
 for serial in serials:
-    print "Found device: ", serial
+    print("Found device: ", serial)
 
-interfaces = range(len(serials))
+interfaces = list(range(len(serials)))
 
 matrix = []
 
@@ -87,11 +86,11 @@ def get_number(message, base=10, default=None):
     number = None
     
     while number == None:
-        input = raw_input(message)
-        if input == '' and default != None:
+        inp = input(message)
+        if inp == '' and default != None:
             return default
         try:
-            number = int(input, base)
+            number = int(inp, base)
         except:
             pass
     return number
@@ -100,25 +99,25 @@ def get_tuple(message, default=None):
     tuple = None
     
     while tuple == None:
-        input = raw_input(message)
-        if input == '' and default != None:
+        inp = input(message)
+        if inp == '' and default != None:
             return default
         try:
-            input = input.split(',')
-            tuple = (int(input[0]), int(input[1]))
+            inp = inp.split(',')
+            tuple = (int(inp[0]), int(inp[1]))
         except:
             pass
     return tuple
 
 xsize = get_number("Please enter the horizontal dimension [16]: ", 10, 16)
 ysize = get_number("Please enter the vertical dimension [6]: ",10, 6)
-print "Your matrix is",xsize,"X",ysize,"big."
+print("Your matrix is",xsize,"X",ysize,"big.")
 
 min_address = get_number("Please enter the smallest lamp address (in hexadecimal)[10]: ", 16, 0x10)
-max_address = get_number("Please enter the biggest lamp address (in hexadecimal)[90]: ", 16, 0x90)
-print "Tested address range: %02X - %02X (%d addresses)"%(min_address, max_address, max_address-min_address+1)
+max_address = get_number("Please enter the biggest lamp address (in hexadecimal)[FF]: ", 16, 0xFF)
+print("Tested address range: %02X - %02X (%d addresses)"%(min_address, max_address, max_address-min_address+1))
 
-addresses = range(min_address, max_address+1)
+addresses = list(range(min_address, max_address+1))
 
 matrix = [[None for x in range(xsize)] for y in range(ysize)]
 
@@ -151,7 +150,7 @@ for interface in interfaces:
     acabsl_interface.sendSetColor(0, 0, 0, 0, interface)
 
 def half(l):
-    return l[0:(len(l)+1)/2], l[(len(l)+1)/2:]
+    return l[0:int((len(l)+1)/2)], l[int((len(l)+1)/2):]
 
 def set_interfaces(interfaces, r, g, b):
     for interface in interfaces:
@@ -173,7 +172,7 @@ def find_interface(interfaces):
     red_interfaces, green_interfaces = half(interfaces)
     blue_interfaces = []
     
-    print "Looking for the correct interface. Press 'Q' to abort. Press 'N' if the lamp does not exist."
+    print("Looking for the correct interface. Press 'Q' to abort. Press 'N' if the lamp does not exist.")
     
     abort = False
     skip = False
@@ -184,7 +183,7 @@ def find_interface(interfaces):
 	
         set_known_addresses(0, 0, 0)	
 
-        result = raw_input("Which color does the lamp have? (r,g,b): ")
+        result = input("Which color does the lamp have? (r,g,b): ")
         if result == 'r' and len(red_interfaces) == 1:
             return red_interfaces[0]
         if result == 'r' and len(red_interfaces) > 0:
@@ -200,7 +199,7 @@ def find_interface(interfaces):
             continue
 
         if result != '' and result in  'rgb':
-            print "There was an error: The lamp ahould not have this color"
+            print("There was an error: The lamp ahould not have this color")
             abort = True
         
         if result == 'Q':
@@ -210,11 +209,11 @@ def find_interface(interfaces):
             skip = True
 
     if abort: 
-        print "Aborting."
+        print("Aborting.")
         return None
     
     if skip:
-        print "Skipping this lamp"
+        print("Skipping this lamp")
         return 'skip'
     
 def find_lamp_address(interface, addresses):
@@ -222,7 +221,7 @@ def find_lamp_address(interface, addresses):
     red_addresses, green_addresses = half(addresses)
     blue_addresses = []
     
-    print 'Looking for the lamp\'s address. Press Q to abort.'
+    print('Looking for the lamp\'s address. Press Q to abort.')
     abort = False
 
     while not abort:
@@ -230,7 +229,7 @@ def find_lamp_address(interface, addresses):
         set_lamps(green_addresses, interface, 0, 255, 0)
         set_lamps(blue_addresses, interface, 0, 0, 0)
 
-        result = raw_input("Which color does the lamp have? (r,g,b): ")
+        result = input("Which color does the lamp have? (r,g,b): ")
         if result == 'r' and len(red_addresses) == 1:
             return red_addresses[0]
         if result == 'r' and len(red_addresses) > 0:
@@ -246,13 +245,13 @@ def find_lamp_address(interface, addresses):
             continue
     
         if result != '' and result in  'rgb':
-            print "There was an error: The lamp should not have this color"
+            print("There was an error: The lamp should not have this color")
             abort = True
         
         if result == 'Q':
             abort = True
 
-    print "Aborting."
+    print("Aborting.")
     return None
 
 write_config(serials, interfaces, matrix)
@@ -266,10 +265,10 @@ while True:
     x,y = get_tuple("Coordinate to test (-1,-1 to quit): [%d,%d]: "%(x,y), (x,y))
 
     if x==-1 and y==-1:
-        print "Aborting."
+        print("Aborting.")
         break
 
-    print "Starting to search for lamp at coordinate (%d,%d):"%(x,y)
+    print("Starting to search for lamp at coordinate (%d,%d):"%(x,y))
 
     if matrix[y][x] != None:
         addresses.append(matrix[y][x][0])

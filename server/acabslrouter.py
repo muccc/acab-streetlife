@@ -1,8 +1,7 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 import socket
-import thread
+import threading
 import time
-import Queue
 import sys
 import select
 
@@ -19,7 +18,8 @@ with lower priority will be activated.
 """
 
 config = sys.argv[1]
-execfile(config)
+with open(config) as f:
+    exec(f.read())
 
 #inputs = [[port, priority, timeout, socket],
 inputs = [{'port': router_base_port + 0, 'priority': 0, 'timeout': 1},
@@ -40,7 +40,7 @@ for i in inputs:
 for w in walls:
     w['socket'] = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     w['simsocket'] = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-#q = Queue.Queue(100)
+
 selected_input = inputs[0]
 
 
@@ -73,15 +73,15 @@ def forward(data, source):
         if source not in tainted:
             tainted['source'] = []
 
-        x = ord(data[0])
-        y = ord(data[1])
+        x = data[0]
+        y = data[1]
         cmd = data[2]
         #print x,y,cmd
 
         if cmd != 'U':
             wall = find_wall(x, y)
             x,y = translate_for_wall(x,y,wall)
-            data = '%c%c%s'%(chr(x), chr(y), data[2:])
+            data = bytes([x, y]) + data[2:]
             #print '->', x, y, wall['simport']
             send_to_wall(data, wall)
             if source not in tainted:

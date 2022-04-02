@@ -13,18 +13,18 @@ except:
 
 serials1 = set()
 
-raw_input("Please attach the USB to RS485 bridges and press enter.: ")
+input("Please attach the USB to RS485 bridges and press enter.: ")
 
 serials2 = set(os.listdir('/dev/serial/by-id'))
 
 serials = ['/dev/serial/by-id/'+serial for serial in serials2 - serials1]
 
 if len(serials) == 0:
-    print "Found no devices. Aborting."
+    print("Found no devices. Aborting.")
     sys.exit(1)
 
 for serial in serials:
-    print "Found device: ", serial
+    print("Found device: ", serial)
 
 interfaces = range(len(serials))
 

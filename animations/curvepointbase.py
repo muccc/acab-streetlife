@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 # Base class for implementing "point-style" animations using curve functions.
 

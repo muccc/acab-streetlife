@@ -1,15 +1,16 @@
 #!/usr/bin/env python2
 import acabsl_interface
 import socket
-import thread
+import threading
 import time
-import Queue
+from queue import Queue
 import sys
 
 config_file = sys.argv[1]
-execfile(config_file)
+with open(config_file) as f:
+    exec(f.read())
 
-q = Queue.Queue(100)
+q = Queue(100)
 acabsl_interface.init(serials, interfaces, matrix)
 
 def writer():
@@ -17,34 +18,36 @@ def writer():
         data = q.get()
         #print list(data)
         try:
-            x = ord(data[0])
-            y = ord(data[1])
             cmd = data[2]
-            r = ord(data[3])
-            g = ord(data[4])
-            b = ord(data[5])
-            msh = ord(data[6])
-            msl = ord(data[7])
-            ms = (msh<<8) + msl;
-            if cmd == 'C':
+            if cmd == ord('C'):
+                x = data[0]
+                y = data[1]
+                r = data[3]
+                g = data[4]
+                b = data[5]
+                msh = data[6]
+                msl = data[7]
+                ms = (msh<<8) + msl
                 acabsl_interface.send(x,y,r,g,b,ms/1000.)
-            elif cmd == 'U':
+            elif cmd == ord('U'):
                 buffered = False
-                if ord(data[0]): buffered = True
+                if data[0]: buffered = True
                 acabsl_interface.sendUpdate(buffered)
 
         except Exception as e:
-            print "Unexpected error:", e
+            print("Unexpected error:", e)
 
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind((server_ip,server_port))
-thread.start_new_thread(writer,())
+t = threading.Thread(target=writer)
+t.daemon = True
+t.start()
 
 while True:
     data = sock.recv(1024)
     if not q.full():
         q.put(data)
     else:
-        print 'ignoring data'
+        print('ignoring data')
 

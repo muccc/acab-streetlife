@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 from acabsl import send
 from acabsl import update
@@ -10,9 +10,6 @@ t = .3
 x = int(sys.argv[1])
 y = int(sys.argv[2])
 t = float(sys.argv[3])
-
-acabsl.UDPHOST = "acab"
-acabsl.UDPPORT = 6002
 
 while 1:
     send(x,y,255,0,0,t)

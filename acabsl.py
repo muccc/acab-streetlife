@@ -55,15 +55,15 @@ def send(x,y,r,g,b,t=0,w=WALL):
 
   # recalculate x and y based on input x,y and wall no w
   x=((w*WALLSIZEX)+x)
-  msg = bytearray([x,y,ord('C'),r,g,b,ms>>8,ms&0xFF])
-  #print list(msg)
+  msg = bytes([x,y,ord('C'),r,g,b,ms>>8,ms&0xFF])
+  #print(list(msg))
   sock.sendto(msg, (UDPHOST, UDPPORT))
 
 def update(buffered = True):
   if buffered:
-    msg = bytearray([1,0,ord('U'),0,0,0,0,0])
+    msg = bytes([1,0,ord('U'),0,0,0,0,0])
   else:
-    msg = bytearray([0,0,ord('U'),0,0,0,0,0])
+    msg = bytes([0,0,ord('U'),0,0,0,0,0])
 
   sock.sendto(msg, (UDPHOST, UDPPORT))
     

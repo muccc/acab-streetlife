@@ -1,8 +1,7 @@
 import serialinterface
 import time
-import Queue
+from queue import Queue
 import threading
-import thread
 
 updatelock = threading.RLock()
 updatequeues = []
@@ -24,8 +23,8 @@ def interfaceHandler(queue, serial, updatequeue):
 
 def createBridge(dev):
     serial = serialinterface.SerialInterface(dev,115200,1)
-    queue = Queue.Queue(130)
-    updatequeue = Queue.Queue(1)
+    queue = Queue()
+    updatequeue = Queue(1)
     updatequeues.append(updatequeue)
     return (queue, serial, updatequeue)
 
@@ -35,15 +34,16 @@ def init(s, i, m):
     interfaces = i
     matrix = m
 
-    bridges = map(createBridge,serials)
+    bridges = list(map(createBridge,serials))
     for bridge in bridges:
-        bridge[1].write('\\F')
+        bridge[1].write(b'\\F')
         # Put all lamps into the pause state
-        msg = '\x00S\x01'
-        msg = "\x5c\x30%s\x5c\x31"%(msg.replace("\\","\\\\"))
-        msg = msg.replace("\\","\\\\")
+        msg = b'\x00S\x01'
+        msg = b"\\\\0" + msg.replace(b"\\",b"\\\\\\\\") + b"\\\\1"
         bridge[1].write(msg)
-        thread.start_new_thread(interfaceHandler,bridge)
+        t = threading.Thread(target=interfaceHandler,args=bridge)
+        t.daemon = True
+        t.start()
 
     buffered = False
     
@@ -83,17 +83,17 @@ def low(x):
 def sendSetColor(lamp,r,g,b,interface):
     global buffered
     if buffered:
-        cmd = "%cP%c%c%c"%(chr(lamp),chr(r),chr(g),chr(b))
+        cmd = bytes([lamp,ord("P"),r,g,b])
     else:
-        cmd = "%cC%c%c%c"%(chr(lamp),chr(r),chr(g),chr(b))
+        cmd = bytes([lamp,ord("C"),r,g,b])
     write(cmd,interface);
 
 def sendMSFade(lamp,r,g,b,ms,interface):
     global buffered
     if buffered:
-        cmd = "%cc%c%c%c%c%c"%(chr(lamp),chr(r),chr(g),chr(b),chr(high(ms)),chr(low(ms)))
+        cmd = bytes([lamp,ord("c"),r,g,b,high(ms),low(ms)])
     else:
-        cmd = "%cM%c%c%c%c%c"%(chr(lamp),chr(r),chr(g),chr(b),chr(high(ms)),chr(low(ms)))
+        cmd = bytes([lamp,ord("M"),r,g,b,high(ms),low(ms)])
     write(cmd,interface);
 
 def sendUpdate(mode):
@@ -104,23 +104,22 @@ def sendUpdate(mode):
             sendMSFade(0,0,0,0,1500,interfaces[i])
     buffered = mode
     if buffered:
-        cmd = "%cU"%chr(0)
+        cmd = bytes([0,ord("U")])
         for i in interfaces:
             write(cmd, interfaces[i])
 
 
 def write(msg, interface):
-    msg = "\x5c\x30%s\x5c\x31"%(msg.replace("\\","\\\\"))
-    msg = msg.replace("\\","\\\\")
+    msg = b"\\\\0" + msg.replace(b"\\",b"\\\\\\\\") + b"\\\\1"
 
     if not bridges[interface][0].full():
         if fullmessage[interface]:
-            print 'reactivating bridge'
+            print('reactivating bridge')
             fullmessage[interface] = False
-            bridges[interface][1].write('\\F')
+            bridges[interface][1].write(b'\\F')
         bridges[interface][0].put(msg)
     else:
         if fullmessage[interface] == False:
-            print 'ignoring', msg, 'queue for bridge is full'
+            print('ignoring', msg, 'queue for bridge is full')
             fullmessage[interface] = True
 
