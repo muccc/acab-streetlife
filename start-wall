@@ -4,4 +4,8 @@ python server/acabslserver.py server/config-wall.py &
 #python animations/s-color4-faster.py --port=6000 &
 python animations/enerystar.py --port=6003 &
 
-screen -A -m -d -S wall-scheduler python scheduler.py playlist-wall 6001 6 8
+# Original
+screen -A -m -d -S wall-scheduler python scheduler.py playlist-wall-normal 6001 6 6
+
+# For 33c3 lamp testing
+#screen -A -m -d -S wall-scheduler python scheduler.py playlist-wall 6001 4 8

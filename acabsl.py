@@ -1,11 +1,11 @@
 import socket
 import sys, getopt
 
-UDPHOST="localhost"
-UDPPORT=6002
+UDPHOST="127.0.0.1"
+UDPPORT=8002
 
-WALLSIZEX=16
-WALLSIZEY=16
+WALLSIZEX=6
+WALLSIZEY=6
 NOOFWALLS=1
 WALL=0
 # Throws an error if an option is not recognized

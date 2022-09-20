@@ -26,8 +26,8 @@ def turn_off():
     global turned_off
     turned_off = True
 
-schedule.every().day.at("16:00").do(turn_on)
-schedule.every().day.at("08:00").do(turn_off)
+schedule.every().day.at("13:00").do(turn_on)
+schedule.every().day.at("07:00").do(turn_off)
 
 while 1:
     schedule.run_pending()

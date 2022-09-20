@@ -3,9 +3,12 @@ killall -9 python
 sleep 2
 
 cd /home/acab/acab-streetlife
-# ./start-32c3
+#./start-34c3
+#./start-muc-sf-festival
 ./start-wall
-./start-decke
+#./start-camp19
+#./start-decke
 #./start-cccamp
+#./start-36c3
 
 ./web-control-server.py &

@@ -60,11 +60,9 @@ except:
     serials1 = set()
 
 serials1 = set()
-
 input("Please attach the USB to RS485 bridges and press enter.: ")
 
 serials2 = set(os.listdir('/dev/serial/by-id'))
-
 serials = ['/dev/serial/by-id/'+serial for serial in serials2 - serials1]
 
 if len(serials) == 0:
@@ -114,7 +112,7 @@ ysize = get_number("Please enter the vertical dimension [6]: ",10, 6)
 print("Your matrix is",xsize,"X",ysize,"big.")
 
 min_address = get_number("Please enter the smallest lamp address (in hexadecimal)[10]: ", 16, 0x10)
-max_address = get_number("Please enter the biggest lamp address (in hexadecimal)[FF]: ", 16, 0xFF)
+max_address = get_number("Please enter the biggest lamp address (in hexadecimal)[BF]: ", 16, 0xFF)
 print("Tested address range: %02X - %02X (%d addresses)"%(min_address, max_address, max_address-min_address+1))
 
 addresses = list(range(min_address, max_address+1))

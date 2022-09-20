@@ -22,8 +22,8 @@ def interfaceHandler(queue, serial, updatequeue):
         time.sleep(0.001)
 
 def createBridge(dev):
-    serial = serialinterface.SerialInterface(dev,115200,1)
-    queue = Queue()
+    serial = serialinterface.SerialInterface(dev, 115200, 1)
+    queue = Queue(255)
     updatequeue = Queue(1)
     updatequeues.append(updatequeue)
     return (queue, serial, updatequeue)

@@ -11,6 +11,9 @@ x = int(sys.argv[1])
 y = int(sys.argv[2])
 t = float(sys.argv[3])
 
+acabsl.UDPHOST = "localhost"
+acabsl.UDPPORT = 8002
+
 while 1:
     send(x,y,255,0,0,t)
     #update()

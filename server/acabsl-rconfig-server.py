@@ -35,6 +35,8 @@ for opt, arg in options:
         path=arg
 
 serials = os.listdir(path)
+#print("WARNING: serials are currently hardcoded")
+#serials = [ 'usb-FTDI_FT232R_USB_UART_A400fvDr-if00-port0', 'usb-FTDI_FT232R_USB_UART_A10044Xp-if00-port0']
 
 if len(serials) == 0:
     print "Found no devices. Aborting."

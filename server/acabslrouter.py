@@ -24,7 +24,7 @@ with open(config) as f:
 #inputs = [[port, priority, timeout, socket],
 inputs = [{'port': router_base_port + 0, 'priority': 0, 'timeout': 1},
           {'port': router_base_port + 1, 'priority': 1, 'timeout': 5},
-          {'port': router_base_port + 2, 'priority': 2, 'timeout': 5},
+          {'port': router_base_port + 2, 'priority': 2, 'timeout': 30},
           {'port': router_base_port + 3, 'priority': 3, 'timeout': 5},
           {'port': router_base_port + 4, 'priority': 4, 'timeout': 5}]
 
