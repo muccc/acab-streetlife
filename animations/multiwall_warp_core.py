@@ -49,7 +49,7 @@ while 1:
 
   if c == 0:
     r, g, b = map(lambda x: x*255, colorsys.hsv_to_rgb(random.random(), 1, 1))
-    print 'Warp Color:', r, g, b
+    print('Warp Color:', r, g, b)
 
   blank_walls(c, tick*1.5)
   time.sleep(tick*.8)
